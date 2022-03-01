@@ -1,0 +1,131 @@
+parent(ElizabethII, Charles)
+parent(ElizabethII, Andrew)
+birthCountry(ElizabethII, UnitedKingdom)
+spouse(ElizabethII, Philip)
+parent(Philip, Charles)
+birthCountry(Philip, Greece)
+parent(George, ElizabethII)
+parent(Elizabeth, ElizabethII)
+spouse(Elizabeth, George)
+birthCountry(Charles, UnitedKingdom)
+parent(Cicillia, Elizabeth)
+birthCountry(Claude, UnitedKingdom)
+parent(ElizabethII, Anne)
+parent(Philip, Andrew)
+parent(Claude, Elizabeth)
+parent(ElizabethII, Edward)
+spouse(Philip, ElizabethII)
+birthCountry(Edward, UnitedKingdom)
+birthCountry(Cicillia, UnitedKingdom)
+parent(Philip, Edward)
+spouse(George, Elizabeth)
+parent(Philip, Anne)
+birthCountry(Anne, UnitedKingdom)
+birthCountry(Andrew, UnitedKingdom)
+birthCountry(Elizabeth, UnitedKingdom)
+
+ElizabethII 0
+Charles 1
+Philip 2
+Andrew 3
+George 4
+Elizabeth 5
+Anne 6
+Edward 7
+UnitedKingdom 8
+Greece 9
+Claude 10
+Cicillia 11
+
+
+parent  0
+spouse  1
+birthCountry    2
+
+
+java -jar amie-dev.jar /Users/bhaskarkrishnag/IdeaProjects/AMIE/RoyalsGraph/allTriples.tsv -mins 0 -minpca 0 -minis 1
+:
+Rule                                    Head Coverage   Std Confidence  PCA Confidence  Positive Examples   Body size   PCA Body size   Functional variable
+?b  1  ?a   => ?a  1  ?b                1               1               1               4                   4           4               ?a T
+?h  0  ?b  ?a  1  ?h   => ?a  0  ?b     0.833333333     1               1               10                  10          10              ?a F                    distinct([H,B,A], (parent(H, B),spouse(A, H),parent(A, _X))).
+?g  0  ?b  ?g  1  ?a   => ?a  0  ?b     0.833333333     1               1               10                  10          10              ?a F
+?a  2  ?h  ?b  2  ?h   => ?a  0  ?b     0.583333333     0.107692308     0.212121212     7                   65          33              ?a F
+?a  0  ?h  ?b  0  ?h   => ?a  1  ?b     1               0.333333333     0.5             4                   12          8               ?a T
+?a  0  ?h  ?h  2  ?b   => ?a  2  ?b     0.444444444     0.666666667     0.8             4                   6           5               ?a T
+?g  0  ?a  ?g  2  ?b   => ?a  2  ?b     0.666666667     0.6             0.6             6                   10          10              ?a T
+
+
+AMIE example graph
+0(?a,?b)  => 1(?a,?b)                   0.5             0.333333333     0.5             1                   3           2               ?a
+1(?a,?b)  => 0(?a,?b)                   0.333333333     0.5             0.5             1                   2           2               ?b
+
+
+
+?a  2  ?h  ?b  2  ?h   => ?a  0  ?b
+MATCH (a)-[:`2`]->(h), (b)-[:`2`]->(h), (a)-[:`0`]->(b) RETURN COUNT(*) as cnt
+
+MATCH (a{entity: 'Claude'})-[r:`1`]->(b{entity: 'Cicillia'}) DELETE R
+
+?a  0  ?h  ?b  0  ?h   => ?a  1  ?b
+spouse(ElizabethII, Philip) | parent(ElizabethII, Anne), parent(Philip, Anne)
+
+?x,?y|parent(?x,?z),parent(?y,?z)
+
+/Users/bhaskarkrishnag/IdeaProjects/AMIE/RoyalsGraph/allTriples.tsv :t/Users/bhaskarkrishnag/IdeaProjects/AMIE/RoyalsGraph/t_rules.tsv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hi,
+
+As part of my Master's Independent Study I am trying to implement AMIE through graph database (Neo4j). I am confident that I understand the partial completeness assumption but the results I see are not inline with my understanding. It would be great if someone can help me understand where my understanding is wrong w.r.t the following example. 
+
+| Parent (r = 0) | 
+| ------------- | 
+| parent(ElizabethII, Andrew)  | 
+| parent(ElizabethII, Anne)  | 
+| parent(ElizabethII, Charles)|
+| parent(ElizabethII, Edward)|
+| parent(Philip, Andrew)  | 
+| parent(Philip, Anne)  | 
+| parent(Philip, Charles)|
+| parent(Philip, Edward)|
+|parent(Cicillia, Elizabeth)|
+|parent(Claude, Elizabeth)|
+|parent(Elizabeth, ElizabethII)|
+|parent(George, ElizabethII)|
+
+|Spouse (r = 1) |
+|-------|
+|spouse(ElizabethII, Philip)|
+|spouse(Philip, ElizabethII)|
+|spouse(Elizabeth, George)|
+|spouse(George, Elizabeth)|
+
+AMIE mines the following rule (among many others):
+**Rule: parent(a, h) ^ parent(b, h) => spouse(a, b)**
+| Rule | Head Coverage | Std Confidence  | PCA Confidence | Positive Examples |   Body size |   PCA Body size |   Functional variable |
+|--------|---|---|----|----|----|----|----|
+| ?a  0  ?h  ?b  0  ?h   => ?a  1  ?b |    1 |               0.333333333 |     0.5 |             4 |                   12 |          8 |               ?a |
+
+Since PCA body size was 8, and positive examples were 4, AMIE found 4 negatives. But, I can't find those 4 negatives.
+According to the Partial completeness assumption negatives are wrong facts about spouse, i.e, we know spouse(x,y) for a given parent(x,z) ^ parent(y,z) but there exists a different spouse(x,y') for the same body.
+
+According to my understanding of PCA, there are no negatives because the #(x,y): parent(x,z) ^ parent(y,z) => spouse(x,y') is 0.
+
+Please let me know what is it that I am missing? Or if you need more information. Sorry for posting it under issues I didn't know of a better place to ask this question.
+
+Thanks!
+Bhaskar
+

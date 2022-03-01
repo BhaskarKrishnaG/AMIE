@@ -1,0 +1,12 @@
+ElizabethII 0
+Charles 1
+Philip 2
+Andrew 3
+George 4
+Elizabeth 5
+Anne 6
+Edward 7
+UnitedKingdom 8
+Greece 9
+Claude 10
+Cicillia 11
