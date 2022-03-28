@@ -47,4 +47,23 @@ public class Atom {
     public void setObject(Long y) {
         this.object = y;
     }
+
+    /**
+     * This method creates a new Atom with same signature.
+     *
+     * @return new Atom.
+     */
+    public Atom deepCopyAtom(){
+        Atom newAtom = new Atom();
+        newAtom.setSubject(getSubject());
+        newAtom.setPredicateId(getPredicateId());
+        newAtom.setObject(getObject());
+
+        return newAtom;
+    }
+
+    @Override
+    public String toString() {
+        return " (" + subject + ")-[" + predicateId + "]->(" + object + ")";
+    }
 }

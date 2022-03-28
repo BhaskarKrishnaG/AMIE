@@ -3,9 +3,6 @@ package edu.rit.gdb.Utils;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Transaction;
 
-import java.util.HashMap;
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class ComputingMetrics {
 
     /**
@@ -18,6 +15,7 @@ public class ComputingMetrics {
     public double getHeadCoverage(Rule r, GraphDatabaseService gdb){
 
         Transaction tx = gdb.beginTx();
+
         // Cypher query to get the relationship type and count #(x',y') with this type.
         int count = ((Number)gdb.execute("MATCH ()-[:`" +r.getHeadAtom().getPredicateId() + "`]->() " +
                         " RETURN COUNT(*) as cnt").next().get("cnt")).intValue();
@@ -26,6 +24,7 @@ public class ComputingMetrics {
         tx.close();
 
         System.out.println("Head coverage: " + hc);
+        r.setHeadCount(hc);
         return hc;
     }
 
@@ -93,8 +92,10 @@ public class ComputingMetrics {
         double conPCA = supp*1.0/(count);
 
         tx.close();
-
+        System.out.println("count: " + count);
         System.out.println("PCA Confidence: " + conPCA);
+
+        r.setConfPCA(conPCA);
         return conPCA;
     }
 
@@ -159,8 +160,8 @@ public class ComputingMetrics {
      */
     public void queryBuilderForPCA(Rule r, StringBuilder query){
         Long s = r.getHeadAtom().getSubject();
-        Long o = r.getHeadAtom().getObject();
         Long p = r.getHeadAtom().getPredicateId();
+        Long o = r.getHeadAtom().getObject();
 
         query.append("MATCH ");
 
@@ -175,8 +176,11 @@ public class ComputingMetrics {
         }
 
         // Now add the head section of the rule.
-//        query.append("(n").append(s).append(")-[r:`").append(p).append("`]->").append("(n").append(o).append(")");
-        query.append("(n").append(s).append(")-[r:`").append(p).append("`]->").append("( )");
+        query.append("(n").append(s).append(")-[r:`").append(p).append("`]->").append("()");
+
+        // Just to test b being functional variable
+//        query.append("()-[r:`").append(p).append("`]->").append("(n").append(o).append(")");
+
     }
 
     public void appendNode(StringBuilder query, Long node){
@@ -210,44 +214,6 @@ public class ComputingMetrics {
             query.append("(").append(placeHolder).append(i.incrementAndGet()).append(")");
         }
     }
-    /*------------------------------------------------------------------------------------------
+    /*------------------------------------------------------------------------------------------*/
 
-    /**
-     * This method will check of it's closed, meaning is there two occurrences of every subject/object.
-     *
-     * @return true - if it's close.
-     *         false - otherwise.
-     */
-    public boolean checkIfClosed(Rule r){
-
-        HashMap<Long, AtomicInteger> countVariables = new HashMap<>();
-        for (Atom eachAtom: r.getBodyAtoms()){
-            if (!countVariables.containsKey(eachAtom.getSubject())){
-                countVariables.put(eachAtom.getSubject(), new AtomicInteger(1));
-            }
-            else {
-                countVariables.get(eachAtom.getSubject()).incrementAndGet();
-            }
-            if (!countVariables.containsKey(eachAtom.getObject())){
-                countVariables.put(eachAtom.getObject(), new AtomicInteger(1));
-            }
-            else {
-                countVariables.get(eachAtom.getObject()).incrementAndGet();
-            }
-        }
-
-        // If none of the head variables are present in the map and they are not the same variables,
-        // then it's definitely not a closed rules.
-        if (!r.getHeadAtom().getSubject().equals(r.getHeadAtom().getObject())
-            && (!countVariables.containsKey(r.getHeadAtom().getSubject()) || !countVariables.containsKey(r.getHeadAtom().getObject()))){
-            return false;
-        }
-
-        for (AtomicInteger count: countVariables.values()){
-            if( count.intValue() < 2) {
-                return false;
-            }
-        }
-        return true;
-    }
 }
