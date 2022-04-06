@@ -1,0 +1,1126 @@
+2022-04-06 16:16:55.700+0000 WARN [o.n.k.i.JvmChecker] You are using an unsupported version of the Java runtime. Please use Oracle(R) Java(TM) Runtime Environment 8 or 11, OpenJDK(TM) 8 or 11 or IBM J9.
+2022-04-06 16:16:55.754+0000 WARN [o.n.i.p.PageCache] The dbms.memory.pagecache.size setting has not been configured. It is recommended that this setting is always explicitly configured, to ensure the system has a balanced configuration. Until then, a computed heuristic value of 6442450944 bytes will be used instead. Run `neo4j-admin memrec` for memory configuration suggestions.
+2022-04-06 16:16:56.194+0000 INFO [o.n.g.f.m.e.CommunityEditionModule] No locking implementation specified, defaulting to 'community'
+2022-04-06 16:16:56.692+0000 INFO [o.n.g.f.GraphDatabaseFacadeFactory] Creating 'db' database.
+2022-04-06 16:16:56.719+0000 INFO [o.n.k.a.DatabaseAvailabilityGuard] Requirement `Database available` makes database db unavailable.
+2022-04-06 16:16:56.720+0000 INFO [o.n.k.a.DatabaseAvailabilityGuard] Database db is unavailable.
+2022-04-06 16:16:56.733+0000 INFO [o.n.i.d.DiagnosticsManager] --- INITIALIZED diagnostics START ---
+2022-04-06 16:16:56.733+0000 INFO [o.n.i.d.DiagnosticsManager] Neo4j Kernel properties:
+2022-04-06 16:16:56.734+0000 INFO [o.n.i.d.DiagnosticsManager] unsupported.dbms.directories.neo4j_home=/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S
+2022-04-06 16:16:56.734+0000 INFO [o.n.i.d.DiagnosticsManager] dbms.active_database=db
+2022-04-06 16:16:56.735+0000 INFO [o.n.i.d.DiagnosticsManager] unsupported.dbms.directories.databases.root=/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S
+2022-04-06 16:16:56.736+0000 INFO [o.n.i.d.DiagnosticsManager] unsupported.dbms.edition=community
+2022-04-06 16:16:56.738+0000 INFO [o.n.i.d.DiagnosticsManager] unsupported.dbms.ephemeral=false
+2022-04-06 16:16:56.738+0000 INFO [o.n.i.d.DiagnosticsManager] Diagnostics providers:
+2022-04-06 16:16:56.738+0000 INFO [o.n.i.d.DiagnosticsManager] org.neo4j.kernel.configuration.Config
+2022-04-06 16:16:56.738+0000 INFO [o.n.i.d.DiagnosticsManager] org.neo4j.internal.diagnostics.DiagnosticsManager
+2022-04-06 16:16:56.738+0000 INFO [o.n.i.d.DiagnosticsManager] SYSTEM_MEMORY
+2022-04-06 16:16:56.738+0000 INFO [o.n.i.d.DiagnosticsManager] JAVA_MEMORY
+2022-04-06 16:16:56.739+0000 INFO [o.n.i.d.DiagnosticsManager] OPERATING_SYSTEM
+2022-04-06 16:16:56.739+0000 INFO [o.n.i.d.DiagnosticsManager] JAVA_VIRTUAL_MACHINE
+2022-04-06 16:16:56.739+0000 INFO [o.n.i.d.DiagnosticsManager] CLASSPATH
+2022-04-06 16:16:56.739+0000 INFO [o.n.i.d.DiagnosticsManager] LIBRARY_PATH
+2022-04-06 16:16:56.739+0000 INFO [o.n.i.d.DiagnosticsManager] SYSTEM_PROPERTIES
+2022-04-06 16:16:56.739+0000 INFO [o.n.i.d.DiagnosticsManager] TIMEZONE_DATABASE
+2022-04-06 16:16:56.739+0000 INFO [o.n.i.d.DiagnosticsManager] NETWORK
+2022-04-06 16:16:56.739+0000 INFO [o.n.i.d.DiagnosticsManager] System memory information:
+2022-04-06 16:16:56.751+0000 INFO [o.n.i.d.DiagnosticsManager] Total Physical memory: 16.00 GB
+2022-04-06 16:16:56.754+0000 INFO [o.n.i.d.DiagnosticsManager] Free Physical memory: 19.07 MB
+2022-04-06 16:16:56.755+0000 INFO [o.n.i.d.DiagnosticsManager] Committed virtual memory: 14.29 GB
+2022-04-06 16:16:56.756+0000 INFO [o.n.i.d.DiagnosticsManager] Total swap space: 1.00 GB
+2022-04-06 16:16:56.758+0000 INFO [o.n.i.d.DiagnosticsManager] Free swap space: 965.00 MB
+2022-04-06 16:16:56.758+0000 INFO [o.n.i.d.DiagnosticsManager] JVM memory information:
+2022-04-06 16:16:56.759+0000 INFO [o.n.i.d.DiagnosticsManager] Free  memory: 209.38 MB
+2022-04-06 16:16:56.760+0000 INFO [o.n.i.d.DiagnosticsManager] Total memory: 260.00 MB
+2022-04-06 16:16:56.761+0000 INFO [o.n.i.d.DiagnosticsManager] Max   memory: 4.00 GB
+2022-04-06 16:16:56.768+0000 INFO [o.n.i.d.DiagnosticsManager] Garbage Collector: G1 Young Generation: [G1 Eden Space, G1 Survivor Space, G1 Old Gen]
+2022-04-06 16:16:56.768+0000 INFO [o.n.i.d.DiagnosticsManager] Garbage Collector: G1 Old Generation: [G1 Eden Space, G1 Survivor Space, G1 Old Gen]
+2022-04-06 16:16:56.775+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: CodeHeap 'non-nmethods' (Non-heap memory): committed=2.44 MB, used=1.25 MB, max=5.57 MB, threshold=0.00 B
+2022-04-06 16:16:56.778+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: Metaspace (Non-heap memory): committed=17.50 MB, used=17.10 MB, max=-1.00 B, threshold=0.00 B
+2022-04-06 16:16:56.781+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: CodeHeap 'profiled nmethods' (Non-heap memory): committed=4.06 MB, used=4.05 MB, max=117.21 MB, threshold=0.00 B
+2022-04-06 16:16:56.785+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: Compressed Class Space (Non-heap memory): committed=2.00 MB, used=1.91 MB, max=1.00 GB, threshold=0.00 B
+2022-04-06 16:16:56.790+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: G1 Eden Space (Heap memory): committed=86.00 MB, used=28.00 MB, max=-1.00 B, threshold=?
+2022-04-06 16:16:56.793+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: G1 Old Gen (Heap memory): committed=168.00 MB, used=14.54 MB, max=4.00 GB, threshold=0.00 B
+2022-04-06 16:16:56.796+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: G1 Survivor Space (Heap memory): committed=6.00 MB, used=5.09 MB, max=-1.00 B, threshold=?
+2022-04-06 16:16:56.800+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: CodeHeap 'non-profiled nmethods' (Non-heap memory): committed=2.44 MB, used=871.75 kB, max=117.21 MB, threshold=0.00 B
+2022-04-06 16:16:56.800+0000 INFO [o.n.i.d.DiagnosticsManager] Operating system information:
+2022-04-06 16:16:56.802+0000 INFO [o.n.i.d.DiagnosticsManager] Operating System: Mac OS X; version: 10.16; arch: x86_64; cpus: 8
+2022-04-06 16:16:56.803+0000 INFO [o.n.i.d.DiagnosticsManager] Max number of file descriptors: 10240
+2022-04-06 16:16:56.804+0000 INFO [o.n.i.d.DiagnosticsManager] Number of open file descriptors: 106
+2022-04-06 16:16:56.815+0000 INFO [o.n.i.d.DiagnosticsManager] Process id: 2777@bhaskars-air.wireless.rit.edu
+2022-04-06 16:16:56.816+0000 INFO [o.n.i.d.DiagnosticsManager] Byte order: LITTLE_ENDIAN
+2022-04-06 16:16:56.851+0000 INFO [o.n.i.d.DiagnosticsManager] Local timezone: America/New_York
+2022-04-06 16:16:56.852+0000 INFO [o.n.i.d.DiagnosticsManager] JVM information:
+2022-04-06 16:16:56.852+0000 INFO [o.n.i.d.DiagnosticsManager] VM Name: Java HotSpot(TM) 64-Bit Server VM
+2022-04-06 16:16:56.852+0000 INFO [o.n.i.d.DiagnosticsManager] VM Vendor: Oracle Corporation
+2022-04-06 16:16:56.852+0000 INFO [o.n.i.d.DiagnosticsManager] VM Version: 15.0.2+7-27
+2022-04-06 16:16:56.852+0000 INFO [o.n.i.d.DiagnosticsManager] JIT compiler: HotSpot 64-Bit Tiered Compilers
+2022-04-06 16:16:56.853+0000 INFO [o.n.i.d.DiagnosticsManager] VM Arguments: [-agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=55550, -Dfile.encoding=UTF-8, -Duser.country=US, -Duser.language=en, -Duser.variant]
+2022-04-06 16:16:56.853+0000 INFO [o.n.i.d.DiagnosticsManager] Java classpath:
+2022-04-06 16:16:56.860+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/IdeaProjects/AMIE/app/build/classes/java/main
+2022-04-06 16:16:56.861+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j.driver/neo4j-java-driver/4.4.0/7c17c7c9ab5eb4ebbf566457ef0189462366d737/neo4j-java-driver-4.4.0.jar
+2022-04-06 16:16:56.861+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-codegen/3.5.29/9e964dd5ddea0aca47e4deceab1a52f0f7df8831/neo4j-codegen-3.5.29.jar
+2022-04-06 16:16:56.861+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-legacy/3.5.29/91a8fc2104ad116d0ec1a26e74f7bee7dfe49522/neo4j-legacy-3.5.29.jar
+2022-04-06 16:16:56.861+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/6.2/1b6c4ff09ce03f3052429139c2a68e295cae6604/asm-6.2.jar
+2022-04-06 16:16:56.861+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-command-line/3.5.29/d1a8fcb7d70f037af29e726c257259e87a5000/neo4j-command-line-3.5.29.jar
+2022-04-06 16:16:56.861+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.parboiled/parboiled-core/1.1.7/a60ff9a54cbeb30ec44c89e16ac4c35913cbad5a/parboiled-core-1.1.7.jar
+2022-04-06 16:16:56.861+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/5.1.49/cf76d2e4c9c3782a85c15c87bec5772b34ffd0e5/mysql-connector-java-5.1.49.jar
+2022-04-06 16:16:56.861+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-runtime-util/3.5.29/9c54e0943bb423f225628c9a8750e35a7de44cfc/neo4j-cypher-runtime-util-3.5.29.jar
+2022-04-06 16:16:56.861+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.8.0/6b83e4a33220272c3a08991498ba9dc09519f190/checker-qual-3.8.0.jar
+2022-04-06 16:16:56.861+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.1.48.Final/ebb3666ba4883ba81920cec8ccb1a3adcc827eb1/netty-all-4.1.48.Final.jar
+2022-04-06 16:16:56.862+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+2022-04-06 16:16:56.862+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-lucene-upgrade/3.5.29/9dd0c779dc79ee53bc0fc17ef50d505b230036f7/neo4j-lucene-upgrade-3.5.29.jar
+2022-04-06 16:16:56.862+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-index/3.5.29/a6bddfce74df9bf26f0ea124966219621803902a/neo4j-index-3.5.29.jar
+2022-04-06 16:16:56.862+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.19/7e65777fb451ddab6a9c054beb879e521b7eab78/commons-compress-1.19.jar
+2022-04-06 16:16:56.862+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.jprocesses/jProcesses/1.6.4/f0d9e30bb02f67bc2d3d9981664f8e57e4ad1f81/jProcesses-1.6.4.jar
+2022-04-06 16:16:56.862+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-reflect/2.11.12/2bb23c13c527566d9828107ca4108be2a2c06f01/scala-reflect-2.11.12.jar
+2022-04-06 16:16:56.862+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-planner-spi-3.4/3.4.18/ab2f19182c231e77d4607565bbef03d1b531620a/neo4j-cypher-planner-spi-3.4-3.4.18.jar
+2022-04-06 16:16:56.862+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-interpreted-runtime/3.5.29/8d945dbfd25e1b173e0f91cb43779b8189343c8c/neo4j-cypher-interpreted-runtime-3.5.29.jar
+2022-04-06 16:16:56.862+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar
+2022-04-06 16:16:56.862+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-udc/3.5.29/9984dc40bd54e0fd476584b6abc64cfbdaf304/neo4j-udc-3.5.29.jar
+2022-04-06 16:16:56.862+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.parboiled/parboiled-scala_2.11/1.1.7/4e14ecb11f40f25216ce01dc349f541bc801354f/parboiled-scala_2.11-1.1.7.jar
+2022-04-06 16:16:56.862+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-fulltext-index/3.5.29/2284354dcdf3433dd541f14b4c79f2bee5a16bd1/neo4j-fulltext-index-3.5.29.jar
+2022-04-06 16:16:56.862+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-rewriting-3.5/3.5.29/615e248150067a889c986989b71d90b429bb9672/neo4j-rewriting-3.5-3.5.29.jar
+2022-04-06 16:16:56.862+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-data-collector/3.5.29/36e592a382e61c6c4165a370f599d4ad3f478/neo4j-data-collector-3.5.29.jar
+2022-04-06 16:16:56.862+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-expressions-3.5/3.5.29/c4ab65cab471764acf2bb9b3ed1a1baa99561815/neo4j-expressions-3.5-3.5.29.jar
+2022-04-06 16:16:56.863+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-frontend-3.1/3.1.9/239d40944641be2f8d453d9823ec3d195ff6d61/neo4j-cypher-frontend-3.1-3.1.9.jar
+2022-04-06 16:16:56.863+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/IdeaProjects/AMIE/app/build/resources/main
+2022-04-06 16:16:56.863+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-bolt/3.5.29/22999acd495319abfa99c083ef3d1a30e6f9d1c3/neo4j-bolt-3.5.29.jar
+2022-04-06 16:16:56.863+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/5.5.5/c34bcd9274859dc07cfed2a935aaca90c4f4b861/lucene-core-5.5.5.jar
+2022-04-06 16:16:56.863+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-graph-algo/3.5.29/144e14f982a8a705ae34141c4ee02cc6e224c370/neo4j-graph-algo-3.5.29.jar
+2022-04-06 16:16:56.863+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-values/3.5.29/706b8492eaee49d796010508ef715ef35bb534ef/neo4j-values-3.5.29.jar
+2022-04-06 16:16:56.863+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j/3.5.29/437d08503514c65d17806f7f52d5c49ae93a1a86/neo4j-3.5.29.jar
+2022-04-06 16:16:56.863+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-common/3.5.29/684f66cfa5f4924e39b84695eaef7fb5e4a1827a/neo4j-common-3.5.29.jar
+2022-04-06 16:16:56.863+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-front-end-3.5/3.5.29/5ec8b4835a39705e00a5ddfaa8a91e97f5e2254c/neo4j-front-end-3.5-3.5.29.jar
+2022-04-06 16:16:56.863+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-queryparser/5.5.5/6c965eb5838a2ba58b0de0fd860a420dcda11937/lucene-queryparser-5.5.5.jar
+2022-04-06 16:16:56.863+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/6.2/61570e046111559f38d4e0e580c005f75988c0a6/asm-tree-6.2.jar
+2022-04-06 16:16:56.864+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-ir-3.4/3.4.18/28974639500b387866e2892fc9c6b93b26379e8c/neo4j-cypher-ir-3.4-3.4.18.jar
+2022-04-06 16:16:56.865+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j.licensing-proxy/zstd-proxy/3.5.29/d01e8c220f1fbadd5434a777da5ba95858ef645f/zstd-proxy-3.5.29.jar
+2022-04-06 16:16:56.865+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-compiler-3.1/3.1.9/6bec4dee36c05a56d19791cacc887d815ebbefd7/neo4j-cypher-compiler-3.1-3.1.9.jar
+2022-04-06 16:16:56.865+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher/3.5.29/eefc255c9bfa130a4ef96edd8a0c9a2c21b34bcc/neo4j-cypher-3.5.29.jar
+2022-04-06 16:16:56.865+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-graph-matching/3.1.9/5265d2eb2cc8df7bc66034b730d86be936ec76a9/neo4j-graph-matching-3.1.9.jar
+2022-04-06 16:16:56.865+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.profesorfalken/jPowerShell/1.9/22a7cdf6e460b9738e751bef9634b1b7cee55130/jPowerShell-1.9.jar
+2022-04-06 16:16:56.865+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-planner-3.4/3.4.18/1fadda795171ba7f87e9c0564780cd2c24304159/neo4j-cypher-planner-3.4-3.4.18.jar
+2022-04-06 16:16:56.865+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-procedure-api/3.5.29/81193d8792e99d13458c5863ba003332050bba54/neo4j-procedure-api-3.5.29.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.eclipse.collections/eclipse-collections/9.2.0/f2f2406e2229497935b6e7dd6c41da7fd67f36a8/eclipse-collections-9.2.0.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/openCypher-frontend-1/3.4.18/3ce2826c13d10ced4d810b39478335573ac4584f/openCypher-frontend-1-3.4.18.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.github.luben/zstd-jni/1.3.8-6/f67bee23f938085bc732ac81f634b922b24f13e6/zstd-jni-1.3.8-6.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.profesorfalken/WMI4Java/1.6.1/628ef4ea73cd6046ddba222ab628eb9f521eb878/WMI4Java-1.6.1.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/30.1.1-jre/87e0fd1df874ea3cbe577702fe6f17068b790fd8/guava-30.1.1-jre.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-codecs/5.5.5/e62864e51b3db16766d400b718ec848b3d66db6/lucene-codecs-5.5.5.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-logical-plans-3.4/3.4.18/9b918e2b0e95f67454a88a71764f1b637cab0406/neo4j-cypher-logical-plans-3.4-3.4.18.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-spatial-index/3.5.29/eff15abcc4daa40fabb5d6a91c080d4521987885/neo4j-spatial-index-3.5.29.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-resource/3.5.29/642656473bb8e18f4eabd90f3d017aebfc41d83a/neo4j-resource-3.5.29.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-diagnostics/3.5.29/58180a1475c220483a07e799ca5b3b71bde6a9c6/neo4j-diagnostics-3.5.29.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-logical-plans-3.5/3.5.29/70906861ff771b899472f52492a4ce64d55a7192/neo4j-cypher-logical-plans-3.5-3.5.29.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-analyzers-common/5.5.5/e6b3f5d1b33ed24da7eef0a72f8062bd4652700c/lucene-analyzers-common-5.5.5.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-ir-3.5/3.5.29/f24c182a8652cec5721765edfdbbda6b44fc10af/neo4j-cypher-ir-3.5-3.5.29.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/6.2/c7d9a90d221cbb977848d2c777eb3aa7637e89df/asm-analysis-6.2.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.11.12/bf5534e6fec3d665bd6419c952a929a8bdd4b591/scala-library-2.11.12.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4.2/2eaf3d3c9746d526ff7e5b93931d482c3887e6ac/concurrentlinkedhashmap-lru-1.4.2.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-dbms/3.5.29/eb0997f26a178bdb574db29c96393276053a78b2/neo4j-dbms-3.5.29.jar
+2022-04-06 16:16:56.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.5.1/562d366678b89ce5d6b6b82c1a073880341e3fba/error_prone_annotations-2.5.1.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-jmx/3.5.29/4f6bf82c9e160be128bc33b54990df8722c831e0/neo4j-jmx-3.5.29.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-text/1.4/680b74de9c393bbf8d9e951af301659b16845907/commons-text-1.4.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-parser-3.5/3.5.29/dd19095f1bd35441bd7f92ca7fcdc8b520807a7b/neo4j-parser-3.5-3.5.29.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-io/3.5.29/1c04ccc800fe3e7994c52718f22ceba570de7027/neo4j-io-3.5.29.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.11/68e9a6adf7cf8eb7e9d31bbc554c7c75eeaac568/commons-lang3-3.11.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.github.ben-manes.caffeine/caffeine/2.6.2/c8fd8817f9d2b2ced82f8968e0dd943aab557de0/caffeine-2.6.2.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-logging/3.5.29/79469df083de0a7d879dddc1cbe0a64a323f83f0/neo4j-logging-3.5.29.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.3/d9fb7a7926ffa635b3dcaa5049fb2bfa25b3e7d0/reactive-streams-1.0.3.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-kernel-api/3.5.29/d66c16b916bc396ebeb95bec4277f71f250d913d/neo4j-kernel-api-3.5.29.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-import-tool/3.5.29/87d9ea3c7d871bca9f9bb1a2e4b613132d8dc1d6/neo4j-import-tool-3.5.29.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-planner-spi-3.5/3.5.29/35713cc14024a42f00f1ea6e36f75059eb6b0aed/neo4j-cypher-planner-spi-3.5-3.5.29.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-compiler-2.3/2.3.12/72ac3a861e32b681461d74523bfdadeeb6f8a72b/neo4j-cypher-compiler-2.3-2.3.12.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-csv/3.5.29/8534779ab0311e16b3506ebc5bbe5caf8745be52/neo4j-csv-3.5.29.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-util-3.5/3.5.29/ff51ab43a7a36df0f75da47a9e34fa05b27e1664/neo4j-util-3.5-3.5.29.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-annotation-processors/3.5.29/bf88c19a3b2fdb553b9540b0a3aa334f6180cc6c/neo4j-annotation-processors-3.5.29.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-consistency-check/3.5.29/71b61b1fecf1daf60c450ebad335db581a104a56/neo4j-consistency-check-3.5.29.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15on/1.68/46a080368d38b428d237a59458f9bc915222894d/bcprov-jdk15on-1.68.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-expression-3.4/3.4.18/3a5c45ab718f96c42b6c08af5ccc0e33becb11b0/neo4j-cypher-expression-3.4-3.4.18.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-configuration/3.5.29/6b69f6a8917368e032cbd6a2ebb1a4dc56c9052c/neo4j-configuration-3.5.29.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-ssl/3.5.29/6bf87b9949c0a99c22bd8ba9a764b72a8a939fb5/neo4j-ssl-3.5.29.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-unsafe/3.5.29/c11bde6735aeab4c653edb9c5f845b42933c0262/neo4j-unsafe-3.5.29.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-collections/3.5.29/7447c4f7984bbbf279083885ba64d405031e4e45/neo4j-collections-3.5.29.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/ba035118bc8bac37d7eff77700720999acd9986d/j2objc-annotations-1.3.jar
+2022-04-06 16:16:56.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-lucene-index/3.5.29/e2e699ebedc75302ffef12ed818e54f234f78a0e/neo4j-lucene-index-3.5.29.jar
+2022-04-06 16:16:56.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-planner-3.5/3.5.29/3d639952b5eeec74baafcdf73ca50185f4df9fe0/neo4j-cypher-planner-3.5-3.5.29.jar
+2022-04-06 16:16:56.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-ast-3.5/3.5.29/b0074538f5c1d4e5fc07fdee414ec8de2f2a356c/neo4j-ast-3.5-3.5.29.jar
+2022-04-06 16:16:56.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-frontend-2.3/2.3.12/d87e903d0b8a10b34ff8f6372362777e51bfbfbe/neo4j-cypher-frontend-2.3-2.3.12.jar
+2022-04-06 16:16:56.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-util-3.4/3.4.18/a2e18569bcd6ab53e0f840b0db8d96f6aa9849d2/neo4j-cypher-util-3.4-3.4.18.jar
+2022-04-06 16:16:56.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-graphdb-api/3.5.29/ff2105b29798c83106cf6d90422716031190a9ab/neo4j-graphdb-api-3.5.29.jar
+2022-04-06 16:16:56.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15on/1.68/81da950604ff0b2652348cbd2b48fde46ced9867/bcpkix-jdk15on-1.68.jar
+2022-04-06 16:16:56.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.eclipse.collections/eclipse-collections-api/9.2.0/d106fd8588e542d2ee9d31d3e057af8bcb813396/eclipse-collections-api-9.2.0.jar
+2022-04-06 16:16:56.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-kernel/3.5.29/e625dd6bb4db32c3a05d99b6a5430ce0465b0e0c/neo4j-kernel-3.5.29.jar
+2022-04-06 16:16:56.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-concurrent/3.5.29/b873d5006da6b4ca7bf075bf28d0d6c8b931b514/neo4j-concurrent-3.5.29.jar
+2022-04-06 16:16:56.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/net.sf.opencsv/opencsv/2.3/c23708cdb9e80a144db433e23344a788a1fd6599/opencsv-2.3.jar
+2022-04-06 16:16:56.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/6.2/a9690730f92cc79eeadc20e400ebb41eccce10b1/asm-util-6.2.jar
+2022-04-06 16:16:56.868+0000 INFO [o.n.i.d.DiagnosticsManager] Library path:
+2022-04-06 16:16:56.868+0000 INFO [o.n.i.d.DiagnosticsManager] /Users/bhaskarkrishnag/Library/Java/Extensions
+2022-04-06 16:16:56.868+0000 INFO [o.n.i.d.DiagnosticsManager] /Library/Java/Extensions
+2022-04-06 16:16:56.869+0000 INFO [o.n.i.d.DiagnosticsManager] /Network/Library/Java/Extensions
+2022-04-06 16:16:56.869+0000 INFO [o.n.i.d.DiagnosticsManager] /System/Library/Java/Extensions
+2022-04-06 16:16:56.869+0000 INFO [o.n.i.d.DiagnosticsManager] /usr/lib/java
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] /Users/bhaskarkrishnag/IdeaProjects/AMIE
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] System.properties:
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] sun.jnu.encoding = UTF-8
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] sun.arch.data.model = 64
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] user.variant = 
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] user.timezone = America/New_York
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] user.country = US
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] sun.java.launcher = SUN_STANDARD
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] sun.boot.library.path = /Library/Java/JavaVirtualMachines/jdk-15.0.2.jdk/Contents/Home/lib
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] sun.java.command = edu.rit.gdb.AMIE
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] http.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] jdk.debug = release
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] sun.cpu.endian = little
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] user.home = /Users/bhaskarkrishnag
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] user.language = en
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] file.separator = /
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] ftp.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] user.name = bhaskarkrishnag
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] path.separator = :
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] file.encoding = UTF-8
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] user.dir = /Users/bhaskarkrishnag/IdeaProjects/AMIE
+2022-04-06 16:16:56.870+0000 INFO [o.n.i.d.DiagnosticsManager] sun.io.unicode.encoding = UnicodeBig
+2022-04-06 16:16:56.871+0000 INFO [o.n.i.d.DiagnosticsManager] socksNonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2022-04-06 16:16:56.871+0000 INFO [o.n.i.d.DiagnosticsManager] (IANA) TimeZone Database Version:
+2022-04-06 16:16:56.924+0000 INFO [o.n.i.d.DiagnosticsManager]   TimeZone version: 2020d (available for 600 zone identifiers)
+2022-04-06 16:16:56.927+0000 INFO [o.n.i.d.DiagnosticsManager] Network information:
+2022-04-06 16:16:56.934+0000 INFO [o.n.i.d.DiagnosticsManager] Interface utun3:
+2022-04-06 16:16:56.936+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:9572:8ff6:4dc2:f3e4%utun3
+2022-04-06 16:16:56.938+0000 INFO [o.n.i.d.DiagnosticsManager] Interface utun2:
+2022-04-06 16:16:56.938+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:3476:a374:654a:2b75%utun2
+2022-04-06 16:16:56.938+0000 INFO [o.n.i.d.DiagnosticsManager] Interface utun1:
+2022-04-06 16:16:56.940+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:4e76:53f9:8d03:b549%utun1
+2022-04-06 16:16:56.941+0000 INFO [o.n.i.d.DiagnosticsManager] Interface utun0:
+2022-04-06 16:16:56.941+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:5a67:f4c3:aaa8:f6d6%utun0
+2022-04-06 16:16:56.941+0000 INFO [o.n.i.d.DiagnosticsManager] Interface llw0:
+2022-04-06 16:16:56.941+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:484b:aeff:fe54:b7eb%llw0
+2022-04-06 16:16:56.941+0000 INFO [o.n.i.d.DiagnosticsManager] Interface awdl0:
+2022-04-06 16:16:56.942+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:484b:aeff:fe54:b7eb%awdl0
+2022-04-06 16:16:56.942+0000 INFO [o.n.i.d.DiagnosticsManager] Interface anpi0:
+2022-04-06 16:16:56.942+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:1c00:d1ff:fe0c:3835%anpi0
+2022-04-06 16:16:56.942+0000 INFO [o.n.i.d.DiagnosticsManager] Interface anpi1:
+2022-04-06 16:16:56.942+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:1c00:d1ff:fe0c:3836%anpi1
+2022-04-06 16:16:56.943+0000 INFO [o.n.i.d.DiagnosticsManager] Interface en0:
+2022-04-06 16:16:56.943+0000 INFO [o.n.i.d.DiagnosticsManager]     address: 2620:8d:8000:1088:1cbf:1a9c:2008:77c2%en0
+2022-04-06 16:16:56.943+0000 INFO [o.n.i.d.DiagnosticsManager]     address: 2620:8d:8000:1088:1044:1759:9551:589f%en0
+2022-04-06 16:16:56.943+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:1869:ec4b:4b35:57a6%en0
+2022-04-06 16:16:56.943+0000 INFO [o.n.i.d.DiagnosticsManager]     address: 129.21.137.41
+2022-04-06 16:16:56.943+0000 INFO [o.n.i.d.DiagnosticsManager] Interface lo0:
+2022-04-06 16:16:56.944+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:0:0:0:1%lo0
+2022-04-06 16:16:56.944+0000 INFO [o.n.i.d.DiagnosticsManager]     address: 0:0:0:0:0:0:0:1%lo0
+2022-04-06 16:16:56.944+0000 INFO [o.n.i.d.DiagnosticsManager]     address: 127.0.0.1
+2022-04-06 16:16:56.944+0000 INFO [o.n.i.d.DiagnosticsManager] --- INITIALIZED diagnostics END ---
+2022-04-06 16:16:57.288+0000 INFO [o.n.k.i.s.f.RecordFormatSelector] Selected RecordFormat:StandardV3_4[v0.A.9] record format from store /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db
+2022-04-06 16:16:57.334+0000 INFO [o.n.k.i.s.f.RecordFormatSelector] Selected RecordFormat:StandardV3_4[v0.A.9] record format from store /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db
+2022-04-06 16:16:57.334+0000 INFO [o.n.k.i.s.f.RecordFormatSelector] Format not configured. Selected format from the store: RecordFormat:StandardV3_4[v0.A.9]
+2022-04-06 16:16:58.084+0000 INFO [o.n.k.NeoStoreDataSource] Rotated to transaction log [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.transaction.db.0] version=0, last transaction in previous log=1
+2022-04-06 16:16:58.087+0000 INFO [o.n.k.NeoStoreDataSource] No commits found after last check point (which is at <no log position given>)
+2022-04-06 16:16:58.112+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:Versions START ---
+2022-04-06 16:16:58.113+0000 INFO [o.n.i.d.DiagnosticsManager] Graph Database: community single StoreId{creationTime=1649261787616, randomId=1988336196583566738, storeVersion=16094931155187206, upgradeTime=1649261787616, upgradeId=1}
+2022-04-06 16:16:58.113+0000 INFO [o.n.i.d.DiagnosticsManager] Kernel version: 3.5.29,916ddf482c3248e475a56eca4163c85033080c10
+2022-04-06 16:16:58.113+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:Versions END ---
+2022-04-06 16:16:58.114+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_VERSIONS START ---
+2022-04-06 16:16:58.114+0000 INFO [o.n.i.d.DiagnosticsManager] Store versions:
+2022-04-06 16:16:58.115+0000 INFO [o.n.i.d.DiagnosticsManager]   ArrayPropertyStore[neostore.nodestore.db.labels] v0.A.9
+2022-04-06 16:16:58.116+0000 INFO [o.n.i.d.DiagnosticsManager]   NodeStore[neostore.nodestore.db] v0.A.9
+2022-04-06 16:16:58.116+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.propertystore.db.index.keys] v0.A.9
+2022-04-06 16:16:58.117+0000 INFO [o.n.i.d.DiagnosticsManager]   PropertyIndexStore[neostore.propertystore.db.index] v0.A.9
+2022-04-06 16:16:58.118+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.propertystore.db.strings] v0.A.9
+2022-04-06 16:16:58.120+0000 INFO [o.n.i.d.DiagnosticsManager]   ArrayPropertyStore[neostore.propertystore.db.arrays] v0.A.9
+2022-04-06 16:16:58.121+0000 INFO [o.n.i.d.DiagnosticsManager]   PropertyStore[neostore.propertystore.db] v0.A.9
+2022-04-06 16:16:58.122+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipStore[neostore.relationshipstore.db] v0.A.9
+2022-04-06 16:16:58.122+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.relationshiptypestore.db.names] v0.A.9
+2022-04-06 16:16:58.123+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipTypeStore[neostore.relationshiptypestore.db] v0.A.9
+2022-04-06 16:16:58.124+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.labeltokenstore.db.names] v0.A.9
+2022-04-06 16:16:58.124+0000 INFO [o.n.i.d.DiagnosticsManager]   LabelTokenStore[neostore.labeltokenstore.db] v0.A.9
+2022-04-06 16:16:58.125+0000 INFO [o.n.i.d.DiagnosticsManager]   SchemaStore[neostore.schemastore.db] v0.A.9
+2022-04-06 16:16:58.125+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipGroupStore[neostore.relationshipgroupstore.db] v0.A.9
+2022-04-06 16:16:58.126+0000 INFO [o.n.i.d.DiagnosticsManager]   NeoStore[neostore] v0.A.9
+2022-04-06 16:16:58.126+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_VERSIONS END ---
+2022-04-06 16:16:58.126+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_ID_USAGE START ---
+2022-04-06 16:16:58.126+0000 INFO [o.n.i.d.DiagnosticsManager] Id usage:
+2022-04-06 16:16:58.128+0000 INFO [o.n.i.d.DiagnosticsManager]   ArrayPropertyStore[neostore.nodestore.db.labels]: used=1 high=0
+2022-04-06 16:16:58.129+0000 INFO [o.n.i.d.DiagnosticsManager]   NodeStore[neostore.nodestore.db]: used=46440 high=46439
+2022-04-06 16:16:58.130+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.propertystore.db.index.keys]: used=1 high=0
+2022-04-06 16:16:58.130+0000 INFO [o.n.i.d.DiagnosticsManager]   PropertyIndexStore[neostore.propertystore.db.index]: used=0 high=-1
+2022-04-06 16:16:58.131+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.propertystore.db.strings]: used=1 high=0
+2022-04-06 16:16:58.132+0000 INFO [o.n.i.d.DiagnosticsManager]   ArrayPropertyStore[neostore.propertystore.db.arrays]: used=1 high=0
+2022-04-06 16:16:58.133+0000 INFO [o.n.i.d.DiagnosticsManager]   PropertyStore[neostore.propertystore.db]: used=0 high=-1
+2022-04-06 16:16:58.134+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipStore[neostore.relationshipstore.db]: used=46654 high=46653
+2022-04-06 16:16:58.135+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.relationshiptypestore.db.names]: used=34 high=33
+2022-04-06 16:16:58.136+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipTypeStore[neostore.relationshiptypestore.db]: used=33 high=32
+2022-04-06 16:16:58.137+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.labeltokenstore.db.names]: used=1 high=0
+2022-04-06 16:16:58.139+0000 INFO [o.n.i.d.DiagnosticsManager]   LabelTokenStore[neostore.labeltokenstore.db]: used=0 high=-1
+2022-04-06 16:16:58.141+0000 INFO [o.n.i.d.DiagnosticsManager]   SchemaStore[neostore.schemastore.db]: used=1 high=0
+2022-04-06 16:16:58.143+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipGroupStore[neostore.relationshipgroupstore.db]: used=394 high=393
+2022-04-06 16:16:58.144+0000 INFO [o.n.i.d.DiagnosticsManager]   NeoStore[neostore]: used=15 high=14
+2022-04-06 16:16:58.144+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_ID_USAGE END ---
+2022-04-06 16:16:58.144+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_RECORDS START ---
+2022-04-06 16:16:58.144+0000 INFO [o.n.i.d.DiagnosticsManager] Neostore records:
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] TIME (Creation time): 1649261787616
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] RANDOM_NUMBER (Random number for store id): 1988336196583566738
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] LOG_VERSION (Current log version): 0
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_TRANSACTION_ID (Last committed transaction): 1
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] STORE_VERSION (Store format version): 16094931155187206
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] FIRST_GRAPH_PROPERTY (First property record containing graph properties): -1
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_CONSTRAINT_TRANSACTION (Last committed transaction containing constraint changes): 0
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] UPGRADE_TRANSACTION_ID (Transaction id most recent upgrade was performed at): 1
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] UPGRADE_TIME (Time of last upgrade): 1649261787616
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_TRANSACTION_CHECKSUM (Checksum of last committed transaction): 0
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] UPGRADE_TRANSACTION_CHECKSUM (Checksum of transaction id the most recent upgrade was performed at): 0
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_CLOSED_TRANSACTION_LOG_VERSION (Log version where the last transaction commit entry has been written into): 0
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_CLOSED_TRANSACTION_LOG_BYTE_OFFSET (Byte offset in the log file where the last transaction commit entry has been written into): 16
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_TRANSACTION_COMMIT_TIMESTAMP (Commit time timestamp for last committed transaction): 0
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] UPGRADE_TRANSACTION_COMMIT_TIMESTAMP (Commit timestamp of transaction the most recent upgrade was performed at): 0
+2022-04-06 16:16:58.145+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_RECORDS END ---
+2022-04-06 16:16:58.146+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for TRANSACTION_RANGE START ---
+2022-04-06 16:16:58.146+0000 INFO [o.n.i.d.DiagnosticsManager] Transaction log:
+2022-04-06 16:16:58.147+0000 INFO [o.n.i.d.DiagnosticsManager] No transactions found in any log
+2022-04-06 16:16:58.147+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for TRANSACTION_RANGE END ---
+2022-04-06 16:16:58.153+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:StoreFiles START ---
+2022-04-06 16:16:58.156+0000 INFO [o.n.i.d.DiagnosticsManager] Disk space on partition (Total / Free / Free %): 494384795648 / 180470734848 / 36
+2022-04-06 16:16:58.156+0000 INFO [o.n.i.d.DiagnosticsManager] Storage files: (filename : modification date - size)
+2022-04-06 16:16:58.167+0000 INFO [o.n.i.d.DiagnosticsManager]   debug.log: 2022-04-06T12:16:29-0400 - 631.00 B
+2022-04-06 16:16:58.168+0000 INFO [o.n.i.d.DiagnosticsManager]   index:
+2022-04-06 16:16:58.169+0000 INFO [o.n.i.d.DiagnosticsManager]   - Total: 2022-04-06T12:16:58-0400 - 0.00 B
+2022-04-06 16:16:58.171+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:16:58.172+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.counts.db.a: 2022-04-06T12:16:28-0400 - 96.00 B
+2022-04-06 16:16:58.174+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.counts.db.b: 2022-04-06T12:16:28-0400 - 1.19 kB
+2022-04-06 16:16:58.176+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.id: 2022-04-06T12:16:57-0400 - 9.00 B
+2022-04-06 16:16:58.177+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.labelscanstore.db: 2022-04-06T12:16:58-0400 - 40.00 kB
+2022-04-06 16:16:58.178+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.labeltokenstore.db: 2022-04-06T12:16:27-0400 - 0.00 B
+2022-04-06 16:16:58.179+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.labeltokenstore.db.id: 2022-04-06T12:16:57-0400 - 9.00 B
+2022-04-06 16:16:58.181+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.labeltokenstore.db.names: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:16:58.185+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.labeltokenstore.db.names.id: 2022-04-06T12:16:57-0400 - 9.00 B
+2022-04-06 16:16:58.186+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.nodestore.db: 2022-04-06T12:16:29-0400 - 687.83 kB
+2022-04-06 16:16:58.188+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.nodestore.db.id: 2022-04-06T12:16:57-0400 - 9.00 B
+2022-04-06 16:16:58.189+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.nodestore.db.labels: 2022-04-06T12:16:26-0400 - 8.00 kB
+2022-04-06 16:16:58.191+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.nodestore.db.labels.id: 2022-04-06T12:16:57-0400 - 9.00 B
+2022-04-06 16:16:58.192+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db: 2022-04-06T12:16:27-0400 - 0.00 B
+2022-04-06 16:16:58.193+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.arrays: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:16:58.194+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.arrays.id: 2022-04-06T12:16:57-0400 - 9.00 B
+2022-04-06 16:16:58.196+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.id: 2022-04-06T12:16:57-0400 - 9.00 B
+2022-04-06 16:16:58.197+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.index: 2022-04-06T12:16:27-0400 - 0.00 B
+2022-04-06 16:16:58.200+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.index.id: 2022-04-06T12:16:57-0400 - 9.00 B
+2022-04-06 16:16:58.202+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.index.keys: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:16:58.203+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.index.keys.id: 2022-04-06T12:16:57-0400 - 9.00 B
+2022-04-06 16:16:58.205+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.strings: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:16:58.207+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.strings.id: 2022-04-06T12:16:57-0400 - 9.00 B
+2022-04-06 16:16:58.209+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshipgroupstore.db: 2022-04-06T12:16:29-0400 - 15.97 kB
+2022-04-06 16:16:58.211+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshipgroupstore.db.id: 2022-04-06T12:16:57-0400 - 9.00 B
+2022-04-06 16:16:58.213+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshipstore.db: 2022-04-06T12:16:29-0400 - 1.52 MB
+2022-04-06 16:16:58.214+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshipstore.db.id: 2022-04-06T12:16:57-0400 - 9.00 B
+2022-04-06 16:16:58.216+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshiptypestore.db: 2022-04-06T12:16:29-0400 - 8.00 kB
+2022-04-06 16:16:58.217+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshiptypestore.db.id: 2022-04-06T12:16:57-0400 - 9.00 B
+2022-04-06 16:16:58.219+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshiptypestore.db.names: 2022-04-06T12:16:29-0400 - 8.00 kB
+2022-04-06 16:16:58.224+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshiptypestore.db.names.id: 2022-04-06T12:16:57-0400 - 9.00 B
+2022-04-06 16:16:58.227+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.schemastore.db: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:16:58.229+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.schemastore.db.id: 2022-04-06T12:16:57-0400 - 9.00 B
+2022-04-06 16:16:58.230+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.transaction.db.0: 2022-04-06T12:16:58-0400 - 16.00 B
+2022-04-06 16:16:58.230+0000 INFO [o.n.i.d.DiagnosticsManager] Storage summary: 
+2022-04-06 16:16:58.231+0000 INFO [o.n.i.d.DiagnosticsManager]   Total size of store: 2.32 MB
+2022-04-06 16:16:58.233+0000 INFO [o.n.i.d.DiagnosticsManager]   Total size of mapped files: 2.31 MB
+2022-04-06 16:16:58.233+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:StoreFiles END ---
+2022-04-06 16:16:58.234+0000 INFO [o.n.k.a.DatabaseAvailabilityGuard] Fulfilling of requirement 'Database available' makes database db available.
+2022-04-06 16:16:58.235+0000 INFO [o.n.k.a.DatabaseAvailabilityGuard] Database db is ready.
+2022-04-06 16:16:58.235+0000 INFO [o.n.k.i.DatabaseHealth] Database health set to OK
+2022-04-06 16:17:06.466+0000 WARN [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=3623, gcTime=12, gcCount=1}
+2022-04-06 16:17:32.300+0000 WARN [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=6602, gcTime=0, gcCount=0}
+2022-04-06 16:17:32.406+0000 WARN [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=5273, gcTime=0, gcCount=0}
+2022-04-06 16:17:55.614+0000 WARN [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=9756, gcTime=0, gcCount=0}
+2022-04-06 16:18:36.652+0000 WARN [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=4663, gcTime=0, gcCount=0}
+2022-04-06 16:18:36.759+0000 WARN [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=9156, gcTime=0, gcCount=0}
+2022-04-06 16:20:01.528+0000 WARN [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=73214, gcTime=0, gcCount=0}
+2022-04-06 16:21:08.096+0000 WARN [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=43603, gcTime=0, gcCount=0}
+2022-04-06 16:49:50.070+0000 WARN [o.n.k.i.JvmChecker] You are using an unsupported version of the Java runtime. Please use Oracle(R) Java(TM) Runtime Environment 8 or 11, OpenJDK(TM) 8 or 11 or IBM J9.
+2022-04-06 16:49:50.115+0000 WARN [o.n.i.p.PageCache] The dbms.memory.pagecache.size setting has not been configured. It is recommended that this setting is always explicitly configured, to ensure the system has a balanced configuration. Until then, a computed heuristic value of 6442450944 bytes will be used instead. Run `neo4j-admin memrec` for memory configuration suggestions.
+2022-04-06 16:49:50.514+0000 INFO [o.n.g.f.m.e.CommunityEditionModule] No locking implementation specified, defaulting to 'community'
+2022-04-06 16:49:51.010+0000 INFO [o.n.g.f.GraphDatabaseFacadeFactory] Creating 'db' database.
+2022-04-06 16:49:51.043+0000 INFO [o.n.k.a.DatabaseAvailabilityGuard] Requirement `Database available` makes database db unavailable.
+2022-04-06 16:49:51.045+0000 INFO [o.n.k.a.DatabaseAvailabilityGuard] Database db is unavailable.
+2022-04-06 16:49:51.062+0000 INFO [o.n.i.d.DiagnosticsManager] --- INITIALIZED diagnostics START ---
+2022-04-06 16:49:51.062+0000 INFO [o.n.i.d.DiagnosticsManager] Neo4j Kernel properties:
+2022-04-06 16:49:51.062+0000 INFO [o.n.i.d.DiagnosticsManager] unsupported.dbms.directories.neo4j_home=/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S
+2022-04-06 16:49:51.064+0000 INFO [o.n.i.d.DiagnosticsManager] dbms.active_database=db
+2022-04-06 16:49:51.065+0000 INFO [o.n.i.d.DiagnosticsManager] unsupported.dbms.directories.databases.root=/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S
+2022-04-06 16:49:51.065+0000 INFO [o.n.i.d.DiagnosticsManager] unsupported.dbms.edition=community
+2022-04-06 16:49:51.065+0000 INFO [o.n.i.d.DiagnosticsManager] unsupported.dbms.ephemeral=false
+2022-04-06 16:49:51.066+0000 INFO [o.n.i.d.DiagnosticsManager] Diagnostics providers:
+2022-04-06 16:49:51.066+0000 INFO [o.n.i.d.DiagnosticsManager] org.neo4j.kernel.configuration.Config
+2022-04-06 16:49:51.066+0000 INFO [o.n.i.d.DiagnosticsManager] org.neo4j.internal.diagnostics.DiagnosticsManager
+2022-04-06 16:49:51.066+0000 INFO [o.n.i.d.DiagnosticsManager] SYSTEM_MEMORY
+2022-04-06 16:49:51.066+0000 INFO [o.n.i.d.DiagnosticsManager] JAVA_MEMORY
+2022-04-06 16:49:51.066+0000 INFO [o.n.i.d.DiagnosticsManager] OPERATING_SYSTEM
+2022-04-06 16:49:51.066+0000 INFO [o.n.i.d.DiagnosticsManager] JAVA_VIRTUAL_MACHINE
+2022-04-06 16:49:51.067+0000 INFO [o.n.i.d.DiagnosticsManager] CLASSPATH
+2022-04-06 16:49:51.067+0000 INFO [o.n.i.d.DiagnosticsManager] LIBRARY_PATH
+2022-04-06 16:49:51.067+0000 INFO [o.n.i.d.DiagnosticsManager] SYSTEM_PROPERTIES
+2022-04-06 16:49:51.067+0000 INFO [o.n.i.d.DiagnosticsManager] TIMEZONE_DATABASE
+2022-04-06 16:49:51.068+0000 INFO [o.n.i.d.DiagnosticsManager] NETWORK
+2022-04-06 16:49:51.068+0000 INFO [o.n.i.d.DiagnosticsManager] System memory information:
+2022-04-06 16:49:51.080+0000 INFO [o.n.i.d.DiagnosticsManager] Total Physical memory: 16.00 GB
+2022-04-06 16:49:51.084+0000 INFO [o.n.i.d.DiagnosticsManager] Free Physical memory: 20.59 MB
+2022-04-06 16:49:51.085+0000 INFO [o.n.i.d.DiagnosticsManager] Committed virtual memory: 14.41 GB
+2022-04-06 16:49:51.086+0000 INFO [o.n.i.d.DiagnosticsManager] Total swap space: 1.00 GB
+2022-04-06 16:49:51.087+0000 INFO [o.n.i.d.DiagnosticsManager] Free swap space: 965.00 MB
+2022-04-06 16:49:51.088+0000 INFO [o.n.i.d.DiagnosticsManager] JVM memory information:
+2022-04-06 16:49:51.088+0000 INFO [o.n.i.d.DiagnosticsManager] Free  memory: 206.84 MB
+2022-04-06 16:49:51.089+0000 INFO [o.n.i.d.DiagnosticsManager] Total memory: 260.00 MB
+2022-04-06 16:49:51.090+0000 INFO [o.n.i.d.DiagnosticsManager] Max   memory: 4.00 GB
+2022-04-06 16:49:51.096+0000 INFO [o.n.i.d.DiagnosticsManager] Garbage Collector: G1 Young Generation: [G1 Eden Space, G1 Survivor Space, G1 Old Gen]
+2022-04-06 16:49:51.100+0000 INFO [o.n.i.d.DiagnosticsManager] Garbage Collector: G1 Old Generation: [G1 Eden Space, G1 Survivor Space, G1 Old Gen]
+2022-04-06 16:49:51.107+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: CodeHeap 'non-nmethods' (Non-heap memory): committed=2.44 MB, used=1.18 MB, max=5.57 MB, threshold=0.00 B
+2022-04-06 16:49:51.110+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: Metaspace (Non-heap memory): committed=17.50 MB, used=16.93 MB, max=-1.00 B, threshold=0.00 B
+2022-04-06 16:49:51.113+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: CodeHeap 'profiled nmethods' (Non-heap memory): committed=4.00 MB, used=3.99 MB, max=117.21 MB, threshold=0.00 B
+2022-04-06 16:49:51.118+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: Compressed Class Space (Non-heap memory): committed=2.00 MB, used=1.91 MB, max=1.00 GB, threshold=0.00 B
+2022-04-06 16:49:51.122+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: G1 Eden Space (Heap memory): committed=88.00 MB, used=32.00 MB, max=-1.00 B, threshold=?
+2022-04-06 16:49:51.126+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: G1 Old Gen (Heap memory): committed=168.00 MB, used=14.36 MB, max=4.00 GB, threshold=0.00 B
+2022-04-06 16:49:51.129+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: G1 Survivor Space (Heap memory): committed=4.00 MB, used=2.80 MB, max=-1.00 B, threshold=?
+2022-04-06 16:49:51.133+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: CodeHeap 'non-profiled nmethods' (Non-heap memory): committed=2.44 MB, used=781.88 kB, max=117.21 MB, threshold=0.00 B
+2022-04-06 16:49:51.133+0000 INFO [o.n.i.d.DiagnosticsManager] Operating system information:
+2022-04-06 16:49:51.135+0000 INFO [o.n.i.d.DiagnosticsManager] Operating System: Mac OS X; version: 10.16; arch: x86_64; cpus: 8
+2022-04-06 16:49:51.136+0000 INFO [o.n.i.d.DiagnosticsManager] Max number of file descriptors: 10240
+2022-04-06 16:49:51.136+0000 INFO [o.n.i.d.DiagnosticsManager] Number of open file descriptors: 104
+2022-04-06 16:49:51.200+0000 INFO [o.n.i.d.DiagnosticsManager] Process id: 3215@bhaskars-air.wireless.rit.edu
+2022-04-06 16:49:51.200+0000 INFO [o.n.i.d.DiagnosticsManager] Byte order: LITTLE_ENDIAN
+2022-04-06 16:49:51.234+0000 INFO [o.n.i.d.DiagnosticsManager] Local timezone: America/New_York
+2022-04-06 16:49:51.235+0000 INFO [o.n.i.d.DiagnosticsManager] JVM information:
+2022-04-06 16:49:51.235+0000 INFO [o.n.i.d.DiagnosticsManager] VM Name: Java HotSpot(TM) 64-Bit Server VM
+2022-04-06 16:49:51.235+0000 INFO [o.n.i.d.DiagnosticsManager] VM Vendor: Oracle Corporation
+2022-04-06 16:49:51.235+0000 INFO [o.n.i.d.DiagnosticsManager] VM Version: 15.0.2+7-27
+2022-04-06 16:49:51.235+0000 INFO [o.n.i.d.DiagnosticsManager] JIT compiler: HotSpot 64-Bit Tiered Compilers
+2022-04-06 16:49:51.236+0000 INFO [o.n.i.d.DiagnosticsManager] VM Arguments: [-Dfile.encoding=UTF-8, -Duser.country=US, -Duser.language=en, -Duser.variant]
+2022-04-06 16:49:51.236+0000 INFO [o.n.i.d.DiagnosticsManager] Java classpath:
+2022-04-06 16:49:51.244+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/IdeaProjects/AMIE/app/build/classes/java/main
+2022-04-06 16:49:51.244+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j.driver/neo4j-java-driver/4.4.0/7c17c7c9ab5eb4ebbf566457ef0189462366d737/neo4j-java-driver-4.4.0.jar
+2022-04-06 16:49:51.244+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-codegen/3.5.29/9e964dd5ddea0aca47e4deceab1a52f0f7df8831/neo4j-codegen-3.5.29.jar
+2022-04-06 16:49:51.244+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-legacy/3.5.29/91a8fc2104ad116d0ec1a26e74f7bee7dfe49522/neo4j-legacy-3.5.29.jar
+2022-04-06 16:49:51.244+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/6.2/1b6c4ff09ce03f3052429139c2a68e295cae6604/asm-6.2.jar
+2022-04-06 16:49:51.244+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-command-line/3.5.29/d1a8fcb7d70f037af29e726c257259e87a5000/neo4j-command-line-3.5.29.jar
+2022-04-06 16:49:51.244+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.parboiled/parboiled-core/1.1.7/a60ff9a54cbeb30ec44c89e16ac4c35913cbad5a/parboiled-core-1.1.7.jar
+2022-04-06 16:49:51.244+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/5.1.49/cf76d2e4c9c3782a85c15c87bec5772b34ffd0e5/mysql-connector-java-5.1.49.jar
+2022-04-06 16:49:51.244+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-runtime-util/3.5.29/9c54e0943bb423f225628c9a8750e35a7de44cfc/neo4j-cypher-runtime-util-3.5.29.jar
+2022-04-06 16:49:51.244+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.8.0/6b83e4a33220272c3a08991498ba9dc09519f190/checker-qual-3.8.0.jar
+2022-04-06 16:49:51.244+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.1.48.Final/ebb3666ba4883ba81920cec8ccb1a3adcc827eb1/netty-all-4.1.48.Final.jar
+2022-04-06 16:49:51.245+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+2022-04-06 16:49:51.245+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-lucene-upgrade/3.5.29/9dd0c779dc79ee53bc0fc17ef50d505b230036f7/neo4j-lucene-upgrade-3.5.29.jar
+2022-04-06 16:49:51.245+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-index/3.5.29/a6bddfce74df9bf26f0ea124966219621803902a/neo4j-index-3.5.29.jar
+2022-04-06 16:49:51.245+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.19/7e65777fb451ddab6a9c054beb879e521b7eab78/commons-compress-1.19.jar
+2022-04-06 16:49:51.245+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.jprocesses/jProcesses/1.6.4/f0d9e30bb02f67bc2d3d9981664f8e57e4ad1f81/jProcesses-1.6.4.jar
+2022-04-06 16:49:51.245+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-reflect/2.11.12/2bb23c13c527566d9828107ca4108be2a2c06f01/scala-reflect-2.11.12.jar
+2022-04-06 16:49:51.245+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-planner-spi-3.4/3.4.18/ab2f19182c231e77d4607565bbef03d1b531620a/neo4j-cypher-planner-spi-3.4-3.4.18.jar
+2022-04-06 16:49:51.245+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-interpreted-runtime/3.5.29/8d945dbfd25e1b173e0f91cb43779b8189343c8c/neo4j-cypher-interpreted-runtime-3.5.29.jar
+2022-04-06 16:49:51.245+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar
+2022-04-06 16:49:51.245+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-udc/3.5.29/9984dc40bd54e0fd476584b6abc64cfbdaf304/neo4j-udc-3.5.29.jar
+2022-04-06 16:49:51.245+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.parboiled/parboiled-scala_2.11/1.1.7/4e14ecb11f40f25216ce01dc349f541bc801354f/parboiled-scala_2.11-1.1.7.jar
+2022-04-06 16:49:51.246+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-fulltext-index/3.5.29/2284354dcdf3433dd541f14b4c79f2bee5a16bd1/neo4j-fulltext-index-3.5.29.jar
+2022-04-06 16:49:51.246+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-rewriting-3.5/3.5.29/615e248150067a889c986989b71d90b429bb9672/neo4j-rewriting-3.5-3.5.29.jar
+2022-04-06 16:49:51.246+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-data-collector/3.5.29/36e592a382e61c6c4165a370f599d4ad3f478/neo4j-data-collector-3.5.29.jar
+2022-04-06 16:49:51.246+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-expressions-3.5/3.5.29/c4ab65cab471764acf2bb9b3ed1a1baa99561815/neo4j-expressions-3.5-3.5.29.jar
+2022-04-06 16:49:51.246+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-frontend-3.1/3.1.9/239d40944641be2f8d453d9823ec3d195ff6d61/neo4j-cypher-frontend-3.1-3.1.9.jar
+2022-04-06 16:49:51.246+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/IdeaProjects/AMIE/app/build/resources/main
+2022-04-06 16:49:51.246+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-bolt/3.5.29/22999acd495319abfa99c083ef3d1a30e6f9d1c3/neo4j-bolt-3.5.29.jar
+2022-04-06 16:49:51.246+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/5.5.5/c34bcd9274859dc07cfed2a935aaca90c4f4b861/lucene-core-5.5.5.jar
+2022-04-06 16:49:51.246+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-graph-algo/3.5.29/144e14f982a8a705ae34141c4ee02cc6e224c370/neo4j-graph-algo-3.5.29.jar
+2022-04-06 16:49:51.246+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-values/3.5.29/706b8492eaee49d796010508ef715ef35bb534ef/neo4j-values-3.5.29.jar
+2022-04-06 16:49:51.246+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j/3.5.29/437d08503514c65d17806f7f52d5c49ae93a1a86/neo4j-3.5.29.jar
+2022-04-06 16:49:51.246+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-common/3.5.29/684f66cfa5f4924e39b84695eaef7fb5e4a1827a/neo4j-common-3.5.29.jar
+2022-04-06 16:49:51.246+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-front-end-3.5/3.5.29/5ec8b4835a39705e00a5ddfaa8a91e97f5e2254c/neo4j-front-end-3.5-3.5.29.jar
+2022-04-06 16:49:51.246+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-queryparser/5.5.5/6c965eb5838a2ba58b0de0fd860a420dcda11937/lucene-queryparser-5.5.5.jar
+2022-04-06 16:49:51.246+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/6.2/61570e046111559f38d4e0e580c005f75988c0a6/asm-tree-6.2.jar
+2022-04-06 16:49:51.247+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-ir-3.4/3.4.18/28974639500b387866e2892fc9c6b93b26379e8c/neo4j-cypher-ir-3.4-3.4.18.jar
+2022-04-06 16:49:51.249+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j.licensing-proxy/zstd-proxy/3.5.29/d01e8c220f1fbadd5434a777da5ba95858ef645f/zstd-proxy-3.5.29.jar
+2022-04-06 16:49:51.249+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-compiler-3.1/3.1.9/6bec4dee36c05a56d19791cacc887d815ebbefd7/neo4j-cypher-compiler-3.1-3.1.9.jar
+2022-04-06 16:49:51.249+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher/3.5.29/eefc255c9bfa130a4ef96edd8a0c9a2c21b34bcc/neo4j-cypher-3.5.29.jar
+2022-04-06 16:49:51.249+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-graph-matching/3.1.9/5265d2eb2cc8df7bc66034b730d86be936ec76a9/neo4j-graph-matching-3.1.9.jar
+2022-04-06 16:49:51.249+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.profesorfalken/jPowerShell/1.9/22a7cdf6e460b9738e751bef9634b1b7cee55130/jPowerShell-1.9.jar
+2022-04-06 16:49:51.249+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-planner-3.4/3.4.18/1fadda795171ba7f87e9c0564780cd2c24304159/neo4j-cypher-planner-3.4-3.4.18.jar
+2022-04-06 16:49:51.249+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-procedure-api/3.5.29/81193d8792e99d13458c5863ba003332050bba54/neo4j-procedure-api-3.5.29.jar
+2022-04-06 16:49:51.249+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.eclipse.collections/eclipse-collections/9.2.0/f2f2406e2229497935b6e7dd6c41da7fd67f36a8/eclipse-collections-9.2.0.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/openCypher-frontend-1/3.4.18/3ce2826c13d10ced4d810b39478335573ac4584f/openCypher-frontend-1-3.4.18.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.github.luben/zstd-jni/1.3.8-6/f67bee23f938085bc732ac81f634b922b24f13e6/zstd-jni-1.3.8-6.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.profesorfalken/WMI4Java/1.6.1/628ef4ea73cd6046ddba222ab628eb9f521eb878/WMI4Java-1.6.1.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/30.1.1-jre/87e0fd1df874ea3cbe577702fe6f17068b790fd8/guava-30.1.1-jre.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-codecs/5.5.5/e62864e51b3db16766d400b718ec848b3d66db6/lucene-codecs-5.5.5.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-logical-plans-3.4/3.4.18/9b918e2b0e95f67454a88a71764f1b637cab0406/neo4j-cypher-logical-plans-3.4-3.4.18.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-spatial-index/3.5.29/eff15abcc4daa40fabb5d6a91c080d4521987885/neo4j-spatial-index-3.5.29.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-resource/3.5.29/642656473bb8e18f4eabd90f3d017aebfc41d83a/neo4j-resource-3.5.29.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-diagnostics/3.5.29/58180a1475c220483a07e799ca5b3b71bde6a9c6/neo4j-diagnostics-3.5.29.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-logical-plans-3.5/3.5.29/70906861ff771b899472f52492a4ce64d55a7192/neo4j-cypher-logical-plans-3.5-3.5.29.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-analyzers-common/5.5.5/e6b3f5d1b33ed24da7eef0a72f8062bd4652700c/lucene-analyzers-common-5.5.5.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-ir-3.5/3.5.29/f24c182a8652cec5721765edfdbbda6b44fc10af/neo4j-cypher-ir-3.5-3.5.29.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/6.2/c7d9a90d221cbb977848d2c777eb3aa7637e89df/asm-analysis-6.2.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.11.12/bf5534e6fec3d665bd6419c952a929a8bdd4b591/scala-library-2.11.12.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4.2/2eaf3d3c9746d526ff7e5b93931d482c3887e6ac/concurrentlinkedhashmap-lru-1.4.2.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-dbms/3.5.29/eb0997f26a178bdb574db29c96393276053a78b2/neo4j-dbms-3.5.29.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.5.1/562d366678b89ce5d6b6b82c1a073880341e3fba/error_prone_annotations-2.5.1.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-jmx/3.5.29/4f6bf82c9e160be128bc33b54990df8722c831e0/neo4j-jmx-3.5.29.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-text/1.4/680b74de9c393bbf8d9e951af301659b16845907/commons-text-1.4.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-parser-3.5/3.5.29/dd19095f1bd35441bd7f92ca7fcdc8b520807a7b/neo4j-parser-3.5-3.5.29.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-io/3.5.29/1c04ccc800fe3e7994c52718f22ceba570de7027/neo4j-io-3.5.29.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.11/68e9a6adf7cf8eb7e9d31bbc554c7c75eeaac568/commons-lang3-3.11.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.github.ben-manes.caffeine/caffeine/2.6.2/c8fd8817f9d2b2ced82f8968e0dd943aab557de0/caffeine-2.6.2.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-logging/3.5.29/79469df083de0a7d879dddc1cbe0a64a323f83f0/neo4j-logging-3.5.29.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.3/d9fb7a7926ffa635b3dcaa5049fb2bfa25b3e7d0/reactive-streams-1.0.3.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-kernel-api/3.5.29/d66c16b916bc396ebeb95bec4277f71f250d913d/neo4j-kernel-api-3.5.29.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-import-tool/3.5.29/87d9ea3c7d871bca9f9bb1a2e4b613132d8dc1d6/neo4j-import-tool-3.5.29.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-planner-spi-3.5/3.5.29/35713cc14024a42f00f1ea6e36f75059eb6b0aed/neo4j-cypher-planner-spi-3.5-3.5.29.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-compiler-2.3/2.3.12/72ac3a861e32b681461d74523bfdadeeb6f8a72b/neo4j-cypher-compiler-2.3-2.3.12.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-csv/3.5.29/8534779ab0311e16b3506ebc5bbe5caf8745be52/neo4j-csv-3.5.29.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-util-3.5/3.5.29/ff51ab43a7a36df0f75da47a9e34fa05b27e1664/neo4j-util-3.5-3.5.29.jar
+2022-04-06 16:49:51.250+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-annotation-processors/3.5.29/bf88c19a3b2fdb553b9540b0a3aa334f6180cc6c/neo4j-annotation-processors-3.5.29.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-consistency-check/3.5.29/71b61b1fecf1daf60c450ebad335db581a104a56/neo4j-consistency-check-3.5.29.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15on/1.68/46a080368d38b428d237a59458f9bc915222894d/bcprov-jdk15on-1.68.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-expression-3.4/3.4.18/3a5c45ab718f96c42b6c08af5ccc0e33becb11b0/neo4j-cypher-expression-3.4-3.4.18.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-configuration/3.5.29/6b69f6a8917368e032cbd6a2ebb1a4dc56c9052c/neo4j-configuration-3.5.29.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-ssl/3.5.29/6bf87b9949c0a99c22bd8ba9a764b72a8a939fb5/neo4j-ssl-3.5.29.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-unsafe/3.5.29/c11bde6735aeab4c653edb9c5f845b42933c0262/neo4j-unsafe-3.5.29.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-collections/3.5.29/7447c4f7984bbbf279083885ba64d405031e4e45/neo4j-collections-3.5.29.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/ba035118bc8bac37d7eff77700720999acd9986d/j2objc-annotations-1.3.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-lucene-index/3.5.29/e2e699ebedc75302ffef12ed818e54f234f78a0e/neo4j-lucene-index-3.5.29.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-planner-3.5/3.5.29/3d639952b5eeec74baafcdf73ca50185f4df9fe0/neo4j-cypher-planner-3.5-3.5.29.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-ast-3.5/3.5.29/b0074538f5c1d4e5fc07fdee414ec8de2f2a356c/neo4j-ast-3.5-3.5.29.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-frontend-2.3/2.3.12/d87e903d0b8a10b34ff8f6372362777e51bfbfbe/neo4j-cypher-frontend-2.3-2.3.12.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-util-3.4/3.4.18/a2e18569bcd6ab53e0f840b0db8d96f6aa9849d2/neo4j-cypher-util-3.4-3.4.18.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-graphdb-api/3.5.29/ff2105b29798c83106cf6d90422716031190a9ab/neo4j-graphdb-api-3.5.29.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15on/1.68/81da950604ff0b2652348cbd2b48fde46ced9867/bcpkix-jdk15on-1.68.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.eclipse.collections/eclipse-collections-api/9.2.0/d106fd8588e542d2ee9d31d3e057af8bcb813396/eclipse-collections-api-9.2.0.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-kernel/3.5.29/e625dd6bb4db32c3a05d99b6a5430ce0465b0e0c/neo4j-kernel-3.5.29.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-concurrent/3.5.29/b873d5006da6b4ca7bf075bf28d0d6c8b931b514/neo4j-concurrent-3.5.29.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/net.sf.opencsv/opencsv/2.3/c23708cdb9e80a144db433e23344a788a1fd6599/opencsv-2.3.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/6.2/a9690730f92cc79eeadc20e400ebb41eccce10b1/asm-util-6.2.jar
+2022-04-06 16:49:51.251+0000 INFO [o.n.i.d.DiagnosticsManager] Library path:
+2022-04-06 16:49:51.252+0000 INFO [o.n.i.d.DiagnosticsManager] /Users/bhaskarkrishnag/Library/Java/Extensions
+2022-04-06 16:49:51.252+0000 INFO [o.n.i.d.DiagnosticsManager] /Library/Java/Extensions
+2022-04-06 16:49:51.252+0000 INFO [o.n.i.d.DiagnosticsManager] /Network/Library/Java/Extensions
+2022-04-06 16:49:51.252+0000 INFO [o.n.i.d.DiagnosticsManager] /System/Library/Java/Extensions
+2022-04-06 16:49:51.252+0000 INFO [o.n.i.d.DiagnosticsManager] /usr/lib/java
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] /Users/bhaskarkrishnag/IdeaProjects/AMIE
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] System.properties:
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] sun.jnu.encoding = UTF-8
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] sun.arch.data.model = 64
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] user.variant = 
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] user.timezone = America/New_York
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] user.country = US
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] sun.java.launcher = SUN_STANDARD
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] sun.boot.library.path = /Library/Java/JavaVirtualMachines/jdk-15.0.2.jdk/Contents/Home/lib
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] sun.java.command = edu.rit.gdb.AMIE
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] http.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] jdk.debug = release
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] sun.cpu.endian = little
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] user.home = /Users/bhaskarkrishnag
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] user.language = en
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] file.separator = /
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] ftp.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] user.name = bhaskarkrishnag
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] path.separator = :
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] file.encoding = UTF-8
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] user.dir = /Users/bhaskarkrishnag/IdeaProjects/AMIE
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] sun.io.unicode.encoding = UnicodeBig
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] socksNonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2022-04-06 16:49:51.253+0000 INFO [o.n.i.d.DiagnosticsManager] (IANA) TimeZone Database Version:
+2022-04-06 16:49:51.301+0000 INFO [o.n.i.d.DiagnosticsManager]   TimeZone version: 2020d (available for 600 zone identifiers)
+2022-04-06 16:49:51.303+0000 INFO [o.n.i.d.DiagnosticsManager] Network information:
+2022-04-06 16:49:51.309+0000 INFO [o.n.i.d.DiagnosticsManager] Interface utun3:
+2022-04-06 16:49:51.309+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:9572:8ff6:4dc2:f3e4%utun3
+2022-04-06 16:49:51.318+0000 INFO [o.n.i.d.DiagnosticsManager] Interface utun2:
+2022-04-06 16:49:51.320+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:3476:a374:654a:2b75%utun2
+2022-04-06 16:49:51.321+0000 INFO [o.n.i.d.DiagnosticsManager] Interface utun1:
+2022-04-06 16:49:51.322+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:4e76:53f9:8d03:b549%utun1
+2022-04-06 16:49:51.322+0000 INFO [o.n.i.d.DiagnosticsManager] Interface utun0:
+2022-04-06 16:49:51.322+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:5a67:f4c3:aaa8:f6d6%utun0
+2022-04-06 16:49:51.323+0000 INFO [o.n.i.d.DiagnosticsManager] Interface llw0:
+2022-04-06 16:49:51.323+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:544a:43ff:fea4:663e%llw0
+2022-04-06 16:49:51.323+0000 INFO [o.n.i.d.DiagnosticsManager] Interface awdl0:
+2022-04-06 16:49:51.323+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:544a:43ff:fea4:663e%awdl0
+2022-04-06 16:49:51.324+0000 INFO [o.n.i.d.DiagnosticsManager] Interface anpi0:
+2022-04-06 16:49:51.324+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:1c00:d1ff:fe0c:3835%anpi0
+2022-04-06 16:49:51.324+0000 INFO [o.n.i.d.DiagnosticsManager] Interface anpi1:
+2022-04-06 16:49:51.325+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:1c00:d1ff:fe0c:3836%anpi1
+2022-04-06 16:49:51.325+0000 INFO [o.n.i.d.DiagnosticsManager] Interface en0:
+2022-04-06 16:49:51.325+0000 INFO [o.n.i.d.DiagnosticsManager]     address: 2620:8d:8000:1088:1cbf:1a9c:2008:77c2%en0
+2022-04-06 16:49:51.325+0000 INFO [o.n.i.d.DiagnosticsManager]     address: 2620:8d:8000:1088:1044:1759:9551:589f%en0
+2022-04-06 16:49:51.326+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:1869:ec4b:4b35:57a6%en0
+2022-04-06 16:49:51.326+0000 INFO [o.n.i.d.DiagnosticsManager]     address: 129.21.137.41
+2022-04-06 16:49:51.326+0000 INFO [o.n.i.d.DiagnosticsManager] Interface lo0:
+2022-04-06 16:49:51.327+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:0:0:0:1%lo0
+2022-04-06 16:49:51.327+0000 INFO [o.n.i.d.DiagnosticsManager]     address: 0:0:0:0:0:0:0:1%lo0
+2022-04-06 16:49:51.327+0000 INFO [o.n.i.d.DiagnosticsManager]     address: 127.0.0.1
+2022-04-06 16:49:51.327+0000 INFO [o.n.i.d.DiagnosticsManager] --- INITIALIZED diagnostics END ---
+2022-04-06 16:49:51.655+0000 INFO [o.n.k.i.s.f.RecordFormatSelector] Selected RecordFormat:StandardV3_4[v0.A.9] record format from store /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db
+2022-04-06 16:49:51.694+0000 INFO [o.n.k.i.s.f.RecordFormatSelector] Selected RecordFormat:StandardV3_4[v0.A.9] record format from store /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db
+2022-04-06 16:49:51.694+0000 INFO [o.n.k.i.s.f.RecordFormatSelector] Format not configured. Selected format from the store: RecordFormat:StandardV3_4[v0.A.9]
+2022-04-06 16:49:52.131+0000 INFO [o.n.k.i.i.l.NativeLabelScanStore] Label index cleanup job registered
+2022-04-06 16:49:52.135+0000 INFO [o.n.k.i.i.l.NativeLabelScanStore] Label index cleanup job started
+2022-04-06 16:49:52.142+0000 INFO [o.n.k.i.i.l.NativeLabelScanStore] Label index cleanup job finished: Number of pages visited: 2, Number of cleaned crashed pointers: 0, Time spent: 5ms
+2022-04-06 16:49:52.142+0000 INFO [o.n.k.i.i.l.NativeLabelScanStore] Label index cleanup job closed
+2022-04-06 16:49:52.142+0000 INFO [o.n.k.NeoStoreDataSource] No check point found in transaction log
+2022-04-06 16:49:52.143+0000 INFO [o.n.k.NeoStoreDataSource] Recovery required from position LogPosition{logVersion=0, byteOffset=16}
+2022-04-06 16:49:52.161+0000 INFO [o.n.k.r.Recovery]   10% completed
+2022-04-06 16:49:52.162+0000 INFO [o.n.k.r.Recovery]   20% completed
+2022-04-06 16:49:52.163+0000 INFO [o.n.k.r.Recovery]   30% completed
+2022-04-06 16:49:52.163+0000 INFO [o.n.k.r.Recovery]   40% completed
+2022-04-06 16:49:52.164+0000 INFO [o.n.k.r.Recovery]   50% completed
+2022-04-06 16:49:52.164+0000 INFO [o.n.k.r.Recovery]   60% completed
+2022-04-06 16:49:52.165+0000 INFO [o.n.k.r.Recovery]   70% completed
+2022-04-06 16:49:52.165+0000 INFO [o.n.k.r.Recovery]   80% completed
+2022-04-06 16:49:52.166+0000 INFO [o.n.k.r.Recovery]   90% completed
+2022-04-06 16:49:52.166+0000 INFO [o.n.k.r.Recovery]   100% completed
+2022-04-06 16:49:52.167+0000 INFO [o.n.k.NeoStoreDataSource] No recovery required
+2022-04-06 16:49:52.168+0000 INFO [o.n.k.i.s.DynamicArrayStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.nodestore.db.labels] ...
+2022-04-06 16:49:52.209+0000 INFO [o.n.k.i.s.DynamicArrayStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.nodestore.db.labels] high id=1 (defragged=0)
+2022-04-06 16:49:52.210+0000 INFO [o.n.k.i.s.DynamicArrayStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.nodestore.db.labels rebuild id generator, highId=1 defragged count=0
+2022-04-06 16:49:52.210+0000 INFO [o.n.k.i.s.NodeStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.nodestore.db] ...
+2022-04-06 16:49:52.256+0000 INFO [o.n.k.i.s.NodeStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.nodestore.db] high id=46440 (defragged=0)
+2022-04-06 16:49:52.256+0000 INFO [o.n.k.i.s.NodeStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.nodestore.db rebuild id generator, highId=46440 defragged count=0
+2022-04-06 16:49:52.256+0000 INFO [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.index.keys] ...
+2022-04-06 16:49:52.293+0000 INFO [o.n.k.i.s.DynamicStringStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.index.keys] high id=1 (defragged=0)
+2022-04-06 16:49:52.293+0000 INFO [o.n.k.i.s.DynamicStringStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.index.keys rebuild id generator, highId=1 defragged count=0
+2022-04-06 16:49:52.294+0000 INFO [o.n.k.i.s.PropertyKeyTokenStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.index] ...
+2022-04-06 16:49:52.329+0000 INFO [o.n.k.i.s.PropertyKeyTokenStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.index] high id=0 (defragged=0)
+2022-04-06 16:49:52.329+0000 INFO [o.n.k.i.s.PropertyKeyTokenStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.index rebuild id generator, highId=0 defragged count=0
+2022-04-06 16:49:52.384+0000 INFO [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.strings] ...
+2022-04-06 16:49:52.421+0000 INFO [o.n.k.i.s.DynamicStringStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.strings] high id=1 (defragged=0)
+2022-04-06 16:49:52.421+0000 INFO [o.n.k.i.s.DynamicStringStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.strings rebuild id generator, highId=1 defragged count=0
+2022-04-06 16:49:52.421+0000 INFO [o.n.k.i.s.DynamicArrayStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.arrays] ...
+2022-04-06 16:49:52.459+0000 INFO [o.n.k.i.s.DynamicArrayStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.arrays] high id=1 (defragged=0)
+2022-04-06 16:49:52.459+0000 INFO [o.n.k.i.s.DynamicArrayStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.arrays rebuild id generator, highId=1 defragged count=0
+2022-04-06 16:49:52.459+0000 INFO [o.n.k.i.s.PropertyStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db] ...
+2022-04-06 16:49:52.496+0000 INFO [o.n.k.i.s.PropertyStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db] high id=0 (defragged=0)
+2022-04-06 16:49:52.497+0000 INFO [o.n.k.i.s.PropertyStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db rebuild id generator, highId=0 defragged count=0
+2022-04-06 16:49:52.498+0000 INFO [o.n.k.i.s.RelationshipStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshipstore.db] ...
+2022-04-06 16:49:52.547+0000 INFO [o.n.k.i.s.RelationshipStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshipstore.db] high id=46654 (defragged=0)
+2022-04-06 16:49:52.548+0000 INFO [o.n.k.i.s.RelationshipStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshipstore.db rebuild id generator, highId=46654 defragged count=0
+2022-04-06 16:49:52.548+0000 INFO [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshiptypestore.db.names] ...
+2022-04-06 16:49:52.586+0000 INFO [o.n.k.i.s.DynamicStringStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshiptypestore.db.names] high id=34 (defragged=0)
+2022-04-06 16:49:52.586+0000 INFO [o.n.k.i.s.DynamicStringStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshiptypestore.db.names rebuild id generator, highId=34 defragged count=0
+2022-04-06 16:49:52.586+0000 INFO [o.n.k.i.s.RelationshipTypeTokenStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshiptypestore.db] ...
+2022-04-06 16:49:52.629+0000 INFO [o.n.k.i.s.RelationshipTypeTokenStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshiptypestore.db] high id=33 (defragged=0)
+2022-04-06 16:49:52.630+0000 INFO [o.n.k.i.s.RelationshipTypeTokenStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshiptypestore.db rebuild id generator, highId=33 defragged count=0
+2022-04-06 16:49:52.685+0000 INFO [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.labeltokenstore.db.names] ...
+2022-04-06 16:49:52.725+0000 INFO [o.n.k.i.s.DynamicStringStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.labeltokenstore.db.names] high id=1 (defragged=0)
+2022-04-06 16:49:52.726+0000 INFO [o.n.k.i.s.DynamicStringStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.labeltokenstore.db.names rebuild id generator, highId=1 defragged count=0
+2022-04-06 16:49:52.726+0000 INFO [o.n.k.i.s.LabelTokenStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.labeltokenstore.db] ...
+2022-04-06 16:49:52.765+0000 INFO [o.n.k.i.s.LabelTokenStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.labeltokenstore.db] high id=0 (defragged=0)
+2022-04-06 16:49:52.765+0000 INFO [o.n.k.i.s.LabelTokenStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.labeltokenstore.db rebuild id generator, highId=0 defragged count=0
+2022-04-06 16:49:52.821+0000 INFO [o.n.k.i.s.SchemaStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.schemastore.db] ...
+2022-04-06 16:49:52.860+0000 INFO [o.n.k.i.s.SchemaStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.schemastore.db] high id=1 (defragged=0)
+2022-04-06 16:49:52.861+0000 INFO [o.n.k.i.s.SchemaStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.schemastore.db rebuild id generator, highId=1 defragged count=0
+2022-04-06 16:49:52.861+0000 INFO [o.n.k.i.s.RelationshipGroupStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshipgroupstore.db] ...
+2022-04-06 16:49:52.899+0000 INFO [o.n.k.i.s.RelationshipGroupStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshipgroupstore.db] high id=394 (defragged=0)
+2022-04-06 16:49:52.899+0000 INFO [o.n.k.i.s.RelationshipGroupStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshipgroupstore.db rebuild id generator, highId=394 defragged count=0
+2022-04-06 16:49:52.900+0000 INFO [o.n.k.i.s.MetaDataStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore] ...
+2022-04-06 16:49:52.937+0000 INFO [o.n.k.i.s.MetaDataStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore] high id=15 (defragged=0)
+2022-04-06 16:49:52.938+0000 INFO [o.n.k.i.s.MetaDataStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore rebuild id generator, highId=15 defragged count=0
+2022-04-06 16:49:52.956+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:Versions START ---
+2022-04-06 16:49:52.957+0000 INFO [o.n.i.d.DiagnosticsManager] Graph Database: community single StoreId{creationTime=1649261787616, randomId=1988336196583566738, storeVersion=16094931155187206, upgradeTime=1649261787616, upgradeId=1}
+2022-04-06 16:49:52.957+0000 INFO [o.n.i.d.DiagnosticsManager] Kernel version: 3.5.29,916ddf482c3248e475a56eca4163c85033080c10
+2022-04-06 16:49:52.957+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:Versions END ---
+2022-04-06 16:49:52.958+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_VERSIONS START ---
+2022-04-06 16:49:52.958+0000 INFO [o.n.i.d.DiagnosticsManager] Store versions:
+2022-04-06 16:49:52.960+0000 INFO [o.n.i.d.DiagnosticsManager]   ArrayPropertyStore[neostore.nodestore.db.labels] v0.A.9
+2022-04-06 16:49:52.961+0000 INFO [o.n.i.d.DiagnosticsManager]   NodeStore[neostore.nodestore.db] v0.A.9
+2022-04-06 16:49:52.962+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.propertystore.db.index.keys] v0.A.9
+2022-04-06 16:49:52.963+0000 INFO [o.n.i.d.DiagnosticsManager]   PropertyIndexStore[neostore.propertystore.db.index] v0.A.9
+2022-04-06 16:49:52.964+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.propertystore.db.strings] v0.A.9
+2022-04-06 16:49:52.965+0000 INFO [o.n.i.d.DiagnosticsManager]   ArrayPropertyStore[neostore.propertystore.db.arrays] v0.A.9
+2022-04-06 16:49:52.966+0000 INFO [o.n.i.d.DiagnosticsManager]   PropertyStore[neostore.propertystore.db] v0.A.9
+2022-04-06 16:49:52.967+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipStore[neostore.relationshipstore.db] v0.A.9
+2022-04-06 16:49:52.968+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.relationshiptypestore.db.names] v0.A.9
+2022-04-06 16:49:52.969+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipTypeStore[neostore.relationshiptypestore.db] v0.A.9
+2022-04-06 16:49:52.970+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.labeltokenstore.db.names] v0.A.9
+2022-04-06 16:49:52.971+0000 INFO [o.n.i.d.DiagnosticsManager]   LabelTokenStore[neostore.labeltokenstore.db] v0.A.9
+2022-04-06 16:49:52.972+0000 INFO [o.n.i.d.DiagnosticsManager]   SchemaStore[neostore.schemastore.db] v0.A.9
+2022-04-06 16:49:52.973+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipGroupStore[neostore.relationshipgroupstore.db] v0.A.9
+2022-04-06 16:49:52.974+0000 INFO [o.n.i.d.DiagnosticsManager]   NeoStore[neostore] v0.A.9
+2022-04-06 16:49:52.974+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_VERSIONS END ---
+2022-04-06 16:49:52.974+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_ID_USAGE START ---
+2022-04-06 16:49:52.974+0000 INFO [o.n.i.d.DiagnosticsManager] Id usage:
+2022-04-06 16:49:52.975+0000 INFO [o.n.i.d.DiagnosticsManager]   ArrayPropertyStore[neostore.nodestore.db.labels]: used=1 high=0
+2022-04-06 16:49:52.976+0000 INFO [o.n.i.d.DiagnosticsManager]   NodeStore[neostore.nodestore.db]: used=46440 high=46439
+2022-04-06 16:49:52.977+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.propertystore.db.index.keys]: used=1 high=0
+2022-04-06 16:49:52.979+0000 INFO [o.n.i.d.DiagnosticsManager]   PropertyIndexStore[neostore.propertystore.db.index]: used=0 high=-1
+2022-04-06 16:49:52.980+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.propertystore.db.strings]: used=1 high=0
+2022-04-06 16:49:52.980+0000 INFO [o.n.i.d.DiagnosticsManager]   ArrayPropertyStore[neostore.propertystore.db.arrays]: used=1 high=0
+2022-04-06 16:49:52.981+0000 INFO [o.n.i.d.DiagnosticsManager]   PropertyStore[neostore.propertystore.db]: used=0 high=-1
+2022-04-06 16:49:52.984+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipStore[neostore.relationshipstore.db]: used=46654 high=46653
+2022-04-06 16:49:52.985+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.relationshiptypestore.db.names]: used=34 high=33
+2022-04-06 16:49:52.986+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipTypeStore[neostore.relationshiptypestore.db]: used=33 high=32
+2022-04-06 16:49:52.987+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.labeltokenstore.db.names]: used=1 high=0
+2022-04-06 16:49:52.988+0000 INFO [o.n.i.d.DiagnosticsManager]   LabelTokenStore[neostore.labeltokenstore.db]: used=0 high=-1
+2022-04-06 16:49:52.989+0000 INFO [o.n.i.d.DiagnosticsManager]   SchemaStore[neostore.schemastore.db]: used=1 high=0
+2022-04-06 16:49:52.990+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipGroupStore[neostore.relationshipgroupstore.db]: used=394 high=393
+2022-04-06 16:49:52.991+0000 INFO [o.n.i.d.DiagnosticsManager]   NeoStore[neostore]: used=15 high=14
+2022-04-06 16:49:52.992+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_ID_USAGE END ---
+2022-04-06 16:49:52.992+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_RECORDS START ---
+2022-04-06 16:49:52.993+0000 INFO [o.n.i.d.DiagnosticsManager] Neostore records:
+2022-04-06 16:49:52.993+0000 INFO [o.n.i.d.DiagnosticsManager] TIME (Creation time): 1649261787616
+2022-04-06 16:49:52.993+0000 INFO [o.n.i.d.DiagnosticsManager] RANDOM_NUMBER (Random number for store id): 1988336196583566738
+2022-04-06 16:49:52.993+0000 INFO [o.n.i.d.DiagnosticsManager] LOG_VERSION (Current log version): 0
+2022-04-06 16:49:52.993+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_TRANSACTION_ID (Last committed transaction): 1
+2022-04-06 16:49:52.993+0000 INFO [o.n.i.d.DiagnosticsManager] STORE_VERSION (Store format version): 16094931155187206
+2022-04-06 16:49:52.993+0000 INFO [o.n.i.d.DiagnosticsManager] FIRST_GRAPH_PROPERTY (First property record containing graph properties): -1
+2022-04-06 16:49:52.994+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_CONSTRAINT_TRANSACTION (Last committed transaction containing constraint changes): 0
+2022-04-06 16:49:52.994+0000 INFO [o.n.i.d.DiagnosticsManager] UPGRADE_TRANSACTION_ID (Transaction id most recent upgrade was performed at): 1
+2022-04-06 16:49:52.994+0000 INFO [o.n.i.d.DiagnosticsManager] UPGRADE_TIME (Time of last upgrade): 1649261787616
+2022-04-06 16:49:52.994+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_TRANSACTION_CHECKSUM (Checksum of last committed transaction): 0
+2022-04-06 16:49:52.994+0000 INFO [o.n.i.d.DiagnosticsManager] UPGRADE_TRANSACTION_CHECKSUM (Checksum of transaction id the most recent upgrade was performed at): 0
+2022-04-06 16:49:52.994+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_CLOSED_TRANSACTION_LOG_VERSION (Log version where the last transaction commit entry has been written into): 0
+2022-04-06 16:49:52.994+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_CLOSED_TRANSACTION_LOG_BYTE_OFFSET (Byte offset in the log file where the last transaction commit entry has been written into): 16
+2022-04-06 16:49:52.994+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_TRANSACTION_COMMIT_TIMESTAMP (Commit time timestamp for last committed transaction): 0
+2022-04-06 16:49:52.994+0000 INFO [o.n.i.d.DiagnosticsManager] UPGRADE_TRANSACTION_COMMIT_TIMESTAMP (Commit timestamp of transaction the most recent upgrade was performed at): 0
+2022-04-06 16:49:52.994+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_RECORDS END ---
+2022-04-06 16:49:52.995+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for TRANSACTION_RANGE START ---
+2022-04-06 16:49:52.995+0000 INFO [o.n.i.d.DiagnosticsManager] Transaction log:
+2022-04-06 16:49:52.995+0000 INFO [o.n.i.d.DiagnosticsManager] No transactions found in any log
+2022-04-06 16:49:52.995+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for TRANSACTION_RANGE END ---
+2022-04-06 16:49:53.000+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:StoreFiles START ---
+2022-04-06 16:49:53.002+0000 INFO [o.n.i.d.DiagnosticsManager] Disk space on partition (Total / Free / Free %): 494384795648 / 180443058176 / 36
+2022-04-06 16:49:53.002+0000 INFO [o.n.i.d.DiagnosticsManager] Storage files: (filename : modification date - size)
+2022-04-06 16:49:53.009+0000 INFO [o.n.i.d.DiagnosticsManager]   debug.log: 2022-04-06T12:16:29-0400 - 631.00 B
+2022-04-06 16:49:53.009+0000 INFO [o.n.i.d.DiagnosticsManager]   index:
+2022-04-06 16:49:53.011+0000 INFO [o.n.i.d.DiagnosticsManager]   - Total: 2022-04-06T12:16:58-0400 - 0.00 B
+2022-04-06 16:49:53.012+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:49:53.013+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.counts.db.a: 2022-04-06T12:16:28-0400 - 96.00 B
+2022-04-06 16:49:53.016+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.counts.db.b: 2022-04-06T12:16:28-0400 - 1.19 kB
+2022-04-06 16:49:53.017+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.id: 2022-04-06T12:49:52-0400 - 9.00 B
+2022-04-06 16:49:53.018+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.labelscanstore.db: 2022-04-06T12:49:52-0400 - 40.00 kB
+2022-04-06 16:49:53.021+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.labeltokenstore.db: 2022-04-06T12:16:27-0400 - 0.00 B
+2022-04-06 16:49:53.022+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.labeltokenstore.db.id: 2022-04-06T12:49:52-0400 - 9.00 B
+2022-04-06 16:49:53.024+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.labeltokenstore.db.names: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:49:53.026+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.labeltokenstore.db.names.id: 2022-04-06T12:49:52-0400 - 9.00 B
+2022-04-06 16:49:53.027+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.nodestore.db: 2022-04-06T12:16:29-0400 - 687.83 kB
+2022-04-06 16:49:53.028+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.nodestore.db.id: 2022-04-06T12:49:52-0400 - 9.00 B
+2022-04-06 16:49:53.030+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.nodestore.db.labels: 2022-04-06T12:16:26-0400 - 8.00 kB
+2022-04-06 16:49:53.031+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.nodestore.db.labels.id: 2022-04-06T12:49:52-0400 - 9.00 B
+2022-04-06 16:49:53.033+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db: 2022-04-06T12:16:27-0400 - 0.00 B
+2022-04-06 16:49:53.034+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.arrays: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:49:53.035+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.arrays.id: 2022-04-06T12:49:52-0400 - 9.00 B
+2022-04-06 16:49:53.037+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.id: 2022-04-06T12:49:52-0400 - 9.00 B
+2022-04-06 16:49:53.038+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.index: 2022-04-06T12:16:27-0400 - 0.00 B
+2022-04-06 16:49:53.041+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.index.id: 2022-04-06T12:49:52-0400 - 9.00 B
+2022-04-06 16:49:53.042+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.index.keys: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:49:53.043+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.index.keys.id: 2022-04-06T12:49:52-0400 - 9.00 B
+2022-04-06 16:49:53.045+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.strings: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:49:53.046+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.strings.id: 2022-04-06T12:49:52-0400 - 9.00 B
+2022-04-06 16:49:53.048+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshipgroupstore.db: 2022-04-06T12:16:29-0400 - 15.97 kB
+2022-04-06 16:49:53.051+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshipgroupstore.db.id: 2022-04-06T12:49:52-0400 - 9.00 B
+2022-04-06 16:49:53.052+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshipstore.db: 2022-04-06T12:16:29-0400 - 1.52 MB
+2022-04-06 16:49:53.054+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshipstore.db.id: 2022-04-06T12:49:52-0400 - 9.00 B
+2022-04-06 16:49:53.056+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshiptypestore.db: 2022-04-06T12:16:29-0400 - 8.00 kB
+2022-04-06 16:49:53.057+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshiptypestore.db.id: 2022-04-06T12:49:52-0400 - 9.00 B
+2022-04-06 16:49:53.059+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshiptypestore.db.names: 2022-04-06T12:16:29-0400 - 8.00 kB
+2022-04-06 16:49:53.061+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshiptypestore.db.names.id: 2022-04-06T12:49:52-0400 - 9.00 B
+2022-04-06 16:49:53.063+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.schemastore.db: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:49:53.064+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.schemastore.db.id: 2022-04-06T12:49:52-0400 - 9.00 B
+2022-04-06 16:49:53.066+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.transaction.db.0: 2022-04-06T12:16:58-0400 - 16.00 B
+2022-04-06 16:49:53.066+0000 INFO [o.n.i.d.DiagnosticsManager] Storage summary: 
+2022-04-06 16:49:53.067+0000 INFO [o.n.i.d.DiagnosticsManager]   Total size of store: 2.32 MB
+2022-04-06 16:49:53.069+0000 INFO [o.n.i.d.DiagnosticsManager]   Total size of mapped files: 2.31 MB
+2022-04-06 16:49:53.070+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:StoreFiles END ---
+2022-04-06 16:49:53.071+0000 INFO [o.n.k.a.DatabaseAvailabilityGuard] Fulfilling of requirement 'Database available' makes database db available.
+2022-04-06 16:49:53.071+0000 INFO [o.n.k.a.DatabaseAvailabilityGuard] Database db is ready.
+2022-04-06 16:49:53.071+0000 INFO [o.n.k.i.DatabaseHealth] Database health set to OK
+2022-04-06 16:51:26.349+0000 WARN [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=113, gcTime=123, gcCount=1}
+2022-04-06 16:51:26.466+0000 WARN [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=101, gcTime=0, gcCount=0}
+2022-04-06 16:52:20.700+0000 WARN [o.n.k.i.JvmChecker] You are using an unsupported version of the Java runtime. Please use Oracle(R) Java(TM) Runtime Environment 8 or 11, OpenJDK(TM) 8 or 11 or IBM J9.
+2022-04-06 16:52:20.750+0000 WARN [o.n.i.p.PageCache] The dbms.memory.pagecache.size setting has not been configured. It is recommended that this setting is always explicitly configured, to ensure the system has a balanced configuration. Until then, a computed heuristic value of 6442450944 bytes will be used instead. Run `neo4j-admin memrec` for memory configuration suggestions.
+2022-04-06 16:52:21.171+0000 INFO [o.n.g.f.m.e.CommunityEditionModule] No locking implementation specified, defaulting to 'community'
+2022-04-06 16:52:21.694+0000 INFO [o.n.g.f.GraphDatabaseFacadeFactory] Creating 'db' database.
+2022-04-06 16:52:21.729+0000 INFO [o.n.k.a.DatabaseAvailabilityGuard] Requirement `Database available` makes database db unavailable.
+2022-04-06 16:52:21.731+0000 INFO [o.n.k.a.DatabaseAvailabilityGuard] Database db is unavailable.
+2022-04-06 16:52:21.746+0000 INFO [o.n.i.d.DiagnosticsManager] --- INITIALIZED diagnostics START ---
+2022-04-06 16:52:21.746+0000 INFO [o.n.i.d.DiagnosticsManager] Neo4j Kernel properties:
+2022-04-06 16:52:21.747+0000 INFO [o.n.i.d.DiagnosticsManager] unsupported.dbms.directories.neo4j_home=/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S
+2022-04-06 16:52:21.748+0000 INFO [o.n.i.d.DiagnosticsManager] dbms.active_database=db
+2022-04-06 16:52:21.748+0000 INFO [o.n.i.d.DiagnosticsManager] unsupported.dbms.directories.databases.root=/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S
+2022-04-06 16:52:21.749+0000 INFO [o.n.i.d.DiagnosticsManager] unsupported.dbms.edition=community
+2022-04-06 16:52:21.749+0000 INFO [o.n.i.d.DiagnosticsManager] unsupported.dbms.ephemeral=false
+2022-04-06 16:52:21.750+0000 INFO [o.n.i.d.DiagnosticsManager] Diagnostics providers:
+2022-04-06 16:52:21.750+0000 INFO [o.n.i.d.DiagnosticsManager] org.neo4j.kernel.configuration.Config
+2022-04-06 16:52:21.750+0000 INFO [o.n.i.d.DiagnosticsManager] org.neo4j.internal.diagnostics.DiagnosticsManager
+2022-04-06 16:52:21.750+0000 INFO [o.n.i.d.DiagnosticsManager] SYSTEM_MEMORY
+2022-04-06 16:52:21.750+0000 INFO [o.n.i.d.DiagnosticsManager] JAVA_MEMORY
+2022-04-06 16:52:21.751+0000 INFO [o.n.i.d.DiagnosticsManager] OPERATING_SYSTEM
+2022-04-06 16:52:21.751+0000 INFO [o.n.i.d.DiagnosticsManager] JAVA_VIRTUAL_MACHINE
+2022-04-06 16:52:21.751+0000 INFO [o.n.i.d.DiagnosticsManager] CLASSPATH
+2022-04-06 16:52:21.751+0000 INFO [o.n.i.d.DiagnosticsManager] LIBRARY_PATH
+2022-04-06 16:52:21.751+0000 INFO [o.n.i.d.DiagnosticsManager] SYSTEM_PROPERTIES
+2022-04-06 16:52:21.751+0000 INFO [o.n.i.d.DiagnosticsManager] TIMEZONE_DATABASE
+2022-04-06 16:52:21.751+0000 INFO [o.n.i.d.DiagnosticsManager] NETWORK
+2022-04-06 16:52:21.751+0000 INFO [o.n.i.d.DiagnosticsManager] System memory information:
+2022-04-06 16:52:21.765+0000 INFO [o.n.i.d.DiagnosticsManager] Total Physical memory: 16.00 GB
+2022-04-06 16:52:21.769+0000 INFO [o.n.i.d.DiagnosticsManager] Free Physical memory: 552.74 MB
+2022-04-06 16:52:21.770+0000 INFO [o.n.i.d.DiagnosticsManager] Committed virtual memory: 14.66 GB
+2022-04-06 16:52:21.771+0000 INFO [o.n.i.d.DiagnosticsManager] Total swap space: 1.00 GB
+2022-04-06 16:52:21.772+0000 INFO [o.n.i.d.DiagnosticsManager] Free swap space: 965.00 MB
+2022-04-06 16:52:21.772+0000 INFO [o.n.i.d.DiagnosticsManager] JVM memory information:
+2022-04-06 16:52:21.773+0000 INFO [o.n.i.d.DiagnosticsManager] Free  memory: 209.12 MB
+2022-04-06 16:52:21.774+0000 INFO [o.n.i.d.DiagnosticsManager] Total memory: 260.00 MB
+2022-04-06 16:52:21.774+0000 INFO [o.n.i.d.DiagnosticsManager] Max   memory: 4.00 GB
+2022-04-06 16:52:21.781+0000 INFO [o.n.i.d.DiagnosticsManager] Garbage Collector: G1 Young Generation: [G1 Eden Space, G1 Survivor Space, G1 Old Gen]
+2022-04-06 16:52:21.782+0000 INFO [o.n.i.d.DiagnosticsManager] Garbage Collector: G1 Old Generation: [G1 Eden Space, G1 Survivor Space, G1 Old Gen]
+2022-04-06 16:52:21.788+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: CodeHeap 'non-nmethods' (Non-heap memory): committed=2.44 MB, used=1.25 MB, max=5.57 MB, threshold=0.00 B
+2022-04-06 16:52:21.791+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: Metaspace (Non-heap memory): committed=17.50 MB, used=17.10 MB, max=-1.00 B, threshold=0.00 B
+2022-04-06 16:52:21.794+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: CodeHeap 'profiled nmethods' (Non-heap memory): committed=4.13 MB, used=4.10 MB, max=117.21 MB, threshold=0.00 B
+2022-04-06 16:52:21.798+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: Compressed Class Space (Non-heap memory): committed=2.00 MB, used=1.91 MB, max=1.00 GB, threshold=0.00 B
+2022-04-06 16:52:21.801+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: G1 Eden Space (Heap memory): committed=86.00 MB, used=28.00 MB, max=-1.00 B, threshold=?
+2022-04-06 16:52:21.805+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: G1 Old Gen (Heap memory): committed=168.00 MB, used=14.77 MB, max=4.00 GB, threshold=0.00 B
+2022-04-06 16:52:21.809+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: G1 Survivor Space (Heap memory): committed=6.00 MB, used=5.10 MB, max=-1.00 B, threshold=?
+2022-04-06 16:52:21.813+0000 INFO [o.n.i.d.DiagnosticsManager] Memory Pool: CodeHeap 'non-profiled nmethods' (Non-heap memory): committed=2.44 MB, used=935.88 kB, max=117.21 MB, threshold=0.00 B
+2022-04-06 16:52:21.813+0000 INFO [o.n.i.d.DiagnosticsManager] Operating system information:
+2022-04-06 16:52:21.815+0000 INFO [o.n.i.d.DiagnosticsManager] Operating System: Mac OS X; version: 10.16; arch: x86_64; cpus: 8
+2022-04-06 16:52:21.816+0000 INFO [o.n.i.d.DiagnosticsManager] Max number of file descriptors: 10240
+2022-04-06 16:52:21.816+0000 INFO [o.n.i.d.DiagnosticsManager] Number of open file descriptors: 106
+2022-04-06 16:52:21.827+0000 INFO [o.n.i.d.DiagnosticsManager] Process id: 3250@bhaskars-air.wireless.rit.edu
+2022-04-06 16:52:21.828+0000 INFO [o.n.i.d.DiagnosticsManager] Byte order: LITTLE_ENDIAN
+2022-04-06 16:52:21.857+0000 INFO [o.n.i.d.DiagnosticsManager] Local timezone: America/New_York
+2022-04-06 16:52:21.857+0000 INFO [o.n.i.d.DiagnosticsManager] JVM information:
+2022-04-06 16:52:21.857+0000 INFO [o.n.i.d.DiagnosticsManager] VM Name: Java HotSpot(TM) 64-Bit Server VM
+2022-04-06 16:52:21.858+0000 INFO [o.n.i.d.DiagnosticsManager] VM Vendor: Oracle Corporation
+2022-04-06 16:52:21.858+0000 INFO [o.n.i.d.DiagnosticsManager] VM Version: 15.0.2+7-27
+2022-04-06 16:52:21.858+0000 INFO [o.n.i.d.DiagnosticsManager] JIT compiler: HotSpot 64-Bit Tiered Compilers
+2022-04-06 16:52:21.858+0000 INFO [o.n.i.d.DiagnosticsManager] VM Arguments: [-agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=58334, -Dfile.encoding=UTF-8, -Duser.country=US, -Duser.language=en, -Duser.variant]
+2022-04-06 16:52:21.858+0000 INFO [o.n.i.d.DiagnosticsManager] Java classpath:
+2022-04-06 16:52:21.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/IdeaProjects/AMIE/app/build/classes/java/main
+2022-04-06 16:52:21.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j.driver/neo4j-java-driver/4.4.0/7c17c7c9ab5eb4ebbf566457ef0189462366d737/neo4j-java-driver-4.4.0.jar
+2022-04-06 16:52:21.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-codegen/3.5.29/9e964dd5ddea0aca47e4deceab1a52f0f7df8831/neo4j-codegen-3.5.29.jar
+2022-04-06 16:52:21.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-legacy/3.5.29/91a8fc2104ad116d0ec1a26e74f7bee7dfe49522/neo4j-legacy-3.5.29.jar
+2022-04-06 16:52:21.866+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/6.2/1b6c4ff09ce03f3052429139c2a68e295cae6604/asm-6.2.jar
+2022-04-06 16:52:21.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-command-line/3.5.29/d1a8fcb7d70f037af29e726c257259e87a5000/neo4j-command-line-3.5.29.jar
+2022-04-06 16:52:21.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.parboiled/parboiled-core/1.1.7/a60ff9a54cbeb30ec44c89e16ac4c35913cbad5a/parboiled-core-1.1.7.jar
+2022-04-06 16:52:21.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/5.1.49/cf76d2e4c9c3782a85c15c87bec5772b34ffd0e5/mysql-connector-java-5.1.49.jar
+2022-04-06 16:52:21.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-runtime-util/3.5.29/9c54e0943bb423f225628c9a8750e35a7de44cfc/neo4j-cypher-runtime-util-3.5.29.jar
+2022-04-06 16:52:21.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.8.0/6b83e4a33220272c3a08991498ba9dc09519f190/checker-qual-3.8.0.jar
+2022-04-06 16:52:21.867+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.1.48.Final/ebb3666ba4883ba81920cec8ccb1a3adcc827eb1/netty-all-4.1.48.Final.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-lucene-upgrade/3.5.29/9dd0c779dc79ee53bc0fc17ef50d505b230036f7/neo4j-lucene-upgrade-3.5.29.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-index/3.5.29/a6bddfce74df9bf26f0ea124966219621803902a/neo4j-index-3.5.29.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.19/7e65777fb451ddab6a9c054beb879e521b7eab78/commons-compress-1.19.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.jprocesses/jProcesses/1.6.4/f0d9e30bb02f67bc2d3d9981664f8e57e4ad1f81/jProcesses-1.6.4.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-reflect/2.11.12/2bb23c13c527566d9828107ca4108be2a2c06f01/scala-reflect-2.11.12.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-planner-spi-3.4/3.4.18/ab2f19182c231e77d4607565bbef03d1b531620a/neo4j-cypher-planner-spi-3.4-3.4.18.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-interpreted-runtime/3.5.29/8d945dbfd25e1b173e0f91cb43779b8189343c8c/neo4j-cypher-interpreted-runtime-3.5.29.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-udc/3.5.29/9984dc40bd54e0fd476584b6abc64cfbdaf304/neo4j-udc-3.5.29.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.parboiled/parboiled-scala_2.11/1.1.7/4e14ecb11f40f25216ce01dc349f541bc801354f/parboiled-scala_2.11-1.1.7.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-fulltext-index/3.5.29/2284354dcdf3433dd541f14b4c79f2bee5a16bd1/neo4j-fulltext-index-3.5.29.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-rewriting-3.5/3.5.29/615e248150067a889c986989b71d90b429bb9672/neo4j-rewriting-3.5-3.5.29.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-data-collector/3.5.29/36e592a382e61c6c4165a370f599d4ad3f478/neo4j-data-collector-3.5.29.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-expressions-3.5/3.5.29/c4ab65cab471764acf2bb9b3ed1a1baa99561815/neo4j-expressions-3.5-3.5.29.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-frontend-3.1/3.1.9/239d40944641be2f8d453d9823ec3d195ff6d61/neo4j-cypher-frontend-3.1-3.1.9.jar
+2022-04-06 16:52:21.868+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/IdeaProjects/AMIE/app/build/resources/main
+2022-04-06 16:52:21.869+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-bolt/3.5.29/22999acd495319abfa99c083ef3d1a30e6f9d1c3/neo4j-bolt-3.5.29.jar
+2022-04-06 16:52:21.869+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/5.5.5/c34bcd9274859dc07cfed2a935aaca90c4f4b861/lucene-core-5.5.5.jar
+2022-04-06 16:52:21.869+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-graph-algo/3.5.29/144e14f982a8a705ae34141c4ee02cc6e224c370/neo4j-graph-algo-3.5.29.jar
+2022-04-06 16:52:21.869+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-values/3.5.29/706b8492eaee49d796010508ef715ef35bb534ef/neo4j-values-3.5.29.jar
+2022-04-06 16:52:21.869+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j/3.5.29/437d08503514c65d17806f7f52d5c49ae93a1a86/neo4j-3.5.29.jar
+2022-04-06 16:52:21.869+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-common/3.5.29/684f66cfa5f4924e39b84695eaef7fb5e4a1827a/neo4j-common-3.5.29.jar
+2022-04-06 16:52:21.870+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-front-end-3.5/3.5.29/5ec8b4835a39705e00a5ddfaa8a91e97f5e2254c/neo4j-front-end-3.5-3.5.29.jar
+2022-04-06 16:52:21.870+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-queryparser/5.5.5/6c965eb5838a2ba58b0de0fd860a420dcda11937/lucene-queryparser-5.5.5.jar
+2022-04-06 16:52:21.871+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/6.2/61570e046111559f38d4e0e580c005f75988c0a6/asm-tree-6.2.jar
+2022-04-06 16:52:21.871+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-ir-3.4/3.4.18/28974639500b387866e2892fc9c6b93b26379e8c/neo4j-cypher-ir-3.4-3.4.18.jar
+2022-04-06 16:52:21.872+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j.licensing-proxy/zstd-proxy/3.5.29/d01e8c220f1fbadd5434a777da5ba95858ef645f/zstd-proxy-3.5.29.jar
+2022-04-06 16:52:21.872+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-compiler-3.1/3.1.9/6bec4dee36c05a56d19791cacc887d815ebbefd7/neo4j-cypher-compiler-3.1-3.1.9.jar
+2022-04-06 16:52:21.872+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher/3.5.29/eefc255c9bfa130a4ef96edd8a0c9a2c21b34bcc/neo4j-cypher-3.5.29.jar
+2022-04-06 16:52:21.872+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-graph-matching/3.1.9/5265d2eb2cc8df7bc66034b730d86be936ec76a9/neo4j-graph-matching-3.1.9.jar
+2022-04-06 16:52:21.872+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.profesorfalken/jPowerShell/1.9/22a7cdf6e460b9738e751bef9634b1b7cee55130/jPowerShell-1.9.jar
+2022-04-06 16:52:21.872+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-planner-3.4/3.4.18/1fadda795171ba7f87e9c0564780cd2c24304159/neo4j-cypher-planner-3.4-3.4.18.jar
+2022-04-06 16:52:21.872+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-procedure-api/3.5.29/81193d8792e99d13458c5863ba003332050bba54/neo4j-procedure-api-3.5.29.jar
+2022-04-06 16:52:21.873+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.eclipse.collections/eclipse-collections/9.2.0/f2f2406e2229497935b6e7dd6c41da7fd67f36a8/eclipse-collections-9.2.0.jar
+2022-04-06 16:52:21.873+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/openCypher-frontend-1/3.4.18/3ce2826c13d10ced4d810b39478335573ac4584f/openCypher-frontend-1-3.4.18.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.github.luben/zstd-jni/1.3.8-6/f67bee23f938085bc732ac81f634b922b24f13e6/zstd-jni-1.3.8-6.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.profesorfalken/WMI4Java/1.6.1/628ef4ea73cd6046ddba222ab628eb9f521eb878/WMI4Java-1.6.1.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/30.1.1-jre/87e0fd1df874ea3cbe577702fe6f17068b790fd8/guava-30.1.1-jre.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-codecs/5.5.5/e62864e51b3db16766d400b718ec848b3d66db6/lucene-codecs-5.5.5.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-logical-plans-3.4/3.4.18/9b918e2b0e95f67454a88a71764f1b637cab0406/neo4j-cypher-logical-plans-3.4-3.4.18.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-spatial-index/3.5.29/eff15abcc4daa40fabb5d6a91c080d4521987885/neo4j-spatial-index-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-resource/3.5.29/642656473bb8e18f4eabd90f3d017aebfc41d83a/neo4j-resource-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-diagnostics/3.5.29/58180a1475c220483a07e799ca5b3b71bde6a9c6/neo4j-diagnostics-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-logical-plans-3.5/3.5.29/70906861ff771b899472f52492a4ce64d55a7192/neo4j-cypher-logical-plans-3.5-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-analyzers-common/5.5.5/e6b3f5d1b33ed24da7eef0a72f8062bd4652700c/lucene-analyzers-common-5.5.5.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-ir-3.5/3.5.29/f24c182a8652cec5721765edfdbbda6b44fc10af/neo4j-cypher-ir-3.5-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/6.2/c7d9a90d221cbb977848d2c777eb3aa7637e89df/asm-analysis-6.2.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.11.12/bf5534e6fec3d665bd6419c952a929a8bdd4b591/scala-library-2.11.12.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4.2/2eaf3d3c9746d526ff7e5b93931d482c3887e6ac/concurrentlinkedhashmap-lru-1.4.2.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-dbms/3.5.29/eb0997f26a178bdb574db29c96393276053a78b2/neo4j-dbms-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.5.1/562d366678b89ce5d6b6b82c1a073880341e3fba/error_prone_annotations-2.5.1.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-jmx/3.5.29/4f6bf82c9e160be128bc33b54990df8722c831e0/neo4j-jmx-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-text/1.4/680b74de9c393bbf8d9e951af301659b16845907/commons-text-1.4.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-parser-3.5/3.5.29/dd19095f1bd35441bd7f92ca7fcdc8b520807a7b/neo4j-parser-3.5-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-io/3.5.29/1c04ccc800fe3e7994c52718f22ceba570de7027/neo4j-io-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.11/68e9a6adf7cf8eb7e9d31bbc554c7c75eeaac568/commons-lang3-3.11.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.github.ben-manes.caffeine/caffeine/2.6.2/c8fd8817f9d2b2ced82f8968e0dd943aab557de0/caffeine-2.6.2.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-logging/3.5.29/79469df083de0a7d879dddc1cbe0a64a323f83f0/neo4j-logging-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.3/d9fb7a7926ffa635b3dcaa5049fb2bfa25b3e7d0/reactive-streams-1.0.3.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-kernel-api/3.5.29/d66c16b916bc396ebeb95bec4277f71f250d913d/neo4j-kernel-api-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-import-tool/3.5.29/87d9ea3c7d871bca9f9bb1a2e4b613132d8dc1d6/neo4j-import-tool-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-planner-spi-3.5/3.5.29/35713cc14024a42f00f1ea6e36f75059eb6b0aed/neo4j-cypher-planner-spi-3.5-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-compiler-2.3/2.3.12/72ac3a861e32b681461d74523bfdadeeb6f8a72b/neo4j-cypher-compiler-2.3-2.3.12.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-csv/3.5.29/8534779ab0311e16b3506ebc5bbe5caf8745be52/neo4j-csv-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-util-3.5/3.5.29/ff51ab43a7a36df0f75da47a9e34fa05b27e1664/neo4j-util-3.5-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-annotation-processors/3.5.29/bf88c19a3b2fdb553b9540b0a3aa334f6180cc6c/neo4j-annotation-processors-3.5.29.jar
+2022-04-06 16:52:21.874+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-consistency-check/3.5.29/71b61b1fecf1daf60c450ebad335db581a104a56/neo4j-consistency-check-3.5.29.jar
+2022-04-06 16:52:21.875+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15on/1.68/46a080368d38b428d237a59458f9bc915222894d/bcprov-jdk15on-1.68.jar
+2022-04-06 16:52:21.875+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-expression-3.4/3.4.18/3a5c45ab718f96c42b6c08af5ccc0e33becb11b0/neo4j-cypher-expression-3.4-3.4.18.jar
+2022-04-06 16:52:21.875+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-configuration/3.5.29/6b69f6a8917368e032cbd6a2ebb1a4dc56c9052c/neo4j-configuration-3.5.29.jar
+2022-04-06 16:52:21.875+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-ssl/3.5.29/6bf87b9949c0a99c22bd8ba9a764b72a8a939fb5/neo4j-ssl-3.5.29.jar
+2022-04-06 16:52:21.875+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-unsafe/3.5.29/c11bde6735aeab4c653edb9c5f845b42933c0262/neo4j-unsafe-3.5.29.jar
+2022-04-06 16:52:21.875+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-collections/3.5.29/7447c4f7984bbbf279083885ba64d405031e4e45/neo4j-collections-3.5.29.jar
+2022-04-06 16:52:21.875+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/ba035118bc8bac37d7eff77700720999acd9986d/j2objc-annotations-1.3.jar
+2022-04-06 16:52:21.875+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-lucene-index/3.5.29/e2e699ebedc75302ffef12ed818e54f234f78a0e/neo4j-lucene-index-3.5.29.jar
+2022-04-06 16:52:21.875+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-planner-3.5/3.5.29/3d639952b5eeec74baafcdf73ca50185f4df9fe0/neo4j-cypher-planner-3.5-3.5.29.jar
+2022-04-06 16:52:21.875+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-ast-3.5/3.5.29/b0074538f5c1d4e5fc07fdee414ec8de2f2a356c/neo4j-ast-3.5-3.5.29.jar
+2022-04-06 16:52:21.875+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-frontend-2.3/2.3.12/d87e903d0b8a10b34ff8f6372362777e51bfbfbe/neo4j-cypher-frontend-2.3-2.3.12.jar
+2022-04-06 16:52:21.875+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-cypher-util-3.4/3.4.18/a2e18569bcd6ab53e0f840b0db8d96f6aa9849d2/neo4j-cypher-util-3.4-3.4.18.jar
+2022-04-06 16:52:21.875+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-graphdb-api/3.5.29/ff2105b29798c83106cf6d90422716031190a9ab/neo4j-graphdb-api-3.5.29.jar
+2022-04-06 16:52:21.876+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15on/1.68/81da950604ff0b2652348cbd2b48fde46ced9867/bcpkix-jdk15on-1.68.jar
+2022-04-06 16:52:21.876+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.eclipse.collections/eclipse-collections-api/9.2.0/d106fd8588e542d2ee9d31d3e057af8bcb813396/eclipse-collections-api-9.2.0.jar
+2022-04-06 16:52:21.876+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-kernel/3.5.29/e625dd6bb4db32c3a05d99b6a5430ce0465b0e0c/neo4j-kernel-3.5.29.jar
+2022-04-06 16:52:21.876+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-concurrent/3.5.29/b873d5006da6b4ca7bf075bf28d0d6c8b931b514/neo4j-concurrent-3.5.29.jar
+2022-04-06 16:52:21.876+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/net.sf.opencsv/opencsv/2.3/c23708cdb9e80a144db433e23344a788a1fd6599/opencsv-2.3.jar
+2022-04-06 16:52:21.876+0000 INFO [o.n.i.d.DiagnosticsManager]  [classpath] /Users/bhaskarkrishnag/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/6.2/a9690730f92cc79eeadc20e400ebb41eccce10b1/asm-util-6.2.jar
+2022-04-06 16:52:21.876+0000 INFO [o.n.i.d.DiagnosticsManager] Library path:
+2022-04-06 16:52:21.876+0000 INFO [o.n.i.d.DiagnosticsManager] /Users/bhaskarkrishnag/Library/Java/Extensions
+2022-04-06 16:52:21.876+0000 INFO [o.n.i.d.DiagnosticsManager] /Library/Java/Extensions
+2022-04-06 16:52:21.876+0000 INFO [o.n.i.d.DiagnosticsManager] /Network/Library/Java/Extensions
+2022-04-06 16:52:21.876+0000 INFO [o.n.i.d.DiagnosticsManager] /System/Library/Java/Extensions
+2022-04-06 16:52:21.876+0000 INFO [o.n.i.d.DiagnosticsManager] /usr/lib/java
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] /Users/bhaskarkrishnag/IdeaProjects/AMIE
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] System.properties:
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] sun.jnu.encoding = UTF-8
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] sun.arch.data.model = 64
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] user.variant = 
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] user.timezone = America/New_York
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] user.country = US
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] sun.java.launcher = SUN_STANDARD
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] sun.boot.library.path = /Library/Java/JavaVirtualMachines/jdk-15.0.2.jdk/Contents/Home/lib
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] sun.java.command = edu.rit.gdb.AMIE
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] http.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] jdk.debug = release
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] sun.cpu.endian = little
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] user.home = /Users/bhaskarkrishnag
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] user.language = en
+2022-04-06 16:52:21.877+0000 INFO [o.n.i.d.DiagnosticsManager] file.separator = /
+2022-04-06 16:52:21.878+0000 INFO [o.n.i.d.DiagnosticsManager] sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+2022-04-06 16:52:21.878+0000 INFO [o.n.i.d.DiagnosticsManager] ftp.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2022-04-06 16:52:21.878+0000 INFO [o.n.i.d.DiagnosticsManager] user.name = bhaskarkrishnag
+2022-04-06 16:52:21.878+0000 INFO [o.n.i.d.DiagnosticsManager] path.separator = :
+2022-04-06 16:52:21.878+0000 INFO [o.n.i.d.DiagnosticsManager] file.encoding = UTF-8
+2022-04-06 16:52:21.878+0000 INFO [o.n.i.d.DiagnosticsManager] user.dir = /Users/bhaskarkrishnag/IdeaProjects/AMIE
+2022-04-06 16:52:21.878+0000 INFO [o.n.i.d.DiagnosticsManager] sun.io.unicode.encoding = UnicodeBig
+2022-04-06 16:52:21.878+0000 INFO [o.n.i.d.DiagnosticsManager] socksNonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2022-04-06 16:52:21.878+0000 INFO [o.n.i.d.DiagnosticsManager] (IANA) TimeZone Database Version:
+2022-04-06 16:52:21.934+0000 INFO [o.n.i.d.DiagnosticsManager]   TimeZone version: 2020d (available for 600 zone identifiers)
+2022-04-06 16:52:21.936+0000 INFO [o.n.i.d.DiagnosticsManager] Network information:
+2022-04-06 16:52:21.944+0000 INFO [o.n.i.d.DiagnosticsManager] Interface utun3:
+2022-04-06 16:52:21.946+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:9572:8ff6:4dc2:f3e4%utun3
+2022-04-06 16:52:21.948+0000 INFO [o.n.i.d.DiagnosticsManager] Interface utun2:
+2022-04-06 16:52:21.948+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:3476:a374:654a:2b75%utun2
+2022-04-06 16:52:21.948+0000 INFO [o.n.i.d.DiagnosticsManager] Interface utun1:
+2022-04-06 16:52:21.949+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:4e76:53f9:8d03:b549%utun1
+2022-04-06 16:52:21.949+0000 INFO [o.n.i.d.DiagnosticsManager] Interface utun0:
+2022-04-06 16:52:21.949+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:5a67:f4c3:aaa8:f6d6%utun0
+2022-04-06 16:52:21.949+0000 INFO [o.n.i.d.DiagnosticsManager] Interface llw0:
+2022-04-06 16:52:21.949+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:544a:43ff:fea4:663e%llw0
+2022-04-06 16:52:21.950+0000 INFO [o.n.i.d.DiagnosticsManager] Interface awdl0:
+2022-04-06 16:52:21.950+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:544a:43ff:fea4:663e%awdl0
+2022-04-06 16:52:21.950+0000 INFO [o.n.i.d.DiagnosticsManager] Interface anpi0:
+2022-04-06 16:52:21.950+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:1c00:d1ff:fe0c:3835%anpi0
+2022-04-06 16:52:21.951+0000 INFO [o.n.i.d.DiagnosticsManager] Interface anpi1:
+2022-04-06 16:52:21.951+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:1c00:d1ff:fe0c:3836%anpi1
+2022-04-06 16:52:21.951+0000 INFO [o.n.i.d.DiagnosticsManager] Interface en0:
+2022-04-06 16:52:21.951+0000 INFO [o.n.i.d.DiagnosticsManager]     address: 2620:8d:8000:1088:1cbf:1a9c:2008:77c2%en0
+2022-04-06 16:52:21.951+0000 INFO [o.n.i.d.DiagnosticsManager]     address: 2620:8d:8000:1088:1044:1759:9551:589f%en0
+2022-04-06 16:52:21.952+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:1869:ec4b:4b35:57a6%en0
+2022-04-06 16:52:21.952+0000 INFO [o.n.i.d.DiagnosticsManager]     address: 129.21.137.41
+2022-04-06 16:52:21.953+0000 INFO [o.n.i.d.DiagnosticsManager] Interface lo0:
+2022-04-06 16:52:21.953+0000 INFO [o.n.i.d.DiagnosticsManager]     address: fe80:0:0:0:0:0:0:1%lo0
+2022-04-06 16:52:21.953+0000 INFO [o.n.i.d.DiagnosticsManager]     address: 0:0:0:0:0:0:0:1%lo0
+2022-04-06 16:52:21.953+0000 INFO [o.n.i.d.DiagnosticsManager]     address: 127.0.0.1
+2022-04-06 16:52:21.953+0000 INFO [o.n.i.d.DiagnosticsManager] --- INITIALIZED diagnostics END ---
+2022-04-06 16:52:22.318+0000 INFO [o.n.k.i.s.f.RecordFormatSelector] Selected RecordFormat:StandardV3_4[v0.A.9] record format from store /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db
+2022-04-06 16:52:22.363+0000 INFO [o.n.k.i.s.f.RecordFormatSelector] Selected RecordFormat:StandardV3_4[v0.A.9] record format from store /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db
+2022-04-06 16:52:22.363+0000 INFO [o.n.k.i.s.f.RecordFormatSelector] Format not configured. Selected format from the store: RecordFormat:StandardV3_4[v0.A.9]
+2022-04-06 16:52:22.818+0000 INFO [o.n.k.i.i.l.NativeLabelScanStore] Label index cleanup job registered
+2022-04-06 16:52:22.821+0000 INFO [o.n.k.i.i.l.NativeLabelScanStore] Label index cleanup job started
+2022-04-06 16:52:22.828+0000 INFO [o.n.k.NeoStoreDataSource] No check point found in transaction log
+2022-04-06 16:52:22.828+0000 INFO [o.n.k.i.i.l.NativeLabelScanStore] Label index cleanup job finished: Number of pages visited: 2, Number of cleaned crashed pointers: 0, Time spent: 4ms
+2022-04-06 16:52:22.828+0000 INFO [o.n.k.i.i.l.NativeLabelScanStore] Label index cleanup job closed
+2022-04-06 16:52:22.828+0000 INFO [o.n.k.NeoStoreDataSource] Recovery required from position LogPosition{logVersion=0, byteOffset=16}
+2022-04-06 16:52:22.849+0000 INFO [o.n.k.r.Recovery]   10% completed
+2022-04-06 16:52:22.850+0000 INFO [o.n.k.r.Recovery]   20% completed
+2022-04-06 16:52:22.851+0000 INFO [o.n.k.r.Recovery]   30% completed
+2022-04-06 16:52:22.851+0000 INFO [o.n.k.r.Recovery]   40% completed
+2022-04-06 16:52:22.852+0000 INFO [o.n.k.r.Recovery]   50% completed
+2022-04-06 16:52:22.852+0000 INFO [o.n.k.r.Recovery]   60% completed
+2022-04-06 16:52:22.853+0000 INFO [o.n.k.r.Recovery]   70% completed
+2022-04-06 16:52:22.855+0000 INFO [o.n.k.r.Recovery]   80% completed
+2022-04-06 16:52:22.856+0000 INFO [o.n.k.r.Recovery]   90% completed
+2022-04-06 16:52:22.857+0000 INFO [o.n.k.r.Recovery]   100% completed
+2022-04-06 16:52:22.858+0000 INFO [o.n.k.NeoStoreDataSource] No recovery required
+2022-04-06 16:52:22.859+0000 INFO [o.n.k.i.s.DynamicArrayStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.nodestore.db.labels] ...
+2022-04-06 16:52:22.900+0000 INFO [o.n.k.i.s.DynamicArrayStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.nodestore.db.labels] high id=1 (defragged=0)
+2022-04-06 16:52:22.900+0000 INFO [o.n.k.i.s.DynamicArrayStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.nodestore.db.labels rebuild id generator, highId=1 defragged count=0
+2022-04-06 16:52:22.900+0000 INFO [o.n.k.i.s.NodeStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.nodestore.db] ...
+2022-04-06 16:52:22.942+0000 INFO [o.n.k.i.s.NodeStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.nodestore.db] high id=46440 (defragged=0)
+2022-04-06 16:52:22.942+0000 INFO [o.n.k.i.s.NodeStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.nodestore.db rebuild id generator, highId=46440 defragged count=0
+2022-04-06 16:52:22.942+0000 INFO [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.index.keys] ...
+2022-04-06 16:52:22.979+0000 INFO [o.n.k.i.s.DynamicStringStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.index.keys] high id=1 (defragged=0)
+2022-04-06 16:52:22.979+0000 INFO [o.n.k.i.s.DynamicStringStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.index.keys rebuild id generator, highId=1 defragged count=0
+2022-04-06 16:52:22.979+0000 INFO [o.n.k.i.s.PropertyKeyTokenStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.index] ...
+2022-04-06 16:52:23.016+0000 INFO [o.n.k.i.s.PropertyKeyTokenStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.index] high id=0 (defragged=0)
+2022-04-06 16:52:23.016+0000 INFO [o.n.k.i.s.PropertyKeyTokenStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.index rebuild id generator, highId=0 defragged count=0
+2022-04-06 16:52:23.070+0000 INFO [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.strings] ...
+2022-04-06 16:52:23.106+0000 INFO [o.n.k.i.s.DynamicStringStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.strings] high id=1 (defragged=0)
+2022-04-06 16:52:23.106+0000 INFO [o.n.k.i.s.DynamicStringStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.strings rebuild id generator, highId=1 defragged count=0
+2022-04-06 16:52:23.106+0000 INFO [o.n.k.i.s.DynamicArrayStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.arrays] ...
+2022-04-06 16:52:23.143+0000 INFO [o.n.k.i.s.DynamicArrayStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.arrays] high id=1 (defragged=0)
+2022-04-06 16:52:23.143+0000 INFO [o.n.k.i.s.DynamicArrayStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db.arrays rebuild id generator, highId=1 defragged count=0
+2022-04-06 16:52:23.144+0000 INFO [o.n.k.i.s.PropertyStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db] ...
+2022-04-06 16:52:23.182+0000 INFO [o.n.k.i.s.PropertyStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db] high id=0 (defragged=0)
+2022-04-06 16:52:23.184+0000 INFO [o.n.k.i.s.PropertyStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.propertystore.db rebuild id generator, highId=0 defragged count=0
+2022-04-06 16:52:23.184+0000 INFO [o.n.k.i.s.RelationshipStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshipstore.db] ...
+2022-04-06 16:52:23.232+0000 INFO [o.n.k.i.s.RelationshipStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshipstore.db] high id=46654 (defragged=0)
+2022-04-06 16:52:23.233+0000 INFO [o.n.k.i.s.RelationshipStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshipstore.db rebuild id generator, highId=46654 defragged count=0
+2022-04-06 16:52:23.233+0000 INFO [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshiptypestore.db.names] ...
+2022-04-06 16:52:23.273+0000 INFO [o.n.k.i.s.DynamicStringStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshiptypestore.db.names] high id=34 (defragged=0)
+2022-04-06 16:52:23.273+0000 INFO [o.n.k.i.s.DynamicStringStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshiptypestore.db.names rebuild id generator, highId=34 defragged count=0
+2022-04-06 16:52:23.273+0000 INFO [o.n.k.i.s.RelationshipTypeTokenStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshiptypestore.db] ...
+2022-04-06 16:52:23.312+0000 INFO [o.n.k.i.s.RelationshipTypeTokenStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshiptypestore.db] high id=33 (defragged=0)
+2022-04-06 16:52:23.312+0000 INFO [o.n.k.i.s.RelationshipTypeTokenStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshiptypestore.db rebuild id generator, highId=33 defragged count=0
+2022-04-06 16:52:23.368+0000 INFO [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.labeltokenstore.db.names] ...
+2022-04-06 16:52:23.406+0000 INFO [o.n.k.i.s.DynamicStringStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.labeltokenstore.db.names] high id=1 (defragged=0)
+2022-04-06 16:52:23.407+0000 INFO [o.n.k.i.s.DynamicStringStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.labeltokenstore.db.names rebuild id generator, highId=1 defragged count=0
+2022-04-06 16:52:23.407+0000 INFO [o.n.k.i.s.LabelTokenStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.labeltokenstore.db] ...
+2022-04-06 16:52:23.445+0000 INFO [o.n.k.i.s.LabelTokenStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.labeltokenstore.db] high id=0 (defragged=0)
+2022-04-06 16:52:23.446+0000 INFO [o.n.k.i.s.LabelTokenStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.labeltokenstore.db rebuild id generator, highId=0 defragged count=0
+2022-04-06 16:52:23.501+0000 INFO [o.n.k.i.s.SchemaStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.schemastore.db] ...
+2022-04-06 16:52:23.539+0000 INFO [o.n.k.i.s.SchemaStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.schemastore.db] high id=1 (defragged=0)
+2022-04-06 16:52:23.539+0000 INFO [o.n.k.i.s.SchemaStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.schemastore.db rebuild id generator, highId=1 defragged count=0
+2022-04-06 16:52:23.539+0000 INFO [o.n.k.i.s.RelationshipGroupStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshipgroupstore.db] ...
+2022-04-06 16:52:23.578+0000 INFO [o.n.k.i.s.RelationshipGroupStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshipgroupstore.db] high id=394 (defragged=0)
+2022-04-06 16:52:23.578+0000 INFO [o.n.k.i.s.RelationshipGroupStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.relationshipgroupstore.db rebuild id generator, highId=394 defragged count=0
+2022-04-06 16:52:23.579+0000 INFO [o.n.k.i.s.MetaDataStore] Rebuilding id generator for[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore] ...
+2022-04-06 16:52:23.618+0000 INFO [o.n.k.i.s.MetaDataStore] [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore] high id=15 (defragged=0)
+2022-04-06 16:52:23.619+0000 INFO [o.n.k.i.s.MetaDataStore] /Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore rebuild id generator, highId=15 defragged count=0
+2022-04-06 16:52:23.650+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:Versions START ---
+2022-04-06 16:52:23.650+0000 INFO [o.n.i.d.DiagnosticsManager] Graph Database: community single StoreId{creationTime=1649261787616, randomId=1988336196583566738, storeVersion=16094931155187206, upgradeTime=1649261787616, upgradeId=1}
+2022-04-06 16:52:23.650+0000 INFO [o.n.i.d.DiagnosticsManager] Kernel version: 3.5.29,916ddf482c3248e475a56eca4163c85033080c10
+2022-04-06 16:52:23.650+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:Versions END ---
+2022-04-06 16:52:23.652+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_VERSIONS START ---
+2022-04-06 16:52:23.652+0000 INFO [o.n.i.d.DiagnosticsManager] Store versions:
+2022-04-06 16:52:23.654+0000 INFO [o.n.i.d.DiagnosticsManager]   ArrayPropertyStore[neostore.nodestore.db.labels] v0.A.9
+2022-04-06 16:52:23.655+0000 INFO [o.n.i.d.DiagnosticsManager]   NodeStore[neostore.nodestore.db] v0.A.9
+2022-04-06 16:52:23.655+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.propertystore.db.index.keys] v0.A.9
+2022-04-06 16:52:23.656+0000 INFO [o.n.i.d.DiagnosticsManager]   PropertyIndexStore[neostore.propertystore.db.index] v0.A.9
+2022-04-06 16:52:23.657+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.propertystore.db.strings] v0.A.9
+2022-04-06 16:52:23.658+0000 INFO [o.n.i.d.DiagnosticsManager]   ArrayPropertyStore[neostore.propertystore.db.arrays] v0.A.9
+2022-04-06 16:52:23.659+0000 INFO [o.n.i.d.DiagnosticsManager]   PropertyStore[neostore.propertystore.db] v0.A.9
+2022-04-06 16:52:23.660+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipStore[neostore.relationshipstore.db] v0.A.9
+2022-04-06 16:52:23.661+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.relationshiptypestore.db.names] v0.A.9
+2022-04-06 16:52:23.662+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipTypeStore[neostore.relationshiptypestore.db] v0.A.9
+2022-04-06 16:52:23.663+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.labeltokenstore.db.names] v0.A.9
+2022-04-06 16:52:23.664+0000 INFO [o.n.i.d.DiagnosticsManager]   LabelTokenStore[neostore.labeltokenstore.db] v0.A.9
+2022-04-06 16:52:23.665+0000 INFO [o.n.i.d.DiagnosticsManager]   SchemaStore[neostore.schemastore.db] v0.A.9
+2022-04-06 16:52:23.665+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipGroupStore[neostore.relationshipgroupstore.db] v0.A.9
+2022-04-06 16:52:23.666+0000 INFO [o.n.i.d.DiagnosticsManager]   NeoStore[neostore] v0.A.9
+2022-04-06 16:52:23.666+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_VERSIONS END ---
+2022-04-06 16:52:23.666+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_ID_USAGE START ---
+2022-04-06 16:52:23.666+0000 INFO [o.n.i.d.DiagnosticsManager] Id usage:
+2022-04-06 16:52:23.668+0000 INFO [o.n.i.d.DiagnosticsManager]   ArrayPropertyStore[neostore.nodestore.db.labels]: used=1 high=0
+2022-04-06 16:52:23.669+0000 INFO [o.n.i.d.DiagnosticsManager]   NodeStore[neostore.nodestore.db]: used=46440 high=46439
+2022-04-06 16:52:23.670+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.propertystore.db.index.keys]: used=1 high=0
+2022-04-06 16:52:23.671+0000 INFO [o.n.i.d.DiagnosticsManager]   PropertyIndexStore[neostore.propertystore.db.index]: used=0 high=-1
+2022-04-06 16:52:23.672+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.propertystore.db.strings]: used=1 high=0
+2022-04-06 16:52:23.674+0000 INFO [o.n.i.d.DiagnosticsManager]   ArrayPropertyStore[neostore.propertystore.db.arrays]: used=1 high=0
+2022-04-06 16:52:23.675+0000 INFO [o.n.i.d.DiagnosticsManager]   PropertyStore[neostore.propertystore.db]: used=0 high=-1
+2022-04-06 16:52:23.676+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipStore[neostore.relationshipstore.db]: used=46654 high=46653
+2022-04-06 16:52:23.677+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.relationshiptypestore.db.names]: used=34 high=33
+2022-04-06 16:52:23.679+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipTypeStore[neostore.relationshiptypestore.db]: used=33 high=32
+2022-04-06 16:52:23.680+0000 INFO [o.n.i.d.DiagnosticsManager]   StringPropertyStore[neostore.labeltokenstore.db.names]: used=1 high=0
+2022-04-06 16:52:23.680+0000 INFO [o.n.i.d.DiagnosticsManager]   LabelTokenStore[neostore.labeltokenstore.db]: used=0 high=-1
+2022-04-06 16:52:23.681+0000 INFO [o.n.i.d.DiagnosticsManager]   SchemaStore[neostore.schemastore.db]: used=1 high=0
+2022-04-06 16:52:23.682+0000 INFO [o.n.i.d.DiagnosticsManager]   RelationshipGroupStore[neostore.relationshipgroupstore.db]: used=394 high=393
+2022-04-06 16:52:23.684+0000 INFO [o.n.i.d.DiagnosticsManager]   NeoStore[neostore]: used=15 high=14
+2022-04-06 16:52:23.685+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_ID_USAGE END ---
+2022-04-06 16:52:23.685+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_RECORDS START ---
+2022-04-06 16:52:23.686+0000 INFO [o.n.i.d.DiagnosticsManager] Neostore records:
+2022-04-06 16:52:23.686+0000 INFO [o.n.i.d.DiagnosticsManager] TIME (Creation time): 1649261787616
+2022-04-06 16:52:23.686+0000 INFO [o.n.i.d.DiagnosticsManager] RANDOM_NUMBER (Random number for store id): 1988336196583566738
+2022-04-06 16:52:23.687+0000 INFO [o.n.i.d.DiagnosticsManager] LOG_VERSION (Current log version): 0
+2022-04-06 16:52:23.687+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_TRANSACTION_ID (Last committed transaction): 1
+2022-04-06 16:52:23.687+0000 INFO [o.n.i.d.DiagnosticsManager] STORE_VERSION (Store format version): 16094931155187206
+2022-04-06 16:52:23.687+0000 INFO [o.n.i.d.DiagnosticsManager] FIRST_GRAPH_PROPERTY (First property record containing graph properties): -1
+2022-04-06 16:52:23.687+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_CONSTRAINT_TRANSACTION (Last committed transaction containing constraint changes): 0
+2022-04-06 16:52:23.687+0000 INFO [o.n.i.d.DiagnosticsManager] UPGRADE_TRANSACTION_ID (Transaction id most recent upgrade was performed at): 1
+2022-04-06 16:52:23.687+0000 INFO [o.n.i.d.DiagnosticsManager] UPGRADE_TIME (Time of last upgrade): 1649261787616
+2022-04-06 16:52:23.687+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_TRANSACTION_CHECKSUM (Checksum of last committed transaction): 0
+2022-04-06 16:52:23.687+0000 INFO [o.n.i.d.DiagnosticsManager] UPGRADE_TRANSACTION_CHECKSUM (Checksum of transaction id the most recent upgrade was performed at): 0
+2022-04-06 16:52:23.687+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_CLOSED_TRANSACTION_LOG_VERSION (Log version where the last transaction commit entry has been written into): 0
+2022-04-06 16:52:23.687+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_CLOSED_TRANSACTION_LOG_BYTE_OFFSET (Byte offset in the log file where the last transaction commit entry has been written into): 16
+2022-04-06 16:52:23.687+0000 INFO [o.n.i.d.DiagnosticsManager] LAST_TRANSACTION_COMMIT_TIMESTAMP (Commit time timestamp for last committed transaction): 0
+2022-04-06 16:52:23.687+0000 INFO [o.n.i.d.DiagnosticsManager] UPGRADE_TRANSACTION_COMMIT_TIMESTAMP (Commit timestamp of transaction the most recent upgrade was performed at): 0
+2022-04-06 16:52:23.687+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_RECORDS END ---
+2022-04-06 16:52:23.688+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for TRANSACTION_RANGE START ---
+2022-04-06 16:52:23.688+0000 INFO [o.n.i.d.DiagnosticsManager] Transaction log:
+2022-04-06 16:52:23.688+0000 INFO [o.n.i.d.DiagnosticsManager] No transactions found in any log
+2022-04-06 16:52:23.689+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for TRANSACTION_RANGE END ---
+2022-04-06 16:52:23.694+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:StoreFiles START ---
+2022-04-06 16:52:23.696+0000 INFO [o.n.i.d.DiagnosticsManager] Disk space on partition (Total / Free / Free %): 494384795648 / 180442230784 / 36
+2022-04-06 16:52:23.696+0000 INFO [o.n.i.d.DiagnosticsManager] Storage files: (filename : modification date - size)
+2022-04-06 16:52:23.702+0000 INFO [o.n.i.d.DiagnosticsManager]   debug.log: 2022-04-06T12:16:29-0400 - 631.00 B
+2022-04-06 16:52:23.703+0000 INFO [o.n.i.d.DiagnosticsManager]   index:
+2022-04-06 16:52:23.705+0000 INFO [o.n.i.d.DiagnosticsManager]   - Total: 2022-04-06T12:16:58-0400 - 0.00 B
+2022-04-06 16:52:23.706+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:52:23.708+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.counts.db.a: 2022-04-06T12:16:28-0400 - 96.00 B
+2022-04-06 16:52:23.711+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.counts.db.b: 2022-04-06T12:16:28-0400 - 1.19 kB
+2022-04-06 16:52:23.714+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.id: 2022-04-06T12:52:23-0400 - 9.00 B
+2022-04-06 16:52:23.716+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.labelscanstore.db: 2022-04-06T12:52:22-0400 - 40.00 kB
+2022-04-06 16:52:23.718+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.labeltokenstore.db: 2022-04-06T12:16:27-0400 - 0.00 B
+2022-04-06 16:52:23.719+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.labeltokenstore.db.id: 2022-04-06T12:52:23-0400 - 9.00 B
+2022-04-06 16:52:23.721+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.labeltokenstore.db.names: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:52:23.723+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.labeltokenstore.db.names.id: 2022-04-06T12:52:23-0400 - 9.00 B
+2022-04-06 16:52:23.724+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.nodestore.db: 2022-04-06T12:16:29-0400 - 687.83 kB
+2022-04-06 16:52:23.725+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.nodestore.db.id: 2022-04-06T12:52:22-0400 - 9.00 B
+2022-04-06 16:52:23.727+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.nodestore.db.labels: 2022-04-06T12:16:26-0400 - 8.00 kB
+2022-04-06 16:52:23.728+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.nodestore.db.labels.id: 2022-04-06T12:52:22-0400 - 9.00 B
+2022-04-06 16:52:23.729+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db: 2022-04-06T12:16:27-0400 - 0.00 B
+2022-04-06 16:52:23.731+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.arrays: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:52:23.732+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.arrays.id: 2022-04-06T12:52:23-0400 - 9.00 B
+2022-04-06 16:52:23.734+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.id: 2022-04-06T12:52:23-0400 - 9.00 B
+2022-04-06 16:52:23.736+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.index: 2022-04-06T12:16:27-0400 - 0.00 B
+2022-04-06 16:52:23.738+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.index.id: 2022-04-06T12:52:23-0400 - 9.00 B
+2022-04-06 16:52:23.739+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.index.keys: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:52:23.741+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.index.keys.id: 2022-04-06T12:52:22-0400 - 9.00 B
+2022-04-06 16:52:23.742+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.strings: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:52:23.744+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.propertystore.db.strings.id: 2022-04-06T12:52:23-0400 - 9.00 B
+2022-04-06 16:52:23.746+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshipgroupstore.db: 2022-04-06T12:16:29-0400 - 15.97 kB
+2022-04-06 16:52:23.748+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshipgroupstore.db.id: 2022-04-06T12:52:23-0400 - 9.00 B
+2022-04-06 16:52:23.749+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshipstore.db: 2022-04-06T12:16:29-0400 - 1.52 MB
+2022-04-06 16:52:23.751+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshipstore.db.id: 2022-04-06T12:52:23-0400 - 9.00 B
+2022-04-06 16:52:23.752+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshiptypestore.db: 2022-04-06T12:16:29-0400 - 8.00 kB
+2022-04-06 16:52:23.754+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshiptypestore.db.id: 2022-04-06T12:52:23-0400 - 9.00 B
+2022-04-06 16:52:23.757+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshiptypestore.db.names: 2022-04-06T12:16:29-0400 - 8.00 kB
+2022-04-06 16:52:23.759+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.relationshiptypestore.db.names.id: 2022-04-06T12:52:23-0400 - 9.00 B
+2022-04-06 16:52:23.761+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.schemastore.db: 2022-04-06T12:16:27-0400 - 8.00 kB
+2022-04-06 16:52:23.762+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.schemastore.db.id: 2022-04-06T12:52:23-0400 - 9.00 B
+2022-04-06 16:52:23.764+0000 INFO [o.n.i.d.DiagnosticsManager]   neostore.transaction.db.0: 2022-04-06T12:16:58-0400 - 16.00 B
+2022-04-06 16:52:23.764+0000 INFO [o.n.i.d.DiagnosticsManager] Storage summary: 
+2022-04-06 16:52:23.765+0000 INFO [o.n.i.d.DiagnosticsManager]   Total size of store: 2.32 MB
+2022-04-06 16:52:23.766+0000 INFO [o.n.i.d.DiagnosticsManager]   Total size of mapped files: 2.31 MB
+2022-04-06 16:52:23.766+0000 INFO [o.n.i.d.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:StoreFiles END ---
+2022-04-06 16:52:23.767+0000 INFO [o.n.k.a.DatabaseAvailabilityGuard] Fulfilling of requirement 'Database available' makes database db available.
+2022-04-06 16:52:23.768+0000 INFO [o.n.k.a.DatabaseAvailabilityGuard] Database db is ready.
+2022-04-06 16:52:23.768+0000 INFO [o.n.k.i.DatabaseHealth] Database health set to OK
+2022-04-06 16:52:31.035+0000 WARN [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=2701, gcTime=6, gcCount=1}
+2022-04-06 16:53:00.034+0000 WARN [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=11522, gcTime=0, gcCount=0}
+2022-04-06 16:53:00.142+0000 WARN [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=3567, gcTime=0, gcCount=0}

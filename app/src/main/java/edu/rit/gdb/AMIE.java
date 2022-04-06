@@ -160,7 +160,14 @@ public class AMIE {
      */
     public static void main(String[] args) {
 //        final String neo4jFolder = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/RoyalsGraph/db";
-        final String neo4jFolder = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db";
+//        final String neo4jFolder = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db";
+
+        if (args.length < 1) {
+            System.out.println("Please pass the folder containing the Neo4j KG.");
+            return;
+        }
+
+        final String neo4jFolder = args[0];
         GraphDatabaseService gdb = new GraphDatabaseFactory().newEmbeddedDatabase(new File(neo4jFolder));
 
         new AMIE().runAMIE(gdb);
