@@ -1,5 +1,6 @@
 package edu.rit.gdb.Utils;
 
+import edu.rit.gdb.AMIE;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Transaction;
 
@@ -14,17 +15,11 @@ public class ComputingMetrics {
      */
     public double getHeadCoverage(Rule r, GraphDatabaseService gdb){
 
-        Transaction tx = gdb.beginTx();
 
-        // Cypher query to get the relationship type and count #(x',y') with this type.
-        int count = ((Number)gdb.execute("MATCH ()-[:`" +r.getHeadAtom().getPredicateId() + "`]->() " +
-                        " RETURN COUNT(*) as cnt").next().get("cnt")).intValue();
+        double hc = computeSupport(r, gdb)*1.0/ AMIE.predicateCount.get(r.getHeadAtom().getPredicateId());
 
-        double hc = computeSupport(r, gdb)*1.0/count;
-        tx.close();
-
-        System.out.println("Head coverage: " + hc);
-        r.setHeadCount(hc);
+//        System.out.println("Head coverage: " + hc);
+        r.setHeadCoverage(hc);
         return hc;
     }
 
@@ -38,24 +33,17 @@ public class ComputingMetrics {
      * @param r rules.
      * @return support value.
      */
-    //TODO: execute the cypher query and return the result
     public int computeSupport(Rule r, GraphDatabaseService gdb){
 
         Transaction tx = gdb.beginTx();
         StringBuilder query = new StringBuilder();
         queryBuilder(r, query);
-//        query.append(" RETURN COUNT(*) as cnt");
-
-//        query.append(" WITH DISTINCT (n").append(r.getHeadAtom().getSubject()).append("), (n")
-//            .append(r.getHeadAtom().getObject()).append(") RETURN COUNT(*) as cnt");
 
         query.append(" RETURN COUNT(DISTINCT id(r)) as cnt");
 
-//        System.out.println("Support Query: " + query + "\n\n");
         int supp = ((Number)gdb.execute(query.toString()).next().get("cnt")).intValue();
         tx.close();
 
-        System.out.println("Support: " + supp);
         return supp;
     }
 
@@ -76,24 +64,21 @@ public class ComputingMetrics {
         Long o = r.getHeadAtom().getObject();
         StringBuilder query = new StringBuilder();
         queryBuilderForPCA(r, query);
+        query.append(" WITH DISTINCT n");
 
-        // Changing the object o to oPrime
-//        query.deleteCharAt(query.length()-1);
-//        query.append("Prime) WHERE id(n").append(o).append(") <> id(n").append(o).append("Prime) WITH DISTINCT n")
+        if (!r.isPartOfBody(o)) {
+            query.append(s).append(" RETURN COUNT(*) as cnt");
+        }
+        else {
+            query.append(s).append(", n").append(o).append(" RETURN COUNT(*) as cnt");
+        }
 
-        // WITH DISTINCT a, b RETURN COUNT(*)
-        query.append(" WITH DISTINCT n")
-        .append(s).append(", n").append(o).append(" RETURN COUNT(*) as cnt");
-
-        System.out.println("\nPCA Query: " + query);
+//        System.out.println("\nPCA Query: " + query);
         int count = ((Number)gdb.execute(query.toString()).next().get("cnt")).intValue();
         int supp = computeSupport(r, gdb);
-//        double conPCA = supp*1.0/(supp + count);
         double conPCA = supp*1.0/(count);
 
         tx.close();
-        System.out.println("count: " + count);
-        System.out.println("PCA Confidence: " + conPCA);
 
         r.setConfPCA(conPCA);
         return conPCA;
@@ -183,37 +168,15 @@ public class ComputingMetrics {
 
     }
 
+    /**
+     * This is a helper method to create a cypher query.
+     *
+     * @param query to append to.
+     * @param node in the db.
+     */
     public void appendNode(StringBuilder query, Long node){
         query.append("(n").append(node).append(")");
 
     }
-
-    /*------------------------------------------------------------------------------------------
-    /**
-     * This is a helper method to generate the QUERY string-builder.
-     * Reason: We want to preserve the locations of the entities from the head of a rule.
-     * example: R: r1(x,z1) ^ r2(y, z2) ^ r3(z1, z2) => r(x,y)
-     *             we want x and y to occur in the right positions in our generic query.
-     *
-     * @param query string builder.
-     * @param s subject of the head.
-     * @param o object of the head.
-     * @param node current atom.
-     * @param i placeHolder incrementer.
-
-    public void appendNode(StringBuilder query, Long s, Long o, Long node, AtomicInteger i){
-        String placeHolder = "z";
-
-        if (node.equals(s)){
-            query.append("(s)");
-        }
-        else if (node.equals(o)){
-            query.append("(o)");
-        }
-        else{
-            query.append("(").append(placeHolder).append(i.incrementAndGet()).append(")");
-        }
-    }
-    /*------------------------------------------------------------------------------------------*/
 
 }

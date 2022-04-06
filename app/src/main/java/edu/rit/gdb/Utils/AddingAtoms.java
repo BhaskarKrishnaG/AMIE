@@ -2,12 +2,15 @@ package edu.rit.gdb.Utils;
 
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Result;
+import org.neo4j.graphdb.Transaction;
 
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 public class AddingAtoms {
+
+    ComputingMetrics metricAssistant = new ComputingMetrics();
 
     /**
      * This method queries the KB to get a new relationship to extend the rule.
@@ -36,9 +39,6 @@ public class AddingAtoms {
             }
         }
 
-        // TODO: Sort this by decreasing relCount to break out faster.
-        // The relations are sorted by support, therefore we can stop once we have reached
-        // the minimum support.
         return result;
     }
 
@@ -49,10 +49,9 @@ public class AddingAtoms {
      *
      * @param gdb database.
      * @param r rule.
-     * @param predicate relation.
      * @param k threshold.
      */
-    public void addDanglingAtoms(GraphDatabaseService gdb, Rule r, Long predicate, double k, Set<Rule> danglingRules){
+    public void addDanglingAtoms(GraphDatabaseService gdb, Rule r, double k, Set<Rule> danglingRules){
 
         StringBuilder query = buildCurrentRule(r);
 
@@ -60,12 +59,12 @@ public class AddingAtoms {
         Set<Long> variables = r.getOpenVariables();
 
         // If the rule is closed then we need to try all combinations.
-        if (r.closed){
+        if (r.isClosed()){
             variables = r.getALLVariables();
         }
         for (Long v: variables) {
-            executeDandling(gdb, r, predicate, k, query, v, true, danglingRules);
-            executeDandling(gdb, r, predicate, k, query, v, false, danglingRules);
+            executeDandling(gdb, r, k, query, v, true, danglingRules);
+            executeDandling(gdb, r, k, query, v, false, danglingRules);
         }
 
     }
@@ -75,41 +74,63 @@ public class AddingAtoms {
      *
      * @param gdb database.
      * @param r rule.
-     * @param predicate relationship type.
      * @param k threshold.
      * @param query pre-built cypher query.
      * @param v variable.
      * @param subject s.
      * @param danglingRules all the new rules that meet the threshold.
      */
-    public void executeDandling(GraphDatabaseService gdb, Rule r, Long predicate,
+    public void executeDandling(GraphDatabaseService gdb, Rule r,
                                 double k, StringBuilder query, Long v, boolean subject, Set<Rule> danglingRules){
 
         StringBuilder tempQuery = new StringBuilder();
-        tempQuery.append("MATCH ");
+        Atom a = new Atom();
+        tempQuery.append(" MATCH ");
         if (subject) {
             appendNode(tempQuery, v);
-            tempQuery.append("-[r:`").append(predicate).append("`]->");
+            tempQuery.append("-[r]->");
             appendNode(tempQuery, v + 100); //THINK: Is there a better way?
+
+            a.setSubject(v);
+            a.setObject(v+100);
         }
         else {
             appendNode(tempQuery, v+100);
-            tempQuery.append("-[r:`").append(predicate).append("`]->");
+            tempQuery.append("-[r]->");
             appendNode(tempQuery, v); //THINK: Is there a better way?
-        }
-        tempQuery.append(" RETURN COUNT(DISTINCT id(r)) as support");
 
-        Result res = gdb.execute(query.toString() + tempQuery.toString());
-        if (res.hasNext()){
+            a.setSubject(v+100);
+            a.setObject(v);
+        }
+        tempQuery.append(" RETURN DISTINCT TYPE(r) as predicate, COUNT(r) as support ORDER BY support DESC");
+
+        Transaction tx = gdb.beginTx();
+
+        String finalQuery = query.toString() + tempQuery.toString();
+        Result res = gdb.execute(finalQuery);
+        while (res.hasNext()){
             Map<String, Object> relation = res.next();
             if (((Number)relation.get("support")).intValue() >= k){
-                // check for redundancy
-                Atom a = new Atom(predicate, v, v+100);
+                Atom newAtom = a.deepCopyAtom();
+                newAtom.setPredicateId(Long.parseLong((String)relation.get("predicate")));
                 Rule newRule = r.deepCopyRule();
-                newRule.getBodyAtoms().add(a);
+                newRule.getBodyAtoms().add(newAtom);
                 danglingRules.add(newRule);
+
+                // Let's set the properties of the rule
+                newRule.setParent(r);
+//                newRule.setHeadCoverage(((Number)relation.get("support")).intValue() * 1.0
+//                        / AMIE.predicateCount.get(Long.parseLong((String)relation.get("predicate"))));
+                metricAssistant.getHeadCoverage(newRule, gdb);
+                metricAssistant.computePCAConfidence(newRule, gdb);
+            }
+            // Since we are sorting the support by descending order remaining
+            // will also not satisfy the Threshold
+            else{
+                break;
             }
         }
+        tx.close();
     }
 
     /**
@@ -118,17 +139,17 @@ public class AddingAtoms {
      *
      * @param gdb database.
      * @param r rule.
-     * @param predicate relationship.
      * @param k threshold.
      * @param closedRules results.
      */
-    public void addClosingAtoms(GraphDatabaseService gdb, Rule r, Long predicate, double k, Set<Rule> closedRules){
+    public void addClosingAtoms(GraphDatabaseService gdb, Rule r, double k, Set<Rule> closedRules){
+        Transaction tx = gdb.beginTx();
         StringBuilder query = buildCurrentRule(r);
 
         Set<Long> sVariables = r.getALLVariables();
         Set<Long> oVariables = r.getALLVariables();
 
-        if (!r.closed) {
+        if (!r.isClosed()) {
             sVariables = r.getOpenVariables();
             oVariables = r.getOpenVariables();
         }
@@ -137,27 +158,44 @@ public class AddingAtoms {
             for (Long object: oVariables){
                 if (!subject.equals(object)){
                     StringBuilder tempQuery = new StringBuilder();
-                    tempQuery.append("MATCH ");
+                    tempQuery.append(" MATCH ");
                     appendNode(tempQuery, subject);
-                    tempQuery.append("-[r:`").append(predicate).append("`]->");
+                    tempQuery.append("-[r]->");
                     appendNode(tempQuery, object);
 
-                    tempQuery.append(" RETURN COUNT(DISTINCT id(r)) as support");
+                    tempQuery.append(" RETURN DISTINCT TYPE(r) as predicate, COUNT(r) as support ORDER BY support DESC");
+                    String finalQuery = query.toString() + tempQuery.toString();
 
-                    Result res = gdb.execute(query.toString() + tempQuery.toString());
-                    if (res.hasNext()){
+                    Result res = gdb.execute(finalQuery);
+                    while (res.hasNext()){
                         Map<String, Object> relation = res.next();
                         if (((Number)relation.get("support")).intValue() >= k){
                             // check for redundancy
-                            Atom a = new Atom(predicate, subject, object);
+                            Atom a = new Atom(Long.parseLong((String)relation.get("predicate")), subject, object);
                             Rule newRule = r.deepCopyRule();
                             newRule.getBodyAtoms().add(a);
-                            closedRules.add(newRule);
+
+                            // If this combination of subject and object already exists then move on to next.
+                            if (!r.containsAtom(a)) {
+                                closedRules.add(newRule);
+
+                                // Let's set the properties of the rule
+                                newRule.setParent(r);
+                                metricAssistant.getHeadCoverage(newRule, gdb);
+                                metricAssistant.computePCAConfidence(newRule, gdb);
+                            }
+                        }
+
+                        // Since we are sorting the support by descending order remaining
+                        // will also not satisfy the Threshold
+                        else{
+                            break;
                         }
                     }
                 }
             }
         }
+        tx.close();
     }
 
 
@@ -186,7 +224,7 @@ public class AddingAtoms {
         }
 
         appendNode(query,s);
-        query.append("-[`").append(p).append("`]->");
+        query.append("-[:`").append(p).append("`]->");
         appendNode(query,o);
 
         return query;

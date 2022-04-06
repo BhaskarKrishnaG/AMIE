@@ -9,28 +9,27 @@ public class Rule {
 
     Atom headAtom;
     Set<Atom> bodyAtoms;
-    Double headCount;
+    Double headCoverage;
     Double confPCA;
-    boolean closed;
 
     // Setting it to null cause the initial set of rules will not have parents.
     // TODO: Is there a better option?
-    Rule parent = null;
+    Set<Rule> parents = new HashSet<>();
 
-    public Rule getParent() {
-        return parent;
+    public Set<Rule> getParent() {
+        return parents;
     }
 
     public void setParent(Rule parent) {
-        this.parent = parent;
+        parents.add(parent);
     }
 
-    public Double getHeadCount() {
-        return headCount;
+    public Double getHeadCoverage() {
+        return headCoverage;
     }
 
-    public void setHeadCount(Double headCount) {
-        this.headCount = headCount;
+    public void setHeadCoverage(Double headCoverage) {
+        this.headCoverage = headCoverage;
     }
 
     public Double getConfPCA() {
@@ -56,13 +55,12 @@ public class Rule {
     public Rule(Atom headAtom, Set<Atom> bodyAtoms) {
         this.headAtom = headAtom;
         this.bodyAtoms = bodyAtoms;
-        this.headCount = 0.0;
+        this.headCoverage = 0.0;
         this.confPCA = 0.0;
     }
 
     public Rule() {
         bodyAtoms = new HashSet<>();
-        closed = false;
     }
 
     public Atom getHeadAtom() {
@@ -98,7 +96,7 @@ public class Rule {
 
 
     /**
-     * This method will return all the variables that occur less than twice within the rule.
+     * This method will return all the variables that occur ONCE within the rule.
      * If rule is NOT closed then we only need to join with non-closed variables so this method will
      * help up get those variables
      *
@@ -152,7 +150,7 @@ public class Rule {
      * @return true - if it's close.
      *         false - otherwise.
      */
-    public boolean checkIfClosed(){
+    public boolean isClosed(){
 
         HashMap<Long, AtomicInteger> countVariables = new HashMap<>();
         for (Atom eachAtom: getBodyAtoms()){
@@ -170,23 +168,134 @@ public class Rule {
             }
         }
 
-        // If none of the head variables are present in the map and they are not the same variables,
-        // then it's definitely not a closed rules.
-        if (!getHeadAtom().getSubject().equals(getHeadAtom().getObject())
-                && (!countVariables.containsKey(getHeadAtom().getSubject()) || !countVariables.containsKey(getHeadAtom().getObject()))){
+        // Both the head atom variables must be present in the map.
+        long s = getHeadAtom().getSubject();
+        long o = getHeadAtom().getObject();
+        if (!countVariables.containsKey(s)
+                || !countVariables.containsKey(o)){
             return false;
         }
 
-        for (AtomicInteger count: countVariables.values()){
-            if( count.intValue() < 2) {
+        for (Long var: countVariables.keySet()){
+            if( countVariables.get(var).intValue() < 2 && var != s && var != o) {
                 return false;
             }
         }
         return true;
     }
 
+
+    /**
+     * This method checks if an Atom is present within the rule.
+     *
+     * @param a Atom.
+     * @return True - If present.
+     *         False - Otherwise.
+     */
+    public boolean containsAtom(Atom a){
+        for (Atom atom: bodyAtoms){
+            if (atom.equals(a)) {
+                return true;
+            }
+        }
+
+        return headAtom.equals(a);
+    }
+
+
+    /**
+     * This method checks if a given variable part of any Atom that's in the body of the rule.
+     *
+     * @return - True if part.
+     *         - False otherwise
+     */
+    public boolean isPartOfBody(Long var){
+
+        for (Atom atom: getBodyAtoms()){
+            if (var.equals(atom.getSubject()) || var.equals(atom.getObject())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    /**
+     * This method will evaluate if two bodies are same(Similar).
+     * Since we are trying out combination of things while generating rules it's possible that we have arrived
+     * at the same rule while taking multiple paths. They might look different but be the same.
+     * Example: p1(x, y) ^ p2(y, z) => p3(x, z) and
+     *          p2(z, x) ^ p1(y, z) => p3(y, x) are the semantically same! but with different ordering of things
+     *          We want to be able to know this semantic equality.
+     *
+     * @param a body1
+     * @param b body2
+     * @return true - if semantically same.
+     *         false - otherwise.
+     */
+    public boolean areTwoBodiesSame(Set<Atom> a, Set<Atom> b){
+
+        HashMap<Long, Integer> aPredicates = new HashMap<>();
+        HashMap<Long, Integer> bPredicates = new HashMap<>();
+        if (a.size() != b.size()) {
+            return false;
+        }
+
+        // THINK: If I use AtomicInteger then we can use IncrementAndGet method to make things simpler,
+        // THINK: but this makes things complicated to compare two hashmaps as the AtomicInteger class does not
+        // THINK: implement the equals() and hashCode() methods from the Object class.
+        else {
+            for (Atom atom: a){
+                Long p = atom.getPredicateId();
+                if(aPredicates.containsKey(p)){
+                    int currentVal = aPredicates.get(p);
+                    aPredicates.put(p, currentVal + 1);
+                }
+                else {
+                    aPredicates.put(p, 1);
+                }
+            }
+            for (Atom atom: b){
+                Long p = atom.getPredicateId();
+                if(bPredicates.containsKey(p)){
+                    int currentVal = bPredicates.get(p);
+                    bPredicates.put(p, currentVal + 1);
+                }
+                else {
+                    bPredicates.put(atom.getPredicateId(), 1);
+                }
+            }
+
+            // If the predicates are different or of different numbers then the rules are different.
+            return aPredicates.size() == bPredicates.size() && aPredicates.equals(bPredicates);
+        }
+
+        // TODO: ? SubGraphMatching
+        // With the way I have designed the initial facts we only need check if number of 1's and 0's are same
+        // Even if we leak certain NOT-THE-SAME rules other checks will rule them out to be equal.
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rule rule = (Rule) o;
+        return Objects.equals(getHeadAtom(), rule.getHeadAtom())
+                && isClosed() == rule.isClosed()
+                && areTwoBodiesSame(getBodyAtoms(), rule.getBodyAtoms())
+                && Objects.equals(getHeadCoverage(), rule.getHeadCoverage())
+                && Objects.equals(getConfPCA(), rule.getConfPCA());
+    }
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getHeadAtom(), getBodyAtoms(), getHeadCoverage(), getConfPCA());
+    }
+
+
     @Override
     public String toString() {
-        return bodyAtoms.toString() + headAtom.toString();
+        return bodyAtoms.toString() + " =>"+ headAtom.toString();
     }
 }

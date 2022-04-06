@@ -16,10 +16,11 @@ public class AMIE {
 
     static Queue<Rule> queue = new LinkedList<>();
     static Set<Rule> output = new HashSet<>();
-    final static double MIN_CONFPCA = 0.1;
+    final static double MIN_confPCA = 0.0;
     final static double MIN_HC = 0.01;
     final static int MAX_LEN = 3;
     public AddingAtoms addAtoms = new AddingAtoms();
+    public static HashMap<Long, Integer> predicateCount = new HashMap<>();
 
 
     /**
@@ -48,24 +49,41 @@ public class AMIE {
 
 
     /**
+     * This method will store the count of number of facts per relation.
+     */
+    public void memorizePredicateCount(GraphDatabaseService gdb) {
+        Transaction tx = gdb.beginTx();
+
+        String query = "MATCH ()-[r]->() RETURN DISTINCT TYPE(r) as predicate, COUNT(r) as factCount";
+        Result relations = gdb.execute(query);
+        while (relations.hasNext()){
+            Map<String, Object> relation = relations.next();
+            predicateCount.put(Long.parseLong((String)relation.get("predicate")),
+                    ((Number)relation.get("factCount")).intValue());
+        }
+        tx.close();
+    }
+
+
+    /**
      * This is the main loop of the algorithm.
      *
-     * @param db graph database.
+     * @param gdb graph database.
      */
-    public void runAMIE(GraphDatabaseService db){
+    public void runAMIE(GraphDatabaseService gdb){
 
-        initializeQueue(db);
-        // Should I compute the metrics of these initial facts?
-        // Let's try
+        initializeQueue(gdb);
+        memorizePredicateCount(gdb);
+
         ComputingMetrics metricsAssistant = new ComputingMetrics();
         for(Rule r: queue){
-            metricsAssistant.getHeadCoverage(r, db);
+            metricsAssistant.getHeadCoverage(r, gdb);
         }
 
         while (!queue.isEmpty()){
             Rule currentRule = queue.remove();
 
-            boolean outputThisRule = currentRule.checkIfClosed()
+            boolean outputThisRule = currentRule.isClosed()
                     && betterThanParent(currentRule) && passesPCAThreshold(currentRule);
 
             // Perfect rule = confPCA(1.0)
@@ -74,28 +92,30 @@ public class AMIE {
             boolean furtherRefine = true;
 
             // If the rule is bigger than just the headAtom then we shall check if it's needs further refining.
-            if (currentRule.getLength() > 1)
-                furtherRefine = !(currentRule.getConfPCA() == 1.0);
+            if (currentRule.getLength() > 1) {
+                furtherRefine = (!(currentRule.getConfPCA() == 1.0) && currentRule.getLength() < MAX_LEN);
+            }
 
             if (furtherRefine) {
                 // Apply all mining operations.
-                double k = currentRule.getHeadCount() * MIN_HC;
-                Set<Long> promisingRel = addAtoms.getPossibleRelations(db, currentRule, k);
+                double k = currentRule.getHeadCoverage() * MIN_HC;
                 Set<Rule> tempRules = new HashSet<>();
 
-                //Think: Do we get promising relations inside these operators?
-                for (Long rel: promisingRel) {
-                    addAtoms.addDanglingAtoms(db, currentRule, rel, k, tempRules);
-                    addAtoms.addClosingAtoms(db, currentRule, rel, k, tempRules);
-                }
+                addAtoms.addDanglingAtoms(gdb, currentRule, k, tempRules);
+                addAtoms.addClosingAtoms(gdb, currentRule, k, tempRules);
 
-                System.out.println(queue.toString());
-                // TODO: check redundancy and add to final queue.
+                // Check redundancy and add to final queue.
+                for (Rule possibleNewRule: tempRules){
+                    if (!queue.contains(possibleNewRule)){
+                        queue.add(possibleNewRule);
+                    }
+                }
             }
 
             if (outputThisRule){
                 output.add(currentRule);
             }
+            System.out.println("Rules mined: " + output.size());
         }
     }
 
@@ -108,7 +128,7 @@ public class AMIE {
      */
     public boolean passesPCAThreshold(Rule r){
 
-        return r.getConfPCA() >= MIN_CONFPCA;
+        return r.getConfPCA() > MIN_confPCA;
     }
 
 
@@ -119,10 +139,17 @@ public class AMIE {
      * @return bool.
      */
     public boolean betterThanParent(Rule r){
-        Rule parent = r.getParent();
 
-        // TODO: AMIE implementation is going through all ancestors, do we need to as well?
-        return r.getConfPCA() >= parent.getConfPCA();
+        boolean isBetter = true;
+
+        for (Rule ancestor : r.getParent()) {
+            if (ancestor.getLength() > 1 && ancestor.isClosed()
+                    && r.getConfPCA() <= ancestor.getConfPCA()) {
+                isBetter = false;
+                break;
+            }
+        }
+        return isBetter;
     }
 
 
@@ -132,9 +159,16 @@ public class AMIE {
      * @param args //THINK: What all should the user pass?
      */
     public static void main(String[] args) {
-        final String neo4jFolder = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/RoyalsGraph/db";
+//        final String neo4jFolder = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/RoyalsGraph/db";
+        final String neo4jFolder = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db";
         GraphDatabaseService gdb = new GraphDatabaseFactory().newEmbeddedDatabase(new File(neo4jFolder));
 
         new AMIE().runAMIE(gdb);
+        System.out.println("\n\nThe mined Rules are: " + output.size());
+        for (Rule allRules: output){
+            System.out.println(allRules.toString());
+        }
+
+        gdb.shutdown();
     }
 }

@@ -1,5 +1,7 @@
 package edu.rit.gdb.Utils;
 
+import java.util.Objects;
+
 public class Atom {
     public Long predicateId;
     public String relationshipName;
@@ -60,6 +62,19 @@ public class Atom {
         newAtom.setObject(getObject());
 
         return newAtom;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Atom atom = (Atom) o;
+        return predicateId.equals(atom.predicateId) && subject.equals(atom.subject) && object.equals(atom.object);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(predicateId, subject, object);
     }
 
     @Override
