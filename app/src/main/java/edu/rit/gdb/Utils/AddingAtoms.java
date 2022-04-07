@@ -1,5 +1,6 @@
 package edu.rit.gdb.Utils;
 
+import edu.rit.gdb.AMIE;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Result;
 import org.neo4j.graphdb.Transaction;
@@ -102,7 +103,7 @@ public class AddingAtoms {
             a.setSubject(v+100);
             a.setObject(v);
         }
-        tempQuery.append(" RETURN DISTINCT TYPE(r) as predicate, COUNT(r) as support ORDER BY support DESC");
+        tempQuery.append(" RETURN DISTINCT TYPE(r) as predicate, COUNT(DISTINCT id(headRel)) as support ORDER BY support DESC");
 
         Transaction tx = gdb.beginTx();
 
@@ -112,16 +113,18 @@ public class AddingAtoms {
             Map<String, Object> relation = res.next();
             if (((Number)relation.get("support")).intValue() >= k){
                 Atom newAtom = a.deepCopyAtom();
-                newAtom.setPredicateId(Long.parseLong((String)relation.get("predicate")));
+                Long predicate = Long.parseLong((String)relation.get("predicate"));
+                newAtom.setPredicateId(predicate);
                 Rule newRule = r.deepCopyRule();
                 newRule.getBodyAtoms().add(newAtom);
                 danglingRules.add(newRule);
 
                 // Let's set the properties of the rule
                 newRule.setParent(r);
-//                newRule.setHeadCoverage(((Number)relation.get("support")).intValue() * 1.0
-//                        / AMIE.predicateCount.get(Long.parseLong((String)relation.get("predicate"))));
-                metricAssistant.getHeadCoverage(newRule, gdb);
+                int support = ((Number)relation.get("support")).intValue();
+                newRule.setSupport(support);
+                newRule.setHeadCoverage((support * 1.0)
+                        / AMIE.predicateCount.get(r.getHeadAtom().getPredicateId()));
                 metricAssistant.computePCAConfidence(newRule, gdb);
             }
             // Since we are sorting the support by descending order remaining
@@ -163,7 +166,7 @@ public class AddingAtoms {
                     tempQuery.append("-[r]->");
                     appendNode(tempQuery, object);
 
-                    tempQuery.append(" RETURN DISTINCT TYPE(r) as predicate, COUNT(r) as support ORDER BY support DESC");
+                    tempQuery.append(" RETURN DISTINCT TYPE(r) as predicate, COUNT(DISTINCT id(headRel)) as support ORDER BY support DESC");
                     String finalQuery = query.toString() + tempQuery.toString();
 
                     Result res = gdb.execute(finalQuery);
@@ -171,7 +174,8 @@ public class AddingAtoms {
                         Map<String, Object> relation = res.next();
                         if (((Number)relation.get("support")).intValue() >= k){
                             // check for redundancy
-                            Atom a = new Atom(Long.parseLong((String)relation.get("predicate")), subject, object);
+                            Long predicate = Long.parseLong((String)relation.get("predicate"));
+                            Atom a = new Atom(predicate, subject, object);
                             Rule newRule = r.deepCopyRule();
                             newRule.getBodyAtoms().add(a);
 
@@ -181,7 +185,10 @@ public class AddingAtoms {
 
                                 // Let's set the properties of the rule
                                 newRule.setParent(r);
-                                metricAssistant.getHeadCoverage(newRule, gdb);
+                                int support = ((Number)relation.get("support")).intValue();
+                                newRule.setSupport(support);
+                                newRule.setHeadCoverage((support * 1.0)
+                                        / AMIE.predicateCount.get(r.getHeadAtom().getPredicateId()));
                                 metricAssistant.computePCAConfidence(newRule, gdb);
                             }
                         }
@@ -224,7 +231,7 @@ public class AddingAtoms {
         }
 
         appendNode(query,s);
-        query.append("-[:`").append(p).append("`]->");
+        query.append("-[headRel:`").append(p).append("`]->");
         appendNode(query,o);
 
         return query;

@@ -44,6 +44,7 @@ public class ComputingMetrics {
         int supp = ((Number)gdb.execute(query.toString()).next().get("cnt")).intValue();
         tx.close();
 
+        r.setSupport(supp);
         return supp;
     }
 
@@ -73,11 +74,14 @@ public class ComputingMetrics {
             query.append(s).append(", n").append(o).append(" RETURN COUNT(*) as cnt");
         }
 
-//        System.out.println("\nPCA Query: " + query);
         int count = ((Number)gdb.execute(query.toString()).next().get("cnt")).intValue();
-        int supp = computeSupport(r, gdb);
-        double conPCA = supp*1.0/(count);
+        double conPCA = r.getSupport()*1.0/(count);
 
+//        if (r.isClosed()) {
+//            System.out.println("\nPCA Query: " + query);
+//            System.out.println("support: " + r.getSupport());
+//            System.out.println("count: " + count);
+//        }
         tx.close();
 
         r.setConfPCA(conPCA);

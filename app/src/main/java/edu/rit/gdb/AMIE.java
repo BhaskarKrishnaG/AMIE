@@ -8,6 +8,7 @@ import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Result;
 import org.neo4j.graphdb.Transaction;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
+import org.neo4j.graphdb.factory.GraphDatabaseSettings;
 
 import java.io.File;
 import java.util.*;
@@ -163,12 +164,14 @@ public class AMIE {
 //        final String neo4jFolder = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db";
 
         if (args.length < 1) {
-            System.out.println("Please pass the folder containing the Neo4j KG.");
+            System.out.println("Please pass the folder containing the Neo4j KB.");
             return;
         }
 
         final String neo4jFolder = args[0];
-        GraphDatabaseService gdb = new GraphDatabaseFactory().newEmbeddedDatabase(new File(neo4jFolder));
+        GraphDatabaseService gdb = new GraphDatabaseFactory().newEmbeddedDatabaseBuilder(new File(neo4jFolder))
+                .setConfig(GraphDatabaseSettings.pagecache_memory, "10G" )
+                .newGraphDatabase();
 
         new AMIE().runAMIE(gdb);
         System.out.println("\n\nThe mined Rules are: " + output.size());

@@ -11,6 +11,7 @@ public class Rule {
     Set<Atom> bodyAtoms;
     Double headCoverage;
     Double confPCA;
+    int support;
 
     // Setting it to null cause the initial set of rules will not have parents.
     // TODO: Is there a better option?
@@ -30,6 +31,14 @@ public class Rule {
 
     public void setHeadCoverage(Double headCoverage) {
         this.headCoverage = headCoverage;
+    }
+
+    public int getSupport() {
+        return support;
+    }
+
+    public void setSupport(int support) {
+        this.support = support;
     }
 
     public Double getConfPCA() {
