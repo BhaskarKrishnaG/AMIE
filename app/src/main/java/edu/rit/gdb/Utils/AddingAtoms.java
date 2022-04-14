@@ -5,6 +5,7 @@ import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Result;
 import org.neo4j.graphdb.Transaction;
 
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -103,35 +104,32 @@ public class AddingAtoms {
             a.setSubject(v+100);
             a.setObject(v);
         }
-        tempQuery.append(" RETURN DISTINCT TYPE(r) as predicate, COUNT(DISTINCT id(headRel)) as support ORDER BY support DESC");
+        tempQuery.append(" WITH TYPE(r) as predicate, COUNT(DISTINCT id(headRel)) as support" +
+                " WHERE support >= $k RETURN predicate, support");
 
         Transaction tx = gdb.beginTx();
 
         String finalQuery = query.toString() + tempQuery.toString();
-        Result res = gdb.execute(finalQuery);
+        System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + finalQuery);
+        Result res = gdb.execute(finalQuery, Map.of("k", k));
         while (res.hasNext()){
             Map<String, Object> relation = res.next();
-            if (((Number)relation.get("support")).intValue() >= k){
-                Atom newAtom = a.deepCopyAtom();
-                Long predicate = Long.parseLong((String)relation.get("predicate"));
-                newAtom.setPredicateId(predicate);
-                Rule newRule = r.deepCopyRule();
-                newRule.getBodyAtoms().add(newAtom);
-                danglingRules.add(newRule);
 
-                // Let's set the properties of the rule
-                newRule.setParent(r);
-                int support = ((Number)relation.get("support")).intValue();
-                newRule.setSupport(support);
-                newRule.setHeadCoverage((support * 1.0)
-                        / AMIE.predicateCount.get(r.getHeadAtom().getPredicateId()));
-                metricAssistant.computePCAConfidence(newRule, gdb);
-            }
-            // Since we are sorting the support by descending order remaining
-            // will also not satisfy the Threshold
-            else{
-                break;
-            }
+            Atom newAtom = a.deepCopyAtom();
+            Long predicate = Long.parseLong((String)relation.get("predicate"));
+            newAtom.setPredicateId(predicate);
+            Rule newRule = r.deepCopyRule();
+            newRule.getBodyAtoms().add(newAtom);
+            danglingRules.add(newRule);
+
+            // Let's set the properties of the rule
+            newRule.setParent(r);
+            int support = ((Number)relation.get("support")).intValue();
+            newRule.setSupport(support);
+            newRule.setHeadCoverage((support * 1.0)
+                    / AMIE.predicateCount.get(r.getHeadAtom().getPredicateId()));
+            metricAssistant.computePCAConfidence(newRule, gdb, false);
+
         }
         tx.close();
     }
@@ -157,46 +155,41 @@ public class AddingAtoms {
             oVariables = r.getOpenVariables();
         }
 
-        for (Long subject: sVariables){
-            for (Long object: oVariables){
+        for (Long subject: sVariables){ // {a, b}
+            for (Long object: oVariables){ // {a, b}
                 if (!subject.equals(object)){
+                    // b, a
                     StringBuilder tempQuery = new StringBuilder();
                     tempQuery.append(" MATCH ");
                     appendNode(tempQuery, subject);
                     tempQuery.append("-[r]->");
                     appendNode(tempQuery, object);
 
-                    tempQuery.append(" RETURN DISTINCT TYPE(r) as predicate, COUNT(DISTINCT id(headRel)) as support ORDER BY support DESC");
+                    tempQuery.append(" WITH TYPE(r) as predicate, COUNT(DISTINCT id(headRel)) as support" +
+                            " WHERE support >= $k RETURN predicate, support");
                     String finalQuery = query.toString() + tempQuery.toString();
 
-                    Result res = gdb.execute(finalQuery);
+                    System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + finalQuery);
+                    Result res = gdb.execute(finalQuery, Map.of("k", k));
                     while (res.hasNext()){
                         Map<String, Object> relation = res.next();
-                        if (((Number)relation.get("support")).intValue() >= k){
-                            // check for redundancy
-                            Long predicate = Long.parseLong((String)relation.get("predicate"));
-                            Atom a = new Atom(predicate, subject, object);
-                            Rule newRule = r.deepCopyRule();
-                            newRule.getBodyAtoms().add(a);
+                        // check for redundancy
+                        Long predicate = Long.parseLong((String)relation.get("predicate"));
+                        Atom a = new Atom(predicate, subject, object);
+                        Rule newRule = r.deepCopyRule();
+                        newRule.getBodyAtoms().add(a);
 
-                            // If this combination of subject and object already exists then move on to next.
-                            if (!r.containsAtom(a)) {
-                                closedRules.add(newRule);
+                        // If this combination of subject and object already exists then move on to next.
+                        if (!r.containsAtom(a)) {
+                            closedRules.add(newRule);
 
-                                // Let's set the properties of the rule
-                                newRule.setParent(r);
-                                int support = ((Number)relation.get("support")).intValue();
-                                newRule.setSupport(support);
-                                newRule.setHeadCoverage((support * 1.0)
-                                        / AMIE.predicateCount.get(r.getHeadAtom().getPredicateId()));
-                                metricAssistant.computePCAConfidence(newRule, gdb);
-                            }
-                        }
-
-                        // Since we are sorting the support by descending order remaining
-                        // will also not satisfy the Threshold
-                        else{
-                            break;
+                            // Let's set the properties of the rule
+                            newRule.setParent(r);
+                            int support = ((Number)relation.get("support")).intValue();
+                            newRule.setSupport(support);
+                            newRule.setHeadCoverage((support * 1.0)
+                                    / AMIE.predicateCount.get(r.getHeadAtom().getPredicateId()));
+                            metricAssistant.computePCAConfidence(newRule, gdb, false);
                         }
                     }
                 }

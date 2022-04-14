@@ -83,8 +83,9 @@ public class AMIE {
 
         while (!queue.isEmpty()){
             Rule currentRule = queue.remove();
+            boolean closed = currentRule.isClosed();
 
-            boolean outputThisRule = currentRule.isClosed()
+            boolean outputThisRule = closed
                     && betterThanParent(currentRule) && passesPCAThreshold(currentRule);
 
             // Perfect rule = confPCA(1.0)
@@ -94,7 +95,7 @@ public class AMIE {
 
             // If the rule is bigger than just the headAtom then we shall check if it's needs further refining.
             if (currentRule.getLength() > 1) {
-                furtherRefine = (!(currentRule.getConfPCA() == 1.0) && currentRule.getLength() < MAX_LEN);
+                furtherRefine = !closed || (!(currentRule.getConfPCA() == 1.0) && currentRule.getLength() < MAX_LEN);
             }
 
             if (furtherRefine) {
@@ -102,7 +103,10 @@ public class AMIE {
                 double k = currentRule.getHeadCoverage() * MIN_HC;
                 Set<Rule> tempRules = new HashSet<>();
 
-                addAtoms.addDanglingAtoms(gdb, currentRule, k, tempRules);
+                // AMIE mines only length 3 rules, so if we are already length 2 then only add closing atoms.
+                if (currentRule.getLength() < 2) {
+                    addAtoms.addDanglingAtoms(gdb, currentRule, k, tempRules);
+                }
                 addAtoms.addClosingAtoms(gdb, currentRule, k, tempRules);
 
                 // Check redundancy and add to final queue.
@@ -160,8 +164,8 @@ public class AMIE {
      * @param args //THINK: What all should the user pass?
      */
     public static void main(String[] args) {
-//        final String neo4jFolder = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/RoyalsGraph/db";
-//        final String neo4jFolder = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db";
+//        final String neo4jFolder = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/RoyalGraph/db";
+//        final String neo4jFolder = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yago2S/db";
 
         if (args.length < 1) {
             System.out.println("Please pass the folder containing the Neo4j KB.");
@@ -169,6 +173,7 @@ public class AMIE {
         }
 
         final String neo4jFolder = args[0];
+
         GraphDatabaseService gdb = new GraphDatabaseFactory().newEmbeddedDatabaseBuilder(new File(neo4jFolder))
                 .setConfig(GraphDatabaseSettings.pagecache_memory, "10G" )
                 .newGraphDatabase();

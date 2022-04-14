@@ -12,6 +12,7 @@ public class Rule {
     Double headCoverage;
     Double confPCA;
     int support;
+    int joiningAtom;
 
     // Setting it to null cause the initial set of rules will not have parents.
     // TODO: Is there a better option?
@@ -49,6 +50,8 @@ public class Rule {
         this.confPCA = confPCA;
     }
 
+
+
     /**
      * This method returns the size of the rule.
      *
@@ -66,6 +69,15 @@ public class Rule {
         this.bodyAtoms = bodyAtoms;
         this.headCoverage = 0.0;
         this.confPCA = 0.0;
+        this.joiningAtom = -1;
+    }
+
+    public Rule(Atom headAtom, Set<Atom> bodyAtoms, int joiningAtom) {
+        this.headAtom = headAtom;
+        this.bodyAtoms = bodyAtoms;
+        this.headCoverage = 0.0;
+        this.confPCA = 0.0;
+        this.joiningAtom = joiningAtom;
     }
 
     public Rule() {
@@ -80,6 +92,14 @@ public class Rule {
         this.headAtom = headAtom;
     }
 
+    public int getJoiningAtom() {
+        return joiningAtom;
+    }
+
+    public void setJoiningAtom(int joiningAtom) {
+        this.joiningAtom = joiningAtom;
+    }
+
     public Set<Atom> getBodyAtoms() {
         return bodyAtoms;
     }
@@ -87,6 +107,7 @@ public class Rule {
     public void setBodyAtoms(Set<Atom> bodyAtoms) {
         this.bodyAtoms = bodyAtoms;
     }
+
 
     /**
      * This method creates a new rules which is a deep copy of the existing rule.
@@ -100,7 +121,7 @@ public class Rule {
             newBodyAtoms.add(a.deepCopyAtom());
         }
 
-        return new Rule(newHead, newBodyAtoms);
+        return new Rule(newHead, newBodyAtoms, getJoiningAtom());
     }
 
 
