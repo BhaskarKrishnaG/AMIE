@@ -15,8 +15,8 @@ public class DataGeneratorForDesktop {
     public static void main(String[] args) {
         final String URI = "bolt://localhost:7687";
         final String USER = "neo4j";
-        final String PASSWORD = "RFDB";
-        final String graphDB = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/RoyalsGraph/db";
+        final String PASSWORD = "YAGO";
+        final String graphDB = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yago2S/db";
 
 
         GraphDatabaseService gdb = new GraphDatabaseFactory().newEmbeddedDatabase(new File(graphDB));
@@ -31,12 +31,16 @@ public class DataGeneratorForDesktop {
         }
 
         ResourceIterable<Relationship> allRelationships = gdb.getAllRelationships();
-
+        int count = 0;
         for (Relationship rel: allRelationships){
             session.run("MATCH (s), (o)" +
-                                " WHERE id(s) = $sId AND id(o) = $oId"+
-                                " CREATE (s)-[:`"+rel.getType().name()+"`]->(o) ",
-                        Map.of("sId", + rel.getStartNodeId(), "oId", rel.getEndNodeId()));
+                                " WHERE s.id = $sId AND o.id = $oId"+
+                                " CREATE (s)-[:`"+rel.getType().name()+"` {entity: $entity}]->(o) ",
+                        Map.of("sId", + rel.getStartNodeId(), "oId", rel.getEndNodeId(), "entity", rel.getProperty("entity")));
+
+            count++;
+            if (count%500==0)
+                System.out.println(count);
 
         }
 

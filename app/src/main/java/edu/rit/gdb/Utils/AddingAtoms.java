@@ -5,8 +5,8 @@ import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Result;
 import org.neo4j.graphdb.Transaction;
 
-import java.sql.Timestamp;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -53,7 +53,7 @@ public class AddingAtoms {
      * @param r rule.
      * @param k threshold.
      */
-    public void addDanglingAtoms(GraphDatabaseService gdb, Rule r, double k, Set<Rule> danglingRules){
+    public void addDanglingAtoms(GraphDatabaseService gdb, Rule r, double k, List<Rule> danglingRules){
 
         StringBuilder query = buildCurrentRule(r);
 
@@ -83,7 +83,7 @@ public class AddingAtoms {
      * @param danglingRules all the new rules that meet the threshold.
      */
     public void executeDandling(GraphDatabaseService gdb, Rule r,
-                                double k, StringBuilder query, Long v, boolean subject, Set<Rule> danglingRules){
+                                double k, StringBuilder query, Long v, boolean subject, List<Rule> danglingRules){
 
         StringBuilder tempQuery = new StringBuilder();
         Atom a = new Atom();
@@ -110,7 +110,7 @@ public class AddingAtoms {
         Transaction tx = gdb.beginTx();
 
         String finalQuery = query.toString() + tempQuery.toString();
-        System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + finalQuery);
+//        System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + finalQuery);
         Result res = gdb.execute(finalQuery, Map.of("k", k));
         while (res.hasNext()){
             Map<String, Object> relation = res.next();
@@ -118,6 +118,7 @@ public class AddingAtoms {
             Atom newAtom = a.deepCopyAtom();
             Long predicate = Long.parseLong((String)relation.get("predicate"));
             newAtom.setPredicateId(predicate);
+            newAtom.setRelationshipName(AMIE.predicateName.get(predicate));
             Rule newRule = r.deepCopyRule();
             newRule.getBodyAtoms().add(newAtom);
             danglingRules.add(newRule);
@@ -143,7 +144,7 @@ public class AddingAtoms {
      * @param k threshold.
      * @param closedRules results.
      */
-    public void addClosingAtoms(GraphDatabaseService gdb, Rule r, double k, Set<Rule> closedRules){
+    public void addClosingAtoms(GraphDatabaseService gdb, Rule r, double k, List<Rule> closedRules){
         Transaction tx = gdb.beginTx();
         StringBuilder query = buildCurrentRule(r);
 
@@ -155,10 +156,10 @@ public class AddingAtoms {
             oVariables = r.getOpenVariables();
         }
 
-        for (Long subject: sVariables){ // {a, b}
-            for (Long object: oVariables){ // {a, b}
+        for (Long subject: sVariables){
+            for (Long object: oVariables){
                 if (!subject.equals(object)){
-                    // b, a
+
                     StringBuilder tempQuery = new StringBuilder();
                     tempQuery.append(" MATCH ");
                     appendNode(tempQuery, subject);
@@ -169,13 +170,13 @@ public class AddingAtoms {
                             " WHERE support >= $k RETURN predicate, support");
                     String finalQuery = query.toString() + tempQuery.toString();
 
-                    System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + finalQuery);
+//                    System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + finalQuery);
                     Result res = gdb.execute(finalQuery, Map.of("k", k));
                     while (res.hasNext()){
                         Map<String, Object> relation = res.next();
                         // check for redundancy
                         Long predicate = Long.parseLong((String)relation.get("predicate"));
-                        Atom a = new Atom(predicate, subject, object);
+                        Atom a = new Atom(predicate, subject, object, AMIE.predicateName.get(predicate));
                         Rule newRule = r.deepCopyRule();
                         newRule.getBodyAtoms().add(a);
 

@@ -5,10 +5,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class Rule {
+public class Rule implements Comparable<Rule>{
 
     Atom headAtom;
-    Set<Atom> bodyAtoms;
+    List<Atom> bodyAtoms;
     Double headCoverage;
     Double confPCA;
     int support;
@@ -64,7 +64,7 @@ public class Rule {
 
     // THINK: Do we want a variable that indicates the closeness? Or as a property?
 
-    public Rule(Atom headAtom, Set<Atom> bodyAtoms) {
+    public Rule(Atom headAtom, List<Atom> bodyAtoms) {
         this.headAtom = headAtom;
         this.bodyAtoms = bodyAtoms;
         this.headCoverage = 0.0;
@@ -72,7 +72,7 @@ public class Rule {
         this.joiningAtom = -1;
     }
 
-    public Rule(Atom headAtom, Set<Atom> bodyAtoms, int joiningAtom) {
+    public Rule(Atom headAtom, List<Atom> bodyAtoms, int joiningAtom) {
         this.headAtom = headAtom;
         this.bodyAtoms = bodyAtoms;
         this.headCoverage = 0.0;
@@ -81,7 +81,7 @@ public class Rule {
     }
 
     public Rule() {
-        bodyAtoms = new HashSet<>();
+        bodyAtoms = new ArrayList<>();
     }
 
     public Atom getHeadAtom() {
@@ -100,11 +100,11 @@ public class Rule {
         this.joiningAtom = joiningAtom;
     }
 
-    public Set<Atom> getBodyAtoms() {
+    public List<Atom> getBodyAtoms() {
         return bodyAtoms;
     }
 
-    public void setBodyAtoms(Set<Atom> bodyAtoms) {
+    public void setBodyAtoms(List<Atom> bodyAtoms) {
         this.bodyAtoms = bodyAtoms;
     }
 
@@ -116,7 +116,7 @@ public class Rule {
      */
     public Rule deepCopyRule(){
         Atom newHead = getHeadAtom().deepCopyAtom();
-        Set<Atom> newBodyAtoms = new HashSet<>();
+        List<Atom> newBodyAtoms = new ArrayList<>();
         for (Atom a: getBodyAtoms()){
             newBodyAtoms.add(a.deepCopyAtom());
         }
@@ -263,7 +263,7 @@ public class Rule {
      * @return true - if semantically same.
      *         false - otherwise.
      */
-    public boolean areTwoBodiesSame(Set<Atom> a, Set<Atom> b){
+    public boolean areTwoBodiesSame(List<Atom> a, List<Atom> b){
 
         HashMap<Long, Integer> aPredicates = new HashMap<>();
         HashMap<Long, Integer> bPredicates = new HashMap<>();
@@ -311,10 +311,11 @@ public class Rule {
         if (o == null || getClass() != o.getClass()) return false;
         Rule rule = (Rule) o;
         return Objects.equals(getHeadAtom(), rule.getHeadAtom())
-                && isClosed() == rule.isClosed()
-                && areTwoBodiesSame(getBodyAtoms(), rule.getBodyAtoms())
+                && (isClosed() == rule.isClosed())
                 && Objects.equals(getHeadCoverage(), rule.getHeadCoverage())
-                && Objects.equals(getConfPCA(), rule.getConfPCA());
+                && Objects.equals(getConfPCA(), rule.getConfPCA())
+                && getSupport() == rule.getSupport()
+                && areTwoBodiesSame(getBodyAtoms(), rule.getBodyAtoms());
     }
 
 
@@ -327,5 +328,10 @@ public class Rule {
     @Override
     public String toString() {
         return bodyAtoms.toString() + " =>"+ headAtom.toString();
+    }
+
+    @Override
+    public int compareTo(Rule o) {
+        return getConfPCA().compareTo(o.getConfPCA());
     }
 }

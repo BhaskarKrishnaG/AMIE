@@ -16,13 +16,15 @@ import java.util.*;
 public class AMIE {
 
     static Queue<Rule> queue = new LinkedList<>();
-    static Set<Rule> output = new HashSet<>();
+    static TreeSet<Rule> output = new TreeSet<>();
     final static double MIN_confPCA = 0.0;
     final static double MIN_HC = 0.01;
     final static int MAX_LEN = 3;
     public AddingAtoms addAtoms = new AddingAtoms();
     public static HashMap<Long, Integer> predicateCount = new HashMap<>();
 
+    // Predicate to relation name.
+    public static HashMap<Long, String> predicateName = new HashMap<>();
 
     /**
      * This method will add all the transactions (Rules of size 1) to the queue which will later be extended.
@@ -40,7 +42,8 @@ public class AMIE {
             Rule newRule = new Rule();
 
             // The subject and object are just variables for the algorithm.
-            Atom newAtom = new Atom(Long.parseLong((String)triple.get("predicates")), 0L, 1L);
+            Atom newAtom = new Atom(Long.parseLong((String)triple.get("predicates")), 0L, 1L,
+                    predicateName.get(Long.parseLong((String)triple.get("predicates"))));
             newRule.setHeadAtom(newAtom);
 
             queue.add(newRule);
@@ -55,12 +58,14 @@ public class AMIE {
     public void memorizePredicateCount(GraphDatabaseService gdb) {
         Transaction tx = gdb.beginTx();
 
-        String query = "MATCH ()-[r]->() RETURN DISTINCT TYPE(r) as predicate, COUNT(r) as factCount";
+        String query = "MATCH ()-[r]->() RETURN DISTINCT TYPE(r) as predicate, r.entity as relName, COUNT(r) as factCount";
         Result relations = gdb.execute(query);
         while (relations.hasNext()){
             Map<String, Object> relation = relations.next();
             predicateCount.put(Long.parseLong((String)relation.get("predicate")),
                     ((Number)relation.get("factCount")).intValue());
+            predicateName.put(Long.parseLong((String)relation.get("predicate")),
+                    (String)relation.get("relName"));
         }
         tx.close();
     }
@@ -73,8 +78,8 @@ public class AMIE {
      */
     public void runAMIE(GraphDatabaseService gdb){
 
-        initializeQueue(gdb);
         memorizePredicateCount(gdb);
+        initializeQueue(gdb);
 
         ComputingMetrics metricsAssistant = new ComputingMetrics();
         for(Rule r: queue){
@@ -101,7 +106,7 @@ public class AMIE {
             if (furtherRefine) {
                 // Apply all mining operations.
                 double k = currentRule.getHeadCoverage() * MIN_HC;
-                Set<Rule> tempRules = new HashSet<>();
+                List<Rule> tempRules = new ArrayList<>();
 
                 // AMIE mines only length 3 rules, so if we are already length 2 then only add closing atoms.
                 if (currentRule.getLength() < 2) {
@@ -114,13 +119,15 @@ public class AMIE {
                     if (!queue.contains(possibleNewRule)){
                         queue.add(possibleNewRule);
                     }
+                    else {
+//                        System.out.printf("Duplicate: %-100s\t%f\n",possibleNewRule, possibleNewRule.getConfPCA());
+                    }
                 }
             }
 
             if (outputThisRule){
                 output.add(currentRule);
             }
-            System.out.println("Rules mined: " + output.size());
         }
     }
 
@@ -149,7 +156,7 @@ public class AMIE {
 
         for (Rule ancestor : r.getParent()) {
             if (ancestor.getLength() > 1 && ancestor.isClosed()
-                    && r.getConfPCA() <= ancestor.getConfPCA()) {
+                    && r.getConfPCA() < ancestor.getConfPCA()) {
                 isBetter = false;
                 break;
             }
@@ -181,7 +188,7 @@ public class AMIE {
         new AMIE().runAMIE(gdb);
         System.out.println("\n\nThe mined Rules are: " + output.size());
         for (Rule allRules: output){
-            System.out.println(allRules.toString());
+            System.out.printf("%-90s \t%f\n", allRules, allRules.getConfPCA());
         }
 
         gdb.shutdown();

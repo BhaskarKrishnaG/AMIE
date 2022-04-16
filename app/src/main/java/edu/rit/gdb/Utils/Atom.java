@@ -14,6 +14,13 @@ public class Atom {
         this.object = object;
     }
 
+    public Atom(Long predicateId, Long subject, Long object, String name) {
+        this.predicateId = predicateId;
+        this.subject = subject;
+        this.object = object;
+        this.relationshipName = name;
+    }
+
     public Atom() {
         // Do nothing.
     }
@@ -60,6 +67,7 @@ public class Atom {
         newAtom.setSubject(getSubject());
         newAtom.setPredicateId(getPredicateId());
         newAtom.setObject(getObject());
+        newAtom.setRelationshipName(getRelationshipName());
 
         return newAtom;
     }
@@ -79,6 +87,6 @@ public class Atom {
 
     @Override
     public String toString() {
-        return " (" + subject + ")-[" + predicateId + "]->(" + object + ")";
+        return " (" + subject + ")-[" + relationshipName + "]->(" + object + ")";
     }
 }

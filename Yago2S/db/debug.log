@@ -1,3 +1,0 @@
-2022-04-06 16:16:26.819+0000 INFO [o.n.u.b.i.BatchInserterImpl] Thread[main,5,main] Starting BatchInserter(EmbeddedBatchInserter[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db])
-2022-04-06 16:16:28.818+0000 INFO [o.n.k.i.s.c.CountsTracker] Rotated counts store at transaction 1 to [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.counts.db.b], from [/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db/neostore.counts.db.a].
-2022-04-06 16:16:29.419+0000 INFO [o.n.u.b.i.BatchInserterImpl] Thread[main,5,main] Clean shutdown on BatchInserter(EmbeddedBatchInserter[/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yoga2S/db])

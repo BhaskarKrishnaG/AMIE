@@ -73,7 +73,7 @@ public class ComputingMetrics {
             queryBuilderForPCA(r, query, 1, graphSemantics);
             query.append(" WITH DISTINCT n");
             query.append(s).append(", n").append(o).append(" RETURN COUNT(*) as cnt");
-            System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + query);
+//            System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + query);
 
             int subjectBlankCount = ((Number)gdb.execute(query.toString()).next().get("cnt")).intValue();
 
@@ -86,7 +86,7 @@ public class ComputingMetrics {
             queryBuilderForPCA(r, query, 2, graphSemantics);
             query.append(" WITH DISTINCT n");
             query.append(s).append(", n").append(o).append(" RETURN COUNT(*) as cnt");
-            System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + query);
+//            System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + query);
 
             int objectBlankCount = ((Number)gdb.execute(query.toString()).next().get("cnt")).intValue();
 
@@ -128,7 +128,7 @@ public class ComputingMetrics {
                 query.append(o).append(" RETURN COUNT(*) as cnt");
             }
 
-            System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + query);
+//            System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + query);
             int count = ((Number)gdb.execute(query.toString()).next().get("cnt")).intValue();
             // Can count be 0?
             if (count != 0) {
@@ -151,7 +151,7 @@ public class ComputingMetrics {
             queryBuilderForPCA(r, query, r.getJoiningAtom(), graphSemantics);
             query.append(" WITH DISTINCT n");
             query.append(s).append(", n").append(o).append(" RETURN COUNT(*) as cnt");
-            System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + query);
+//            System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + query);
 
             int count = ((Number)gdb.execute(query.toString()).next().get("cnt")).intValue();
             // Can count be 0?
