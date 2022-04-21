@@ -77,12 +77,15 @@ public class Atom {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Atom atom = (Atom) o;
+
+        if (this.predicateId == null || atom.predicateId == null)
+            return relationshipName.equals(atom.getRelationshipName()) && subject.equals(atom.subject) && object.equals(atom.object);
         return predicateId.equals(atom.predicateId) && subject.equals(atom.subject) && object.equals(atom.object);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(predicateId, subject, object);
+        return 0;
     }
 
     @Override

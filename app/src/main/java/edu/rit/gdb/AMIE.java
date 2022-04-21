@@ -1,9 +1,6 @@
 package edu.rit.gdb;
 
-import edu.rit.gdb.Utils.AddingAtoms;
-import edu.rit.gdb.Utils.Atom;
-import edu.rit.gdb.Utils.ComputingMetrics;
-import edu.rit.gdb.Utils.Rule;
+import edu.rit.gdb.Utils.*;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Result;
 import org.neo4j.graphdb.Transaction;
@@ -11,12 +8,13 @@ import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 import org.neo4j.graphdb.factory.GraphDatabaseSettings;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class AMIE {
 
     static Queue<Rule> queue = new LinkedList<>();
-    static TreeSet<Rule> output = new TreeSet<>();
+    static List<Rule> output = new ArrayList<>();
     final static double MIN_confPCA = 0.0;
     final static double MIN_HC = 0.01;
     final static int MAX_LEN = 3;
@@ -119,18 +117,59 @@ public class AMIE {
                     if (!queue.contains(possibleNewRule)){
                         queue.add(possibleNewRule);
                     }
-                    else {
-//                        System.out.printf("Duplicate: %-100s\t%f\n",possibleNewRule, possibleNewRule.getConfPCA());
-                    }
                 }
             }
 
             if (outputThisRule){
-                output.add(currentRule);
+                if (!exitsInQueue(currentRule)){
+                    output.add(currentRule);
+                }
             }
         }
     }
 
+    public boolean exitsInQueue(Rule currRule){
+        boolean found = false;
+        for (Rule r: output) {
+            if (currRule.getLength() == r.getLength()) {
+                if (r.getLength() == 2) {
+                    found = compareAtom(currRule.getHeadAtom(), r.getHeadAtom())
+                            && compareAtom(currRule.getBodyAtoms().get(0), r.getBodyAtoms().get(0));
+
+                } else {
+                    found = compareAtom(currRule.getHeadAtom(), r.getHeadAtom())
+                            && ((compareAtom(currRule.getBodyAtoms().get(0), r.getBodyAtoms().get(0))
+                            && compareAtom(currRule.getBodyAtoms().get(1), r.getBodyAtoms().get(1)))
+                            || (compareAtom(currRule.getBodyAtoms().get(0), r.getBodyAtoms().get(1)))
+                            && compareAtom(currRule.getBodyAtoms().get(1), r.getBodyAtoms().get(0)));
+                }
+                if (found) {
+                    break;
+                }
+            }
+        }
+        return found;
+    }
+
+    public boolean compareAtom(Atom a, Atom b){
+        if (a.getSubject() > 1)
+            return b.getSubject()>1 && a.getObject().equals(b.getObject()) && a.relationshipName.equals(b.relationshipName);
+
+        else if (a.getObject()>1)
+            return b.getObject()>1 && a.getSubject().equals(b.getSubject()) && a.relationshipName.equals(b.relationshipName);
+
+        else
+            return a.getSubject().equals(b.getSubject()) && a.getObject().equals(b.getObject()) && a.relationshipName.equals(b.relationshipName);
+
+//        if (a.getSubject() > 1)
+//            return b.getSubject()>1 && a.getObject().equals(b.getObject()) && a.predicateId.equals(b.predicateId);
+//
+//        else if (a.getObject()>1)
+//            return b.getObject()>1 && a.getSubject().equals(b.getSubject()) && a.predicateId.equals(b.predicateId);
+//
+//        else
+//            return a.getSubject().equals(b.getSubject()) && a.getObject().equals(b.getObject()) && a.predicateId.equals(b.predicateId);
+    }
 
     /**
      * This method tells if a rule passes the minimum PCA confidence threshold;
@@ -170,9 +209,7 @@ public class AMIE {
      *
      * @param args //THINK: What all should the user pass?
      */
-    public static void main(String[] args) {
-//        final String neo4jFolder = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/RoyalGraph/db";
-//        final String neo4jFolder = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/Yago2S/db";
+    public static void main(String[] args) throws FileNotFoundException {
 
         if (args.length < 1) {
             System.out.println("Please pass the folder containing the Neo4j KB.");
@@ -186,10 +223,13 @@ public class AMIE {
                 .newGraphDatabase();
 
         new AMIE().runAMIE(gdb);
-        System.out.println("\n\nThe mined Rules are: " + output.size());
+        Collections.sort(output);
         for (Rule allRules: output){
             System.out.printf("%-90s \t%f\n", allRules, allRules.getConfPCA());
         }
+        System.out.println("\n\nThe mined Rules are: " + output.size());
+
+        CompareOutput.compareResults(output);
 
         gdb.shutdown();
     }

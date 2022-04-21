@@ -4,8 +4,6 @@ import edu.rit.gdb.AMIE;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Transaction;
 
-import java.sql.Timestamp;
-
 public class ComputingMetrics {
 
     /**
