@@ -5,6 +5,7 @@ import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 
 import java.io.File;
+import java.util.List;
 import java.util.Set;
 
 public class TestComputingMetrics {
@@ -19,51 +20,51 @@ public class TestComputingMetrics {
     static Atom carlWasBornInInRome = new Atom(1001L, 2L, 101L);
 
     // R: livesIn(x, y) => wasBornIn(x, y)
-    static Rule r1 = new Rule(adamWasBornInInParis, Set.of(adamLivesInParis));
+    static Rule r1 = new Rule(adamWasBornInInParis, List.of(adamLivesInParis));
 
     // R: isMarriedTo(x,z) ∧ hasChild(z,y) => hasChild(x,y)
     static Atom a1 = new Atom(10L, 0L, 1L);
     static Atom a2 = new Atom(11L, 1L, 2L);
     static Atom a3 = new Atom(11L, 0L, 2L);
 
-    static Rule r2 = new Rule(a3, Set.of(a1, a2));
+    static Rule r2 = new Rule(a3, List.of(a1, a2));
 
     // Verifying with AMIE
     // ?b  1  ?a   => ?a  1  ?b
     static Atom bSpouseA = new Atom(1L, 100L, 101L);
     static Atom aSpouseB = new Atom(1L, 101L, 100L);
-    static Rule amie1 = new Rule(aSpouseB, Set.of(bSpouseA));
+    static Rule amie1 = new Rule(aSpouseB, List.of(bSpouseA));
 
     // ?h  0  ?b  ?a  1  ?h   => ?a  0  ?b
     static Atom hParentB = new Atom(0L, 103L, 100L);
     static Atom aParentB = new Atom(0L, 101L, 100L);
     static Atom aSpouseH = new Atom(1L, 101L, 103L);
-    static Rule amie2 = new Rule(aParentB, Set.of(hParentB, aSpouseH));
+    static Rule amie2 = new Rule(aParentB, List.of(hParentB, aSpouseH));
 
     // ?g  0  ?b  ?g  1  ?a   => ?a  0  ?b
     static Atom gParentB = new Atom(0L, 104L, 100L);
     static Atom gSpouseA = new Atom(1L, 104L, 101L);
-    static Rule amie3 = new Rule(aParentB, Set.of(gParentB, gSpouseA));
+    static Rule amie3 = new Rule(aParentB, List.of(gParentB, gSpouseA));
 
     // ?a  2  ?h  ?b  2  ?h   => ?a  0  ?b
     static Atom aBCH = new Atom(2L, 101L, 103L);
     static Atom bBCH = new Atom(2L, 100L, 103L);
-    static Rule amie4 = new Rule(aParentB, Set.of(aBCH, bBCH));
+    static Rule amie4 = new Rule(aParentB, List.of(aBCH, bBCH));
 
     // ?a  0  ?h  ?b  0  ?h   => ?a  1  ?b
     static Atom aParentH = new Atom(0L, 101L, 103L);
     static Atom bParentH = new Atom(0L, 100L, 103L);
-    static Rule amie5 = new Rule(aSpouseB, Set.of(aParentH, bParentH));
+    static Rule amie5 = new Rule(aSpouseB, List.of(aParentH, bParentH));
 
     // ?a  0  ?h  ?h  2  ?b   => ?a  2  ?b
     static Atom hBornInB = new Atom(2L, 103L, 100L);
     static Atom aBornInB = new Atom(2L, 101L, 100L);
-    static Rule amie6 = new Rule(aBornInB, Set.of(aParentH, hBornInB));
+    static Rule amie6 = new Rule(aBornInB, List.of(aParentH, hBornInB));
 
     // ?g  0  ?a  ?g  2  ?b   => ?a  2  ?b
     static Atom gParentA = new Atom(0L, 104L, 101L);
     static Atom gBCB = new Atom(2L, 104L, 100L);
-    static Rule amie7 = new Rule(aBornInB, Set.of(gParentA, gBCB));
+    static Rule amie7 = new Rule(aBornInB, List.of(gParentA, gBCB));
 
     public static void main(String[] args) {
         final String neo4jFolder = "/Users/bhaskarkrishnag/IdeaProjects/AMIE/RoyalsGraph/db";
@@ -77,20 +78,20 @@ public class TestComputingMetrics {
 //        testObject.computePCAConfidenceFixObject(r2, gdb);
 
 //        testObject.getHeadCoverage(amie1, gdb);
-        testObject.computePCAConfidence(amie1, gdb);
+        testObject.computePCAConfidence(amie1, gdb, false);
 
 //        testObject.getHeadCoverage(amie2, gdb);
-        testObject.computePCAConfidence(amie2, gdb);
+        testObject.computePCAConfidence(amie2, gdb, false);
 
 //        testObject.getHeadCoverage(amie3, gdb);
-        testObject.computePCAConfidence(amie3, gdb);
+        testObject.computePCAConfidence(amie3, gdb, false);
 
 //        testObject.getHeadCoverage(amie4, gdb);
-        testObject.computePCAConfidence(amie4, gdb);
+        testObject.computePCAConfidence(amie4, gdb, false);
 
 //        testObject.getHeadCoverage(amie5, gdb);
-        testObject.computePCAConfidence(amie5, gdb);
-        testObject.computePCAConfidence(amie6, gdb);
-        testObject.computePCAConfidence(amie7, gdb);
+        testObject.computePCAConfidence(amie5, gdb, false);
+        testObject.computePCAConfidence(amie6, gdb, false);
+        testObject.computePCAConfidence(amie7, gdb, false);
     }
 }

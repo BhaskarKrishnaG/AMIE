@@ -1,8 +1,10 @@
 package edu.rit.gdb.Utils;
 
 import edu.rit.gdb.AMIE;
-import org.neo4j.graphdb.GraphDatabaseService;
-import org.neo4j.graphdb.Transaction;
+import org.neo4j.driver.Record;
+import org.neo4j.driver.Session;
+
+import java.util.Map;
 
 public class ComputingMetrics {
 
@@ -13,9 +15,10 @@ public class ComputingMetrics {
      *
      * @return headCount.
      */
-    public double getHeadCoverage(Rule r, GraphDatabaseService gdb){
+    public double getHeadCoverage(Rule r, Session gdb){
 
         double hc = computeSupport(r, gdb)*1.0/ AMIE.predicateCount.get(r.getHeadAtom().getPredicateId());
+
         r.setHeadCoverage(hc);
         return hc;
     }
@@ -30,16 +33,14 @@ public class ComputingMetrics {
      * @param r rules.
      * @return support value.
      */
-    public int computeSupport(Rule r, GraphDatabaseService gdb){
+    public int computeSupport(Rule r, Session gdb){
 
-        Transaction tx = gdb.beginTx();
         StringBuilder query = new StringBuilder();
         queryBuilder(r, query);
 
         query.append(" RETURN COUNT(DISTINCT id(r)) as cnt");
 
-        int supp = ((Number)gdb.execute(query.toString()).next().get("cnt")).intValue();
-        tx.close();
+        int supp = gdb.run(query.toString()).next().get("cnt").asInt();
 
         r.setSupport(supp);
         return supp;
@@ -55,112 +56,44 @@ public class ComputingMetrics {
      * @param r rule.
      * @return confidence score.
      */
-    public double computePCAConfidence(Rule r, GraphDatabaseService gdb, boolean graphSemantics) {
+    public double computePCAConfidence(Rule r, Session gdb, boolean graphSemantics) {
 
-        Transaction tx = gdb.beginTx();
         Long s = r.getHeadAtom().getSubject();
         Long o = r.getHeadAtom().getObject();
         StringBuilder query = new StringBuilder();
 
-        // If the rule is closed and size 2 then it's PCA is computed for the first time.
-        // Try both subject and object as the joining variables and keep greater PCA.
-        if (r.getLength() == 2 && r.isClosed()){
-            double subjectPCA = 0;
-            double objectPCA = 0;
+        double conPCA = 0;
 
-            queryBuilderForPCA(r, query, 1, graphSemantics);
-            query.append(" WITH DISTINCT n");
-            query.append(s).append(", n").append(o).append(" RETURN COUNT(*) as cnt");
-//            System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + query);
+        queryBuilderForPCA(r, query, r.getFunctionalVariable(), graphSemantics);
+        query.append(" WITH DISTINCT n");
 
-            int subjectBlankCount = ((Number)gdb.execute(query.toString()).next().get("cnt")).intValue();
-
-            // Can count be 0?
-            if (subjectBlankCount != 0){
-                subjectPCA = r.getSupport()*1.0/(subjectBlankCount);
-            }
-
-            query = new StringBuilder();
-            queryBuilderForPCA(r, query, 2, graphSemantics);
-            query.append(" WITH DISTINCT n");
-            query.append(s).append(", n").append(o).append(" RETURN COUNT(*) as cnt");
-//            System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + query);
-
-            int objectBlankCount = ((Number)gdb.execute(query.toString()).next().get("cnt")).intValue();
-
-            // Can count be 0?
-            if (subjectBlankCount != 0) {
-                objectPCA = r.getSupport() * 1.0 / (objectBlankCount);
-            }
-            if (subjectPCA >= objectPCA){
-                r.setJoiningAtom(1);
-                r.setConfPCA(subjectPCA);
-
-                tx.close();
-                return subjectPCA;
-            }
-            else {
-                r.setJoiningAtom(2);
-                r.setConfPCA(objectPCA);
-
-                tx.close();
-                return objectPCA;
-            }
-        }
-
-        // If the rules is not closed and we are computing PCA for the first time then get the joining variable/common
-        // variable and use that for PCA.
-        else if (r.getLength() == 2){
-            double conPCA = 0;
-
+        // If the rule is not closed then we have two choices, only one is right
+        // (s)-[]->() || ()-[]->(o)
+        // pick the right one.
+        if (!r.isClosed()){
             if (r.isPartOfBody(s)){
-                r.setJoiningAtom(1);
-                queryBuilderForPCA(r, query, 1, graphSemantics);
-                query.append(" WITH DISTINCT n");
                 query.append(s).append(" RETURN COUNT(*) as cnt");
             }
             else {
-                r.setJoiningAtom(2);
-                queryBuilderForPCA(r, query, 2, graphSemantics);
-                query.append(" WITH DISTINCT n");
                 query.append(o).append(" RETURN COUNT(*) as cnt");
             }
 
-//            System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + query);
-            int count = ((Number)gdb.execute(query.toString()).next().get("cnt")).intValue();
-            // Can count be 0?
-            if (count != 0) {
-                conPCA = r.getSupport() * 1.0 / (count);
-            }
-            r.setConfPCA(conPCA);
-
-            tx.close();
-            return conPCA;
         }
 
-        // If we are here then the PCA for shorter version of this rule was already computed, use that joining variable.
-        // At this point, since AMIE only mines closed rules and just length 3 we will have both subject and object in the
-        // body of the rule so we will use both in the filter section.
-        // Note: If we decide to mine longer rules in future this needs more work.
-        //       We will have to check if subject and object are present and build the filter accordingly.
+        // If the rule is closed will can have both subject and object in the query.
         else {
-            double conPCA = 0;
-
-            queryBuilderForPCA(r, query, r.getJoiningAtom(), graphSemantics);
-            query.append(" WITH DISTINCT n");
             query.append(s).append(", n").append(o).append(" RETURN COUNT(*) as cnt");
-//            System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + query);
-
-            int count = ((Number)gdb.execute(query.toString()).next().get("cnt")).intValue();
-            // Can count be 0?
-            if (count != 0) {
-                conPCA = r.getSupport() * 1.0 / (count);
-            }
-            r.setConfPCA(conPCA);
-
-            tx.close();
-            return conPCA;
         }
+
+        int count = gdb.run(query.toString()).next().get("cnt").asInt();
+        // Can count be 0?
+        if (count != 0) {
+            conPCA = r.getSupport() * 1.0 / (count);
+        }
+        r.setConfPCA(conPCA);
+
+        return conPCA;
+
     }
 
 
@@ -193,29 +126,13 @@ public class ComputingMetrics {
 
 
     /**
-     * Decider method for which semantics to use for the query.
-     *
-     * @param r rule.
-     * @param query string builder.
-     * @param joiningVariable which variable to set blank.
-     */
-    public void queryBuilderForPCA(Rule r, StringBuilder query, int joiningVariable, boolean graphSemantics){
-        if (graphSemantics) {
-            queryBuilderForPCA_GraphSemantics(r, query, joiningVariable);
-        } else {
-            queryBuilderForPCA_PrologSemantics(r, query, joiningVariable);
-        }
-    }
-
-
-    /**
      * This is a PCA query builder method.
      *
      * @param r rule.
      * @param query string builder.
-     * @param joiningVariable which variable to set blank.
+     * @param functionalVariable which variable to set blank.
      */
-    public void queryBuilderForPCA_PrologSemantics(Rule r, StringBuilder query, int joiningVariable){
+    public void queryBuilderForPCA(Rule r, StringBuilder query, int functionalVariable, boolean graphSemantics){
         Long s = r.getHeadAtom().getSubject();
         Long p = r.getHeadAtom().getPredicateId();
         Long o = r.getHeadAtom().getObject();
@@ -229,56 +146,23 @@ public class ComputingMetrics {
             appendNode(query,sPrime);
             query.append("-[:`").append(body.getPredicateId()).append("`]->");
             appendNode(query,oPrime);
-            query.append(" MATCH ");
+
+            if(graphSemantics){
+                query.append(" , ");
+            }
+            else {
+                query.append(" MATCH ");
+            }
         }
 
-        // Set subject as blank.
-        if (joiningVariable == 1) {
+        // Set Object as blank.
+        if (functionalVariable == 0) {
             query.append("(n").append(s).append(")-[r:`").append(p).append("`]->").append("()");
         }
 
-        // Set Object as blank.
+        // Set Subject as blank.
         else {
             query.append("()-[r:`").append(p).append("`]->").append("(n").append(o).append(")");
-        }
-
-    }
-
-
-    /**
-     * This is a PCA query builder method.
-     *
-     * @param r rule.
-     * @param query string builder.
-     * @param joiningVariable which variable to retain.
-     */
-    public void queryBuilderForPCA_GraphSemantics(Rule r, StringBuilder query, int joiningVariable){
-        Long s = r.getHeadAtom().getSubject();
-        Long p = r.getHeadAtom().getPredicateId();
-        Long o = r.getHeadAtom().getObject();
-
-        query.append("MATCH ");
-
-        for (Atom body: r.getBodyAtoms()){
-            Long sPrime = body.getSubject();
-            Long oPrime = body.getObject();
-
-            appendNode(query,sPrime);
-            query.append("-[:`").append(body.getPredicateId()).append("`]->");
-            appendNode(query,oPrime);
-            query.append(", ");
-        }
-
-        // Set subject as blank.
-        if (joiningVariable == 1) {
-            query.append("(n").append(s).append(")-[r:`").append(p).append("`]->").append("(n").append(o).append("PRIME)")
-                    .append(" WHERE id(n").append(o).append(") <> id(n").append(o).append("PRIME) ");
-        }
-
-        // Set Object as blank.
-        else {
-            query.append("(n").append(s).append("PRIME)-[r:`").append(p).append("`]->").append("(n").append(o)
-                    .append(") WHERE id(n").append(s).append(") <> id(n").append(s).append("PRIME) ");
         }
 
     }
@@ -294,4 +178,12 @@ public class ComputingMetrics {
         query.append("(n").append(node).append(")");
     }
 
+    public int getFunctionality(Session gdb, Rule r) {
+        Record row = gdb.run("  MATCH (s)-[r]->(o) " +
+                        " WHERE type(r) = $predicate " +
+                        " RETURN count(DISTINCT s) as domainCount, count(DISTINCT o) as coDomainCount",
+                Map.of("predicate", String.valueOf(r.getHeadAtom().getPredicateId()))).next();
+
+        return row.get("domainCount").asInt() >= row.get("coDomainCount").asInt() ?  0 :  1;
+    }
 }

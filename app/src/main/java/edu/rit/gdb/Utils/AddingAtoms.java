@@ -1,9 +1,8 @@
 package edu.rit.gdb.Utils;
 
 import edu.rit.gdb.AMIE;
-import org.neo4j.graphdb.GraphDatabaseService;
-import org.neo4j.graphdb.Result;
-import org.neo4j.graphdb.Transaction;
+import org.neo4j.driver.Result;
+import org.neo4j.driver.Session;
 
 import java.util.HashSet;
 import java.util.List;
@@ -22,7 +21,7 @@ public class AddingAtoms {
      * @param k minHC X support of the rule.
      * @return relations.
      */
-    public Set<Long> getPossibleRelations(GraphDatabaseService gdb, Rule r, double k){
+    public Set<Long> getPossibleRelations(Session gdb, Rule r, double k){
 
         Set<Long> result = new HashSet<>();
 
@@ -33,9 +32,9 @@ public class AddingAtoms {
         // THINK: Add minimum support as argument?
         query.append(" MATCH ()-[r]->() RETURN DISTINCT TYPE(r) as rel, COUNT(r) as relCount");
 
-        Result res = gdb.execute(query.toString());
+        Result res = gdb.run(query.toString());
         while (res.hasNext()){
-            Map<String, Object> relation = res.next();
+            Map<String, Object> relation = res.next().asMap();
             if (((Number)relation.get("relCount")).intValue() >= k){
                 result.add(Long.parseLong((String)relation.get("rel")));
             }
@@ -53,7 +52,7 @@ public class AddingAtoms {
      * @param r rule.
      * @param k threshold.
      */
-    public void addDanglingAtoms(GraphDatabaseService gdb, Rule r, double k, List<Rule> danglingRules){
+    public void addDanglingAtoms(Session gdb, Rule r, double k, List<Rule> danglingRules){
 
         StringBuilder query = buildCurrentRule(r);
 
@@ -82,7 +81,7 @@ public class AddingAtoms {
      * @param subject s.
      * @param danglingRules all the new rules that meet the threshold.
      */
-    public void executeDandling(GraphDatabaseService gdb, Rule r,
+    public void executeDandling(Session gdb, Rule r,
                                 double k, StringBuilder query, Long v, boolean subject, List<Rule> danglingRules){
 
         StringBuilder tempQuery = new StringBuilder();
@@ -104,16 +103,15 @@ public class AddingAtoms {
             a.setSubject(v+100);
             a.setObject(v);
         }
-        tempQuery.append(" WITH TYPE(r) as predicate, COUNT(DISTINCT id(headRel)) as support" +
-                " WHERE support >= $k RETURN predicate, support");
+        String filter = " WITH TYPE(r) as predicate, COUNT(DISTINCT id(headRel)) as support" +
+                " WHERE support >= $k RETURN predicate, support";
 
-        Transaction tx = gdb.beginTx();
 
-        String finalQuery = query.toString() + tempQuery.toString();
-//        System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + finalQuery);
-        Result res = gdb.execute(finalQuery, Map.of("k", k));
+        String finalQuery = tempQuery.toString() + query.toString() + filter;
+
+        Result res = gdb.run(finalQuery, Map.of("k", k));
         while (res.hasNext()){
-            Map<String, Object> relation = res.next();
+            Map<String, Object> relation = res.next().asMap();
 
             Atom newAtom = a.deepCopyAtom();
             Long predicate = Long.parseLong((String)relation.get("predicate"));
@@ -132,7 +130,6 @@ public class AddingAtoms {
             metricAssistant.computePCAConfidence(newRule, gdb, false);
 
         }
-        tx.close();
     }
 
     /**
@@ -144,8 +141,7 @@ public class AddingAtoms {
      * @param k threshold.
      * @param closedRules results.
      */
-    public void addClosingAtoms(GraphDatabaseService gdb, Rule r, double k, List<Rule> closedRules){
-        Transaction tx = gdb.beginTx();
+    public void addClosingAtoms(Session gdb, Rule r, double k, List<Rule> closedRules){
         StringBuilder query = buildCurrentRule(r);
 
         Set<Long> sVariables = r.getALLVariables();
@@ -170,10 +166,9 @@ public class AddingAtoms {
                             " WHERE support >= $k RETURN predicate, support");
                     String finalQuery = query.toString() + tempQuery.toString();
 
-//                    System.out.println(new Timestamp(System.currentTimeMillis()).getTime() + "\t" + finalQuery);
-                    Result res = gdb.execute(finalQuery, Map.of("k", k));
+                    Result res = gdb.run(finalQuery, Map.of("k", k));
                     while (res.hasNext()){
-                        Map<String, Object> relation = res.next();
+                        Map<String, Object> relation = res.next().asMap();
                         // check for redundancy
                         Long predicate = Long.parseLong((String)relation.get("predicate"));
                         Atom a = new Atom(predicate, subject, object, AMIE.predicateName.get(predicate));
@@ -196,7 +191,6 @@ public class AddingAtoms {
                 }
             }
         }
-        tx.close();
     }
 
 
@@ -212,7 +206,7 @@ public class AddingAtoms {
         Long o = r.getHeadAtom().getObject();
 
         StringBuilder query = new StringBuilder();
-        query.append("MATCH ");
+        query.append(" MATCH ");
 
         for (Atom body: r.getBodyAtoms()){
             Long sPrime = body.getSubject();

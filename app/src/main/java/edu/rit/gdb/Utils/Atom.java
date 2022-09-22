@@ -1,7 +1,5 @@
 package edu.rit.gdb.Utils;
 
-import java.util.Objects;
-
 public class Atom {
     public Long predicateId;
     public String relationshipName;

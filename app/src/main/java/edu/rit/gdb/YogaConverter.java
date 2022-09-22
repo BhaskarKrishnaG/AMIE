@@ -32,7 +32,7 @@ public class YogaConverter {
         int progress = 0;
         for (String line : lines) {
 
-            // Remove the dot at the end of the line. By observation it always a dot but we'll check.
+            // Remove the dot at the end of the line. By observation line always has a dot but we'll check.
             if (line.lastIndexOf('.') == line.length()-1){
                 line = line.substring(0, line.length()-1);
             }

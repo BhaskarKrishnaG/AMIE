@@ -12,7 +12,7 @@ public class Rule implements Comparable<Rule>{
     Double headCoverage;
     Double confPCA;
     int support;
-    int joiningAtom;
+    int functionalVariable;
 
     // Setting it to null cause the initial set of rules will not have parents.
     // TODO: Is there a better option?
@@ -50,7 +50,13 @@ public class Rule implements Comparable<Rule>{
         this.confPCA = confPCA;
     }
 
+    public int getFunctionalVariable() {
+        return functionalVariable;
+    }
 
+    public void setFunctionalVariable(int functionalVariable) {
+        this.functionalVariable = functionalVariable;
+    }
 
     /**
      * This method returns the size of the rule.
@@ -69,19 +75,22 @@ public class Rule implements Comparable<Rule>{
         this.bodyAtoms = bodyAtoms;
         this.headCoverage = 0.0;
         this.confPCA = 0.0;
-        this.joiningAtom = -1;
+        this.functionalVariable = -1;
     }
 
-    public Rule(Atom headAtom, List<Atom> bodyAtoms, int joiningAtom) {
+    public Rule(Atom headAtom, List<Atom> bodyAtoms, int functionalVariable) {
         this.headAtom = headAtom;
         this.bodyAtoms = bodyAtoms;
         this.headCoverage = 0.0;
         this.confPCA = 0.0;
-        this.joiningAtom = joiningAtom;
+        this.functionalVariable = functionalVariable;
     }
 
     public Rule() {
         bodyAtoms = new ArrayList<>();
+        this.headCoverage = 0.0;
+        this.confPCA = 0.0;
+        this.functionalVariable = -1;
     }
 
     public Atom getHeadAtom() {
@@ -92,13 +101,6 @@ public class Rule implements Comparable<Rule>{
         this.headAtom = headAtom;
     }
 
-    public int getJoiningAtom() {
-        return joiningAtom;
-    }
-
-    public void setJoiningAtom(int joiningAtom) {
-        this.joiningAtom = joiningAtom;
-    }
 
     public List<Atom> getBodyAtoms() {
         return bodyAtoms;
@@ -121,7 +123,7 @@ public class Rule implements Comparable<Rule>{
             newBodyAtoms.add(a.deepCopyAtom());
         }
 
-        return new Rule(newHead, newBodyAtoms, getJoiningAtom());
+        return new Rule(newHead, newBodyAtoms, functionalVariable);
     }
 
 
